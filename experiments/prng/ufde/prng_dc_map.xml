@@ -1,0 +1,383 @@
+<design name="top">
+	<external name="cell_lib">
+		<module name="DFFSHQ" type="FFLATCH">
+			<property name="edge" value="rise"/>
+			<port name="D" direction="input"/>
+			<port name="CK" direction="input" type="clock"/>
+			<port name="SN" direction="input" type="reset"/>
+			<port name="Q" direction="output"/>
+		</module>
+		<module name="DFFRHQ" type="FFLATCH">
+			<property name="edge" value="rise"/>
+			<port name="D" direction="input"/>
+			<port name="CK" direction="input" type="clock"/>
+			<port name="RN" direction="input" type="reset"/>
+			<port name="Q" direction="output"/>
+		</module>
+		<module name="ADDF" type="MACRO">
+			<property name="truthtable" value="1100001100111100"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="CI" direction="input"/>
+			<port name="S" direction="output"/>
+			<port name="CO" direction="output" type="carry"/>
+		</module>
+		<module name="LUT2" type="LUT">
+			<port name="ADR0" direction="input"/>
+			<port name="ADR1" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="LUT3" type="LUT">
+			<port name="ADR0" direction="input"/>
+			<port name="ADR1" direction="input"/>
+			<port name="ADR2" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="IBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="CLKBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="IPAD" type="MACRO">
+			<port name="PAD" direction="input"/>
+		</module>
+		<module name="OBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="OPAD" type="MACRO">
+			<port name="PAD" direction="output"/>
+		</module>
+		<module name="LOGIC_1" type="MACRO">
+			<property name="truthtable" value="|1"/>
+			<port name="LOGIC_1_PIN" direction="output"/>
+		</module>
+		<module name="LOGIC_0" type="MACRO">
+			<property name="truthtable" value="|0"/>
+			<port name="LOGIC_0_PIN" direction="output"/>
+		</module>
+	</external>
+	<library name="work_lib">
+		<module name="top" type="GENERIC">
+			<port name="seed" msb="7" lsb="0" direction="input"/>
+			<port name="seg" msb="6" lsb="0" direction="output"/>
+			<port name="clk" direction="input"/>
+			<port name="rst" direction="input"/>
+			<contents>
+				<instance name="u_prng/random_reg[7]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[0]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[1]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[2]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[3]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[4]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[5]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[6]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="U26" moduleRef="ADDF" libraryRef="cell_lib"/>
+				<instance name="L0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="6"/>
+				</instance>
+				<instance name="L1" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="EB"/>
+				</instance>
+				<instance name="L2" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="6E"/>
+				</instance>
+				<instance name="L3" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="2B"/>
+				</instance>
+				<instance name="L4" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="51"/>
+				</instance>
+				<instance name="L5" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="79"/>
+				</instance>
+				<instance name="L6" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="FB"/>
+				</instance>
+				<instance name="L7" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="9F"/>
+				</instance>
+				<instance name="L8" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Buf-pad-seed[7]" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seed[6]" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seed[5]" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seed[4]" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seed[3]" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seed[2]" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seed[1]" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seed[0]" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-clk" moduleRef="CLKBUF" libraryRef="cell_lib"/>
+				<instance name="IBuf-clkpad-clk" moduleRef="CLKBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-rst" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="seed[7]_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="seed[6]_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="seed[5]_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="seed[4]_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="seed[3]_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="seed[2]_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="seed[1]_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="seed[0]_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="clk_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="rst_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[6]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[5]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[4]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[3]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[2]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[1]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[0]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="seg[6]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[5]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[4]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[3]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[2]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[1]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[0]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="VCC" moduleRef="LOGIC_1" libraryRef="cell_lib"/>
+				<instance name="GND" moduleRef="LOGIC_0" libraryRef="cell_lib"/>
+				<net name="net_Buf-pad-seed[7]">
+					<portRef name="O" instanceRef="Buf-pad-seed[7]"/>
+				</net>
+				<net name="net_Buf-pad-seed[6]">
+					<portRef name="O" instanceRef="Buf-pad-seed[6]"/>
+				</net>
+				<net name="net_Buf-pad-seed[5]">
+					<portRef name="O" instanceRef="Buf-pad-seed[5]"/>
+				</net>
+				<net name="net_Buf-pad-seed[4]">
+					<portRef name="O" instanceRef="Buf-pad-seed[4]"/>
+				</net>
+				<net name="net_Buf-pad-seed[3]">
+					<portRef name="O" instanceRef="Buf-pad-seed[3]"/>
+				</net>
+				<net name="net_Buf-pad-seed[2]">
+					<portRef name="O" instanceRef="Buf-pad-seed[2]"/>
+				</net>
+				<net name="net_Buf-pad-seed[1]">
+					<portRef name="O" instanceRef="Buf-pad-seed[1]"/>
+				</net>
+				<net name="net_Buf-pad-seed[0]">
+					<portRef name="O" instanceRef="Buf-pad-seed[0]"/>
+				</net>
+				<net name="net_IBuf-clkpad-clk">
+					<portRef name="O" instanceRef="IBuf-clkpad-clk"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[7]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[0]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[1]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[2]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[3]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[4]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[5]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[6]"/>
+				</net>
+				<net name="net_Buf-pad-rst">
+					<portRef name="O" instanceRef="Buf-pad-rst"/>
+					<portRef name="ADR0" instanceRef="L8"/>
+					<portRef name="ADR1" instanceRef="L8"/>
+				</net>
+				<net name="u_prng/feedback">
+					<portRef name="S" instanceRef="U26"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[0]"/>
+				</net>
+				<net name="net_L8">
+					<portRef name="O" instanceRef="L8"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[7]"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[0]"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[1]"/>
+					<portRef name="RN" instanceRef="u_prng/random_reg[2]"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[3]"/>
+					<portRef name="RN" instanceRef="u_prng/random_reg[4]"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[5]"/>
+					<portRef name="RN" instanceRef="u_prng/random_reg[6]"/>
+				</net>
+				<net name="net_L0">
+					<portRef name="O" instanceRef="L0"/>
+					<portRef name="CI" instanceRef="U26"/>
+				</net>
+				<net name="rnd_out[7]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[7]"/>
+					<portRef name="A" instanceRef="U26"/>
+				</net>
+				<net name="rnd_out[6]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[6]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[7]"/>
+				</net>
+				<net name="rnd_out[5]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[5]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[6]"/>
+					<portRef name="B" instanceRef="U26"/>
+				</net>
+				<net name="rnd_out[4]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[4]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[5]"/>
+					<portRef name="ADR0" instanceRef="L0"/>
+				</net>
+				<net name="rnd_out[3]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[3]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[4]"/>
+					<portRef name="ADR1" instanceRef="L0"/>
+				</net>
+				<net name="rnd_out[2]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[2]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[3]"/>
+					<portRef name="ADR1" instanceRef="L1"/>
+					<portRef name="ADR1" instanceRef="L2"/>
+					<portRef name="ADR0" instanceRef="L3"/>
+					<portRef name="ADR1" instanceRef="L4"/>
+					<portRef name="ADR1" instanceRef="L5"/>
+					<portRef name="ADR2" instanceRef="L6"/>
+					<portRef name="ADR2" instanceRef="L7"/>
+				</net>
+				<net name="rnd_out[1]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[1]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[2]"/>
+					<portRef name="ADR0" instanceRef="L1"/>
+					<portRef name="ADR0" instanceRef="L2"/>
+					<portRef name="ADR2" instanceRef="L3"/>
+					<portRef name="ADR2" instanceRef="L4"/>
+					<portRef name="ADR2" instanceRef="L5"/>
+					<portRef name="ADR1" instanceRef="L6"/>
+					<portRef name="ADR0" instanceRef="L7"/>
+				</net>
+				<net name="rnd_out[0]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[0]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[1]"/>
+					<portRef name="ADR2" instanceRef="L1"/>
+					<portRef name="ADR2" instanceRef="L2"/>
+					<portRef name="ADR1" instanceRef="L3"/>
+					<portRef name="ADR0" instanceRef="L4"/>
+					<portRef name="ADR0" instanceRef="L5"/>
+					<portRef name="ADR0" instanceRef="L6"/>
+					<portRef name="ADR1" instanceRef="L7"/>
+				</net>
+				<net name="net_Buf-pad-seg[0]">
+					<portRef name="O" instanceRef="L2"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[0]"/>
+				</net>
+				<net name="net_Buf-pad-seg[1]">
+					<portRef name="O" instanceRef="L3"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[1]"/>
+				</net>
+				<net name="net_Buf-pad-seg[3]">
+					<portRef name="O" instanceRef="L5"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[3]"/>
+				</net>
+				<net name="net_Buf-pad-seg[4]">
+					<portRef name="O" instanceRef="L6"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[4]"/>
+				</net>
+				<net name="net_Buf-pad-seg[5]">
+					<portRef name="O" instanceRef="L7"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[5]"/>
+				</net>
+				<net name="net_Buf-pad-seg[6]">
+					<portRef name="O" instanceRef="L1"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[6]"/>
+				</net>
+				<net name="net_Buf-pad-seg[2]">
+					<portRef name="O" instanceRef="L4"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[2]"/>
+				</net>
+				<net name="seed[7]">
+					<portRef name="seed[7]"/>
+					<portRef name="I" instanceRef="Buf-pad-seed[7]"/>
+					<portRef name="PAD" instanceRef="seed[7]_ipad"/>
+				</net>
+				<net name="seed[6]">
+					<portRef name="seed[6]"/>
+					<portRef name="I" instanceRef="Buf-pad-seed[6]"/>
+					<portRef name="PAD" instanceRef="seed[6]_ipad"/>
+				</net>
+				<net name="seed[5]">
+					<portRef name="seed[5]"/>
+					<portRef name="I" instanceRef="Buf-pad-seed[5]"/>
+					<portRef name="PAD" instanceRef="seed[5]_ipad"/>
+				</net>
+				<net name="seed[4]">
+					<portRef name="seed[4]"/>
+					<portRef name="I" instanceRef="Buf-pad-seed[4]"/>
+					<portRef name="PAD" instanceRef="seed[4]_ipad"/>
+				</net>
+				<net name="seed[3]">
+					<portRef name="seed[3]"/>
+					<portRef name="I" instanceRef="Buf-pad-seed[3]"/>
+					<portRef name="PAD" instanceRef="seed[3]_ipad"/>
+				</net>
+				<net name="seed[2]">
+					<portRef name="seed[2]"/>
+					<portRef name="I" instanceRef="Buf-pad-seed[2]"/>
+					<portRef name="PAD" instanceRef="seed[2]_ipad"/>
+				</net>
+				<net name="seed[1]">
+					<portRef name="seed[1]"/>
+					<portRef name="I" instanceRef="Buf-pad-seed[1]"/>
+					<portRef name="PAD" instanceRef="seed[1]_ipad"/>
+				</net>
+				<net name="seed[0]">
+					<portRef name="seed[0]"/>
+					<portRef name="I" instanceRef="Buf-pad-seed[0]"/>
+					<portRef name="PAD" instanceRef="seed[0]_ipad"/>
+				</net>
+				<net name="clk">
+					<portRef name="clk"/>
+					<portRef name="I" instanceRef="Buf-pad-clk"/>
+					<portRef name="PAD" instanceRef="clk_ipad"/>
+				</net>
+				<net name="net_Buf-pad-clk">
+					<portRef name="O" instanceRef="Buf-pad-clk"/>
+					<portRef name="I" instanceRef="IBuf-clkpad-clk"/>
+				</net>
+				<net name="rst">
+					<portRef name="rst"/>
+					<portRef name="I" instanceRef="Buf-pad-rst"/>
+					<portRef name="PAD" instanceRef="rst_ipad"/>
+				</net>
+				<net name="seg[6]">
+					<portRef name="PAD" instanceRef="seg[6]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[6]"/>
+					<portRef name="seg[6]"/>
+				</net>
+				<net name="seg[5]">
+					<portRef name="PAD" instanceRef="seg[5]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[5]"/>
+					<portRef name="seg[5]"/>
+				</net>
+				<net name="seg[4]">
+					<portRef name="PAD" instanceRef="seg[4]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[4]"/>
+					<portRef name="seg[4]"/>
+				</net>
+				<net name="seg[3]">
+					<portRef name="PAD" instanceRef="seg[3]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[3]"/>
+					<portRef name="seg[3]"/>
+				</net>
+				<net name="seg[2]">
+					<portRef name="PAD" instanceRef="seg[2]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[2]"/>
+					<portRef name="seg[2]"/>
+				</net>
+				<net name="seg[1]">
+					<portRef name="PAD" instanceRef="seg[1]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[1]"/>
+					<portRef name="seg[1]"/>
+				</net>
+				<net name="seg[0]">
+					<portRef name="PAD" instanceRef="seg[0]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[0]"/>
+					<portRef name="seg[0]"/>
+				</net>
+			</contents>
+		</module>
+	</library>
+	<topModule name="top" libraryRef="work_lib"/>
+</design>
+

@@ -1,0 +1,11 @@
+<design name="timer_display">
+  <port name="seg[0]" position="P7"/>
+<port name="seg[1]" position="P6"/>
+<port name="seg[2]" position="P5"/>
+<port name="seg[3]" position="P4"/>
+<port name="seg[4]" position="P9"/>
+<port name="seg[5]" position="P8"/>
+<port name="seg[6]" position="P16"/>
+<port name="clk" position="P77"/>
+<port name="rst_n" position="P151"/>
+    </design>

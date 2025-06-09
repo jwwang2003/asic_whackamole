@@ -1,0 +1,662 @@
+----------------------------------------------------------------------------
+Static Timing Analyzer Report
+Copyright of Fudan University. All rights reserved.
+
+Design file:                  top
+Device:                       fdp3000k
+----------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------
+Input to Register Information
+----------------------------------------------------------------------------
+
+--------------------------------------------------------------
+------------------------------- Type: Rise -------------------------------
+Data Path 0
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__252__/pin:CLK                                 125.61
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:ckinv/pin:I1                       125.61
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:ckinv/pin:O                        126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:wsgen/pin:CK                       126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:wsgen/pin:WSF                      126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:f/pin:WS                           126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:f/pin:D                            126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:fxmux/pin:F                        126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:fxmux/pin:O                        126.09
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:dxmux/pin:I1                       126.09
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:dxmux/pin:O                        126.16
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:ffx/pin:D                          126.16
+          [PO]  Sequential Sink                                                                     126.16
+                                                                                                    -----
+                                                                                          Slack:    0.00
+
+Data Path 1
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffy       FFY
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__252__/pin:CLK                                 125.61
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:ckinv/pin:I1                       125.61
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:ckinv/pin:O                        126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:wsgen/pin:CK                       126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:wsgen/pin:WSG                      126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:g/pin:WS                           126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:g/pin:D                            126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:gymux/pin:G                        126.02
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:gymux/pin:O                        126.09
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:dymux/pin:I1                       126.09
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:dymux/pin:O                        126.12
+          ->    /lib:template_work_lib/module:cSLICE__252__/inst:ffy/pin:D                          126.12
+          [PO]  Sequential Sink                                                                     126.12
+                                                                                                    -----
+                                                                                          Slack:    0.04
+
+Data Path 2
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__250__/pin:CLK                                 125.54
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:ckinv/pin:I1                       125.54
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:ckinv/pin:O                        125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:wsgen/pin:CK                       125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:wsgen/pin:WSF                      125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:f/pin:WS                           125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:f/pin:D                            125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:fxmux/pin:F                        125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:fxmux/pin:O                        126.03
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:dxmux/pin:I1                       126.03
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:dxmux/pin:O                        126.09
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:ffx/pin:D                          126.09
+          [PO]  Sequential Sink                                                                     126.09
+                                                                                                    -----
+                                                                                          Slack:    0.06
+
+Data Path 3
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__156__/pin:CLK                                 125.54
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:ckinv/pin:I1                       125.54
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:ckinv/pin:O                        125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:wsgen/pin:CK                       125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:wsgen/pin:WSF                      125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:f/pin:WS                           125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:f/pin:D                            125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:fxmux/pin:F                        125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:fxmux/pin:O                        126.03
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:dxmux/pin:I1                       126.03
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:dxmux/pin:O                        126.09
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:ffx/pin:D                          126.09
+          [PO]  Sequential Sink                                                                     126.09
+                                                                                                    -----
+                                                                                          Slack:    0.06
+
+Data Path 4
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__152__/pin:CLK                                 125.52
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:ckinv/pin:I1                       125.52
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:ckinv/pin:O                        125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:wsgen/pin:CK                       125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:wsgen/pin:WSF                      125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:f/pin:WS                           125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:f/pin:D                            125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:fxmux/pin:F                        125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:fxmux/pin:O                        126.00
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:dxmux/pin:I1                       126.00
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:dxmux/pin:O                        126.07
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:ffx/pin:D                          126.07
+          [PO]  Sequential Sink                                                                     126.07
+                                                                                                    -----
+                                                                                          Slack:    0.09
+
+Data Path 5
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffy       FFY
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__250__/pin:CLK                                 125.54
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:ckinv/pin:I1                       125.54
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:ckinv/pin:O                        125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:wsgen/pin:CK                       125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:wsgen/pin:WSG                      125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:g/pin:WS                           125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:g/pin:D                            125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:gymux/pin:G                        125.96
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:gymux/pin:O                        126.03
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:dymux/pin:I1                       126.03
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:dymux/pin:O                        126.06
+          ->    /lib:template_work_lib/module:cSLICE__250__/inst:ffy/pin:D                          126.06
+          [PO]  Sequential Sink                                                                     126.06
+                                                                                                    -----
+                                                                                          Slack:    0.10
+
+Data Path 6
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffy       FFY
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__156__/pin:CLK                                 125.54
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:ckinv/pin:I1                       125.54
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:ckinv/pin:O                        125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:wsgen/pin:CK                       125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:wsgen/pin:WSG                      125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:g/pin:WS                           125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:g/pin:D                            125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:gymux/pin:G                        125.96
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:gymux/pin:O                        126.03
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:dymux/pin:I1                       126.03
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:dymux/pin:O                        126.06
+          ->    /lib:template_work_lib/module:cSLICE__156__/inst:ffy/pin:D                          126.06
+          [PO]  Sequential Sink                                                                     126.06
+                                                                                                    -----
+                                                                                          Slack:    0.10
+
+Data Path 7
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffy       FFY
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__152__/pin:CLK                                 125.52
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:ckinv/pin:I1                       125.52
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:ckinv/pin:O                        125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:wsgen/pin:CK                       125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:wsgen/pin:WSG                      125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:g/pin:WS                           125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:g/pin:D                            125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:gymux/pin:G                        125.93
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:gymux/pin:O                        126.00
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:dymux/pin:I1                       126.00
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:dymux/pin:O                        126.03
+          ->    /lib:template_work_lib/module:cSLICE__152__/inst:ffy/pin:D                          126.03
+          [PO]  Sequential Sink                                                                     126.03
+                                                                                                    -----
+                                                                                          Slack:    0.13
+
+Data Path 8
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffy       FFY
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__415__/pin:CLK                                 125.61
+          ->    /lib:template_work_lib/module:cSLICE__415__/inst:ckinv/pin:I1                       125.61
+          ->    /lib:template_work_lib/module:cSLICE__415__/inst:ckinv/pin:O                        126.02
+          ->    /lib:template_work_lib/module:cSLICE__415__/inst:ffy/pin:CK                         126.02
+          [PO]  Sequential Sink                                                                     126.02
+                                                                                                    -----
+                                                                                          Slack:    0.14
+
+Data Path 9
+
+     Source:        gclk_buf  GCLK_BUF
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:I                     0.00
+          ->    /lib:template_work_lib/module:cGCLKIOB__0__/inst:gclk_buf/pin:O                     0.00
+          ->    /lib:work_lib/module:top/inst:clk/pin:GCLKOUT                                       0.00
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:IN                                 0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:I                     0.36
+          ->    /lib:template_work_lib/module:cGCLK__0__/inst:gclk_buffer/pin:O                     1.02
+          ->    /lib:work_lib/module:top/inst:iGclk_buf__0__/pin:OUT                                1.02
+          ->    /lib:work_lib/module:top/inst:iSlice__415__/pin:CLK                                 125.61
+          ->    /lib:template_work_lib/module:cSLICE__415__/inst:ckinv/pin:I1                       125.61
+          ->    /lib:template_work_lib/module:cSLICE__415__/inst:ckinv/pin:O                        126.02
+          ->    /lib:template_work_lib/module:cSLICE__415__/inst:ffx/pin:CK                         126.02
+          [PO]  Sequential Sink                                                                     126.02
+                                                                                                    -----
+                                                                                          Slack:    0.14
+
+
+------------------------------- Type: Fall -------------------------------
+Data Path 0
+
+     Source:        g         G
+     Destination:   ffy       FFY
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cSLICE__308__/inst:g/pin:A3                           0.00
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:g/pin:D                            0.00
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:gymux/pin:G                        0.00
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:gymux/pin:O                        0.05
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:yused/pin:I                        0.05
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:yused/pin:O                        0.23
+          ->    /lib:work_lib/module:top/inst:iSlice__308__/pin:Y                                   0.23
+          ->    /lib:work_lib/module:top/inst:iSlice__98__/pin:F4                                   2.73
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:f/pin:A4                            2.73
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:f/pin:D                             2.73
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:fxmux/pin:F                         2.73
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:fxmux/pin:O                         2.80
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:xused/pin:I                         2.80
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:xused/pin:O                         2.93
+          ->    /lib:work_lib/module:top/inst:iSlice__98__/pin:X                                    2.93
+          ->    /lib:work_lib/module:top/inst:iSlice__188__/pin:F2                                  3.03
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:f/pin:A2                           3.03
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:f/pin:D                            3.03
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:fxmux/pin:F                        3.03
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:fxmux/pin:O                        3.09
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:xused/pin:I                        3.09
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:xused/pin:O                        3.22
+          ->    /lib:work_lib/module:top/inst:iSlice__188__/pin:X                                   3.22
+          ->    /lib:work_lib/module:top/inst:iSlice__147__/pin:F1                                  5.20
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:f/pin:A1                           5.20
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:f/pin:D                            5.20
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:fxmux/pin:F                        5.20
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:fxmux/pin:O                        5.26
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:xused/pin:I                        5.26
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:xused/pin:O                        5.39
+          ->    /lib:work_lib/module:top/inst:iSlice__147__/pin:X                                   5.39
+          ->    /lib:work_lib/module:top/inst:iSlice__257__/pin:G2                                  9.00
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:g/pin:A2                           9.00
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:g/pin:D                            9.00
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:gymux/pin:G                        9.00
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:gymux/pin:O                        9.05
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:dymux/pin:I1                       9.05
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:dymux/pin:O                        9.08
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:ffy/pin:D                          9.08
+          [PO]  Sequential Sink                                                                     9.08
+                                                                                                    -----
+                                                                                          Slack:    0.00
+
+Data Path 1
+
+     Source:        f         F
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cSLICE__339__/inst:f/pin:A4                           0.00
+          ->    /lib:template_work_lib/module:cSLICE__339__/inst:f/pin:D                            0.00
+          ->    /lib:template_work_lib/module:cSLICE__339__/inst:fxmux/pin:F                        0.00
+          ->    /lib:template_work_lib/module:cSLICE__339__/inst:fxmux/pin:O                        0.06
+          ->    /lib:template_work_lib/module:cSLICE__339__/inst:xused/pin:I                        0.06
+          ->    /lib:template_work_lib/module:cSLICE__339__/inst:xused/pin:O                        0.19
+          ->    /lib:work_lib/module:top/inst:iSlice__339__/pin:X                                   0.19
+          ->    /lib:work_lib/module:top/inst:iSlice__4__/pin:BX                                    2.45
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:bxmux/pin:BX                         2.45
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:bxmux/pin:O                          2.91
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:dgen/pin:BX                          2.91
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:dgen/pin:DF                          2.91
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:f/pin:DI                             2.91
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:f/pin:D                              2.91
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:cyself/pin:F                         2.91
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:cyself/pin:O                         3.06
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:cymuxf/pin:S0                        3.06
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:cymuxf/pin:OUT                       3.15
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:cymuxg/pin:I1                        3.15
+          ->    /lib:template_work_lib/module:cSLICE__4__/inst:cymuxg/pin:OUT                       3.26
+          ->    /lib:work_lib/module:top/inst:iSlice__4__/pin:COUT                                  3.26
+          ->    /lib:work_lib/module:top/inst:iSlice__5__/pin:CIN                                   3.26
+          ->    /lib:template_work_lib/module:cSLICE__5__/inst:cyinit/pin:CIN                       3.26
+          ->    /lib:template_work_lib/module:cSLICE__5__/inst:cyinit/pin:O                         3.31
+          ->    /lib:template_work_lib/module:cSLICE__5__/inst:cymuxf/pin:I1                        3.31
+          ->    /lib:template_work_lib/module:cSLICE__5__/inst:cymuxf/pin:OUT                       3.42
+          ->    /lib:template_work_lib/module:cSLICE__5__/inst:xbused/pin:I                         3.42
+          ->    /lib:template_work_lib/module:cSLICE__5__/inst:xbused/pin:O                         3.42
+          ->    /lib:work_lib/module:top/inst:iSlice__5__/pin:XB                                    3.42
+          ->    /lib:work_lib/module:top/inst:iSlice__177__/pin:F4                                  3.52
+          ->    /lib:template_work_lib/module:cSLICE__177__/inst:f/pin:A4                           3.52
+          ->    /lib:template_work_lib/module:cSLICE__177__/inst:f/pin:D                            3.52
+          ->    /lib:template_work_lib/module:cSLICE__177__/inst:fxmux/pin:F                        3.52
+          ->    /lib:template_work_lib/module:cSLICE__177__/inst:fxmux/pin:O                        3.59
+          ->    /lib:template_work_lib/module:cSLICE__177__/inst:xused/pin:I                        3.59
+          ->    /lib:template_work_lib/module:cSLICE__177__/inst:xused/pin:O                        3.71
+          ->    /lib:work_lib/module:top/inst:iSlice__177__/pin:X                                   3.71
+          ->    /lib:work_lib/module:top/inst:iSlice__178__/pin:F4                                  3.82
+          ->    /lib:template_work_lib/module:cSLICE__178__/inst:f/pin:A4                           3.82
+          ->    /lib:template_work_lib/module:cSLICE__178__/inst:f/pin:D                            3.82
+          ->    /lib:template_work_lib/module:cSLICE__178__/inst:fxmux/pin:F                        3.82
+          ->    /lib:template_work_lib/module:cSLICE__178__/inst:fxmux/pin:O                        3.88
+          ->    /lib:template_work_lib/module:cSLICE__178__/inst:xused/pin:I                        3.88
+          ->    /lib:template_work_lib/module:cSLICE__178__/inst:xused/pin:O                        4.01
+          ->    /lib:work_lib/module:top/inst:iSlice__178__/pin:X                                   4.01
+          ->    /lib:work_lib/module:top/inst:iSlice__139__/pin:F4                                  5.48
+          ->    /lib:template_work_lib/module:cSLICE__139__/inst:f/pin:A4                           5.48
+          ->    /lib:template_work_lib/module:cSLICE__139__/inst:f/pin:D                            5.48
+          ->    /lib:template_work_lib/module:cSLICE__139__/inst:fxmux/pin:F                        5.48
+          ->    /lib:template_work_lib/module:cSLICE__139__/inst:fxmux/pin:O                        5.54
+          ->    /lib:template_work_lib/module:cSLICE__139__/inst:xused/pin:I                        5.54
+          ->    /lib:template_work_lib/module:cSLICE__139__/inst:xused/pin:O                        5.67
+          ->    /lib:work_lib/module:top/inst:iSlice__139__/pin:X                                   5.67
+          ->    /lib:work_lib/module:top/inst:iSlice__254__/pin:F2                                  8.89
+          ->    /lib:template_work_lib/module:cSLICE__254__/inst:f/pin:A2                           8.89
+          ->    /lib:template_work_lib/module:cSLICE__254__/inst:f/pin:D                            8.89
+          ->    /lib:template_work_lib/module:cSLICE__254__/inst:fxmux/pin:F                        8.89
+          ->    /lib:template_work_lib/module:cSLICE__254__/inst:fxmux/pin:O                        8.95
+          ->    /lib:template_work_lib/module:cSLICE__254__/inst:dxmux/pin:I1                       8.95
+          ->    /lib:template_work_lib/module:cSLICE__254__/inst:dxmux/pin:O                        9.02
+          ->    /lib:template_work_lib/module:cSLICE__254__/inst:ffx/pin:D                          9.02
+          [PO]  Sequential Sink                                                                     9.02
+                                                                                                    -----
+                                                                                          Slack:    0.06
+
+Data Path 2
+
+     Source:        g         G
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cSLICE__308__/inst:g/pin:A3                           0.00
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:g/pin:D                            0.00
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:gymux/pin:G                        0.00
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:gymux/pin:O                        0.05
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:yused/pin:I                        0.05
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:yused/pin:O                        0.23
+          ->    /lib:work_lib/module:top/inst:iSlice__308__/pin:Y                                   0.23
+          ->    /lib:work_lib/module:top/inst:iSlice__98__/pin:F4                                   2.73
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:f/pin:A4                            2.73
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:f/pin:D                             2.73
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:fxmux/pin:F                         2.73
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:fxmux/pin:O                         2.80
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:xused/pin:I                         2.80
+          ->    /lib:template_work_lib/module:cSLICE__98__/inst:xused/pin:O                         2.93
+          ->    /lib:work_lib/module:top/inst:iSlice__98__/pin:X                                    2.93
+          ->    /lib:work_lib/module:top/inst:iSlice__188__/pin:F2                                  3.03
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:f/pin:A2                           3.03
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:f/pin:D                            3.03
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:fxmux/pin:F                        3.03
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:fxmux/pin:O                        3.09
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:xused/pin:I                        3.09
+          ->    /lib:template_work_lib/module:cSLICE__188__/inst:xused/pin:O                        3.22
+          ->    /lib:work_lib/module:top/inst:iSlice__188__/pin:X                                   3.22
+          ->    /lib:work_lib/module:top/inst:iSlice__147__/pin:F1                                  5.20
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:f/pin:A1                           5.20
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:f/pin:D                            5.20
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:fxmux/pin:F                        5.20
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:fxmux/pin:O                        5.26
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:xused/pin:I                        5.26
+          ->    /lib:template_work_lib/module:cSLICE__147__/inst:xused/pin:O                        5.39
+          ->    /lib:work_lib/module:top/inst:iSlice__147__/pin:X                                   5.39
+          ->    /lib:work_lib/module:top/inst:iSlice__257__/pin:F2                                  8.87
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:f/pin:A2                           8.87
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:f/pin:D                            8.87
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:fxmux/pin:F                        8.87
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:fxmux/pin:O                        8.93
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:dxmux/pin:I1                       8.93
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:dxmux/pin:O                        9.00
+          ->    /lib:template_work_lib/module:cSLICE__257__/inst:ffx/pin:D                          9.00
+          [PO]  Sequential Sink                                                                     9.00
+                                                                                                    -----
+                                                                                          Slack:    0.09
+
+Data Path 3
+
+     Source:        f         F
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cSLICE__308__/inst:f/pin:A3                           0.00
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:f/pin:D                            0.00
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:fxmux/pin:F                        0.00
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:fxmux/pin:O                        0.06
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:xused/pin:I                        0.06
+          ->    /lib:template_work_lib/module:cSLICE__308__/inst:xused/pin:O                        0.19
+          ->    /lib:work_lib/module:top/inst:iSlice__308__/pin:X                                   0.19
+          ->    /lib:work_lib/module:top/inst:iSlice__49__/pin:F4                                   3.12
+          ->    /lib:template_work_lib/module:cSLICE__49__/inst:f/pin:A4                            3.12
+          ->    /lib:template_work_lib/module:cSLICE__49__/inst:f/pin:D                             3.12
+          ->    /lib:template_work_lib/module:cSLICE__49__/inst:fxmux/pin:F                         3.12
+          ->    /lib:template_work_lib/module:cSLICE__49__/inst:fxmux/pin:O                         3.18
+          ->    /lib:template_work_lib/module:cSLICE__49__/inst:xused/pin:I                         3.18
+          ->    /lib:template_work_lib/module:cSLICE__49__/inst:xused/pin:O                         3.31
+          ->    /lib:work_lib/module:top/inst:iSlice__49__/pin:X                                    3.31
+          ->    /lib:work_lib/module:top/inst:iSlice__128__/pin:F2                                  4.21
+          ->    /lib:template_work_lib/module:cSLICE__128__/inst:f/pin:A2                           4.21
+          ->    /lib:template_work_lib/module:cSLICE__128__/inst:f/pin:D                            4.21
+          ->    /lib:template_work_lib/module:cSLICE__128__/inst:fxmux/pin:F                        4.21
+          ->    /lib:template_work_lib/module:cSLICE__128__/inst:fxmux/pin:O                        4.28
+          ->    /lib:template_work_lib/module:cSLICE__128__/inst:xused/pin:I                        4.28
+          ->    /lib:template_work_lib/module:cSLICE__128__/inst:xused/pin:O                        4.41
+          ->    /lib:work_lib/module:top/inst:iSlice__128__/pin:X                                   4.41
+          ->    /lib:work_lib/module:top/inst:iSlice__22__/pin:G3                                   4.51
+          ->    /lib:template_work_lib/module:cSLICE__22__/inst:g/pin:A3                            4.51
+          ->    /lib:template_work_lib/module:cSLICE__22__/inst:g/pin:D                             4.51
+          ->    /lib:template_work_lib/module:cSLICE__22__/inst:gymux/pin:G                         4.51
+          ->    /lib:template_work_lib/module:cSLICE__22__/inst:gymux/pin:O                         4.57
+          ->    /lib:template_work_lib/module:cSLICE__22__/inst:yused/pin:I                         4.57
+          ->    /lib:template_work_lib/module:cSLICE__22__/inst:yused/pin:O                         4.74
+          ->    /lib:work_lib/module:top/inst:iSlice__22__/pin:Y                                    4.74
+          ->    /lib:work_lib/module:top/inst:iSlice__81__/pin:G2                                   4.84
+          ->    /lib:template_work_lib/module:cSLICE__81__/inst:g/pin:A2                            4.84
+          ->    /lib:template_work_lib/module:cSLICE__81__/inst:g/pin:D                             4.84
+          ->    /lib:template_work_lib/module:cSLICE__81__/inst:gymux/pin:G                         4.84
+          ->    /lib:template_work_lib/module:cSLICE__81__/inst:gymux/pin:O                         4.90
+          ->    /lib:template_work_lib/module:cSLICE__81__/inst:yused/pin:I                         4.90
+          ->    /lib:template_work_lib/module:cSLICE__81__/inst:yused/pin:O                         5.07
+          ->    /lib:work_lib/module:top/inst:iSlice__81__/pin:Y                                    5.07
+          ->    /lib:work_lib/module:top/inst:iSlice__182__/pin:F2                                  8.86
+          ->    /lib:template_work_lib/module:cSLICE__182__/inst:f/pin:A2                           8.86
+          ->    /lib:template_work_lib/module:cSLICE__182__/inst:f/pin:D                            8.86
+          ->    /lib:template_work_lib/module:cSLICE__182__/inst:fxmux/pin:F                        8.86
+          ->    /lib:template_work_lib/module:cSLICE__182__/inst:fxmux/pin:O                        8.92
+          ->    /lib:template_work_lib/module:cSLICE__182__/inst:dxmux/pin:I1                       8.92
+          ->    /lib:template_work_lib/module:cSLICE__182__/inst:dxmux/pin:O                        8.99
+          ->    /lib:template_work_lib/module:cSLICE__182__/inst:ffx/pin:D                          8.99
+          [PO]  Sequential Sink                                                                     8.99
+                                                                                                    -----
+                                                                                          Slack:    0.10
+
+Data Path 4
+
+     Source:        inbuf     INBUF
+     Destination:   ffy       FFY
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:I                           0.00
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:O                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:I                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:O                           2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:I                        2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:O                        2.60
+          ->    /lib:work_lib/module:top/inst:rstn/pin:IN                                           2.60
+          ->    /lib:work_lib/module:top/inst:iSlice__154__/pin:SR                                  7.06
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:srmux_slice/pin:SR_B               7.06
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:srmux_slice/pin:O                  7.17
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:srffmux/pin:I                      7.17
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:srffmux/pin:O                      7.56
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:ffy/pin:INIT                       7.56
+          [PO]  Sequential Sink                                                                     7.56
+                                                                                                    -----
+                                                                                          Slack:    1.53
+
+Data Path 5
+
+     Source:        inbuf     INBUF
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:I                           0.00
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:O                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:I                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:O                           2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:I                        2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:O                        2.60
+          ->    /lib:work_lib/module:top/inst:rstn/pin:IN                                           2.60
+          ->    /lib:work_lib/module:top/inst:iSlice__154__/pin:SR                                  7.06
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:srmux_slice/pin:SR_B               7.06
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:srmux_slice/pin:O                  7.17
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:srffmux/pin:I                      7.17
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:srffmux/pin:O                      7.56
+          ->    /lib:template_work_lib/module:cSLICE__154__/inst:ffx/pin:INIT                       7.56
+          [PO]  Sequential Sink                                                                     7.56
+                                                                                                    -----
+                                                                                          Slack:    1.53
+
+Data Path 6
+
+     Source:        inbuf     INBUF
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cIOB__2__/inst:inbuf/pin:I                            0.00
+          ->    /lib:template_work_lib/module:cIOB__2__/inst:inbuf/pin:O                            1.52
+          ->    /lib:template_work_lib/module:cIOB__2__/inst:delay/pin:I                            1.52
+          ->    /lib:template_work_lib/module:cIOB__2__/inst:delay/pin:O                            2.33
+          ->    /lib:template_work_lib/module:cIOB__2__/inst:imux_iob/pin:I                         2.33
+          ->    /lib:template_work_lib/module:cIOB__2__/inst:imux_iob/pin:O                         2.60
+          ->    /lib:work_lib/module:top/inst:mole2_btn/pin:IN                                      2.60
+          ->    /lib:work_lib/module:top/inst:iSlice__364__/pin:BX                                  6.94
+          ->    /lib:template_work_lib/module:cSLICE__364__/inst:bxmux/pin:BX                       6.94
+          ->    /lib:template_work_lib/module:cSLICE__364__/inst:bxmux/pin:O                        7.41
+          ->    /lib:template_work_lib/module:cSLICE__364__/inst:dxmux/pin:I0                       7.41
+          ->    /lib:template_work_lib/module:cSLICE__364__/inst:dxmux/pin:O                        7.45
+          ->    /lib:template_work_lib/module:cSLICE__364__/inst:ffx/pin:D                          7.45
+          [PO]  Sequential Sink                                                                     7.45
+                                                                                                    -----
+                                                                                          Slack:    1.64
+
+Data Path 7
+
+     Source:        inbuf     INBUF
+     Destination:   ffy       FFY
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:I                           0.00
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:O                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:I                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:O                           2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:I                        2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:O                        2.60
+          ->    /lib:work_lib/module:top/inst:rstn/pin:IN                                           2.60
+          ->    /lib:work_lib/module:top/inst:iSlice__434__/pin:SR                                  6.66
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:srmux_slice/pin:SR_B               6.66
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:srmux_slice/pin:O                  6.77
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:srffmux/pin:I                      6.77
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:srffmux/pin:O                      7.16
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:ffy/pin:INIT                       7.16
+          [PO]  Sequential Sink                                                                     7.16
+                                                                                                    -----
+                                                                                          Slack:    1.93
+
+Data Path 8
+
+     Source:        inbuf     INBUF
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:I                           0.00
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:O                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:I                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:O                           2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:I                        2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:O                        2.60
+          ->    /lib:work_lib/module:top/inst:rstn/pin:IN                                           2.60
+          ->    /lib:work_lib/module:top/inst:iSlice__434__/pin:SR                                  6.66
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:srmux_slice/pin:SR_B               6.66
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:srmux_slice/pin:O                  6.77
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:srffmux/pin:I                      6.77
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:srffmux/pin:O                      7.16
+          ->    /lib:template_work_lib/module:cSLICE__434__/inst:ffx/pin:INIT                       7.16
+          [PO]  Sequential Sink                                                                     7.16
+                                                                                                    -----
+                                                                                          Slack:    1.93
+
+Data Path 9
+
+     Source:        inbuf     INBUF
+     Destination:   ffx       FFX
+          Pins:                                                                                     AT
+          ------                                                                                    -----
+          [PI]  /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:I                           0.00
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:inbuf/pin:O                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:I                           1.52
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:delay/pin:O                           2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:I                        2.33
+          ->    /lib:template_work_lib/module:cIOB__51__/inst:imux_iob/pin:O                        2.60
+          ->    /lib:work_lib/module:top/inst:rstn/pin:IN                                           2.60
+          ->    /lib:work_lib/module:top/inst:iSlice__385__/pin:SR                                  6.66
+          ->    /lib:template_work_lib/module:cSLICE__385__/inst:srmux_slice/pin:SR_B               6.66
+          ->    /lib:template_work_lib/module:cSLICE__385__/inst:srmux_slice/pin:O                  6.77
+          ->    /lib:template_work_lib/module:cSLICE__385__/inst:srffmux/pin:I                      6.77
+          ->    /lib:template_work_lib/module:cSLICE__385__/inst:srffmux/pin:O                      7.16
+          ->    /lib:template_work_lib/module:cSLICE__385__/inst:ffx/pin:INIT                       7.16
+          [PO]  Sequential Sink                                                                     7.16
+                                                                                                    -----
+                                                                                          Slack:    1.93
+
+----------------------------------------------------------------------------
+
+Minimum Period is 126.16ns
+Maximum Frequency is 7.93MHz
+----------------------------------------------------------------------------
+
+

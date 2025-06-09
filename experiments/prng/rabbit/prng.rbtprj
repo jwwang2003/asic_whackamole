@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Rabbit Project File-->
+<project name="prng" constraint="../ufde/prng_cons.xml" bitstream="../ufde/prng_dc_bit.bit">
+    <panel grid_width="50" grid_height="50"/>
+    <components>
+        <component type="Switch" name="seed[4]" grid_x="6" grid_y="3">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P160" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="seed[7]" grid_x="12" grid_y="3">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P163" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Button" name="rst" grid_x="3" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P164" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="seed[5]" grid_x="8" grid_y="3">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P161" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="seed[2]" grid_x="10" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P150" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="seed[1]" grid_x="8" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P148" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="SegmentDisplay" name="RNG" grid_x="1" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P16" port="A"/>
+                <output pin="P8" port="B"/>
+                <output pin="P9" port="C"/>
+                <output pin="P4" port="D"/>
+                <output pin="P5" port="E"/>
+                <output pin="P6" port="F"/>
+                <output pin="P7" port="G"/>
+                <output pin="" port="DP"/>
+            </outputs>
+        </component>
+        <component type="Switch" name="seed[3]" grid_x="12" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P152" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="seed[6]" grid_x="10" grid_y="3">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P162" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="seed[0]" grid_x="6" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P151" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+    </components>
+</project>

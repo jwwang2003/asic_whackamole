@@ -1,0 +1,3614 @@
+<design name="timer_display">
+	<external name="template_work_lib">
+		<module name="slice" type="SLICE">
+			<port name="CIN" direction="input" capacitance="0.00000"/>
+			<port name="SR" direction="input" capacitance="0.00000"/>
+			<port name="CLK" direction="input" capacitance="0.00000"/>
+			<port name="CE" direction="input" capacitance="0.00000"/>
+			<port name="BX" direction="input" capacitance="0.00000"/>
+			<port name="F1" direction="input" capacitance="0.00000"/>
+			<port name="F2" direction="input" capacitance="0.00000"/>
+			<port name="F3" direction="input" capacitance="0.00000"/>
+			<port name="F4" direction="input" capacitance="0.00000"/>
+			<port name="F5IN" direction="input" capacitance="0.00000"/>
+			<port name="BY" direction="input" capacitance="0.00000"/>
+			<port name="G1" direction="input" capacitance="0.00000"/>
+			<port name="G2" direction="input" capacitance="0.00000"/>
+			<port name="G3" direction="input" capacitance="0.00000"/>
+			<port name="G4" direction="input" capacitance="0.00000"/>
+			<port name="XQ" direction="output" capacitance="0.00000"/>
+			<port name="X" direction="output" capacitance="0.00000"/>
+			<port name="F5" direction="output" capacitance="0.00000"/>
+			<port name="XB" direction="output" capacitance="0.00000"/>
+			<port name="YQ" direction="output" capacitance="0.00000"/>
+			<port name="Y" direction="output" capacitance="0.00000"/>
+			<port name="YB" direction="output" capacitance="0.00000"/>
+			<port name="COUT" direction="output" capacitance="0.00000"/>
+		</module>
+		<module name="iob" type="IOB">
+			<port name="TRI" direction="input" capacitance="0.00000"/>
+			<port name="TRICE" direction="input" capacitance="0.00000"/>
+			<port name="OUT" direction="input" capacitance="0.00000"/>
+			<port name="OUTCE" direction="input" capacitance="0.00000"/>
+			<port name="INCE" direction="input" capacitance="0.00000"/>
+			<port name="CLK" direction="input" capacitance="0.00000"/>
+			<port name="SR" direction="input" capacitance="0.00000"/>
+			<port name="IN" direction="output" capacitance="0.00000"/>
+			<port name="IQ" direction="output" capacitance="0.00000"/>
+			<port name="PAD" direction="inout" capacitance="0.00000"/>
+		</module>
+		<module name="gclk" type="GCLK">
+			<port name="CE" direction="input" capacitance="0.00000"/>
+			<port name="IN" direction="input" capacitance="0.00000"/>
+			<port name="OUT" direction="output" capacitance="0.00000"/>
+		</module>
+		<module name="gclkiob" type="GCLKIOB">
+			<port name="PAD" direction="inout" capacitance="0.00000"/>
+			<port name="GCLKOUT" direction="output" capacitance="0.00000"/>
+		</module>
+	</external>
+	<library name="work_lib">
+		<module name="timer_display" type="GENERIC">
+			<port name="interval" msb="2" lsb="0" direction="input" capacitance="0.00000"/>
+			<port name="seg" msb="6" lsb="0" direction="output" capacitance="0.00000"/>
+			<port name="clk" direction="input" capacitance="0.00000"/>
+			<port name="rst_n" direction="input" capacitance="0.00000"/>
+			<port name="dir" direction="input" capacitance="0.00000"/>
+			<port name="timeout" direction="output" capacitance="0.00000"/>
+			<contents>
+				<instance name="iSlice__0__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="32,9,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*A2)*A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__1__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="6,3,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="1"/>
+					<config name="F" value="#LUT:D=((A3*A2)*A1)+((~A3*A2)*A1)+((~A3*A2)*~A1)+((~A3*~A2)*A1)+((~A3*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*A1)+(((A4*~A3)*A2)*A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*A1)+(((~A4*A3)*A2)*A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*A1)+(((~A4*~A3)*A2)*A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__2__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="27,46,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*A1)+(((~A4*A3)*A2)*A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*A2)*~A1)+(((~A4*~A3)*A2)*A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__3__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="12,30,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="1"/>
+					<config name="F" value="#LUT:D=((~A3*A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*A2)*A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*~A2)*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__4__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="20,38,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*~A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*A1)+(((A4*~A3)*~A2)*A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*~A2)*A1)+(((~A4*~A3)*A2)*A1)+(((~A4*~A3)*~A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*~A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__5__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="5,10,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*~A3)*A2)*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__6__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="5,28,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__7__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="23,17,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*~A3)*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__8__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="7,39,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__9__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="13,16,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((~A4*A3)*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((~A4*~A3)*~A2)*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__10__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="26,28,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*A1)+(((A4*~A3)*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__11__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="25,7,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="1"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*~A3)*A2)*A1)+(((~A4*A3)*~A2)*A1)+(((~A4*~A3)*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((~A3*A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__12__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="26,15,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="1"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*~A2)*A1)+(((A4*~A3)*A2)*A1)+(((~A4*A3)*A2)*A1)+(((~A4*~A3)*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((~A3*A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__13__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="11,4,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((~A4*A3)*A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__14__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="27,5,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=((A3*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((A3*A2)*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__15__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="19,26,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*A1)+(((A4*~A3)*A2)*A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*A2)*A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*A1)+(((A4*~A3)*A2)*~A1)+(((A4*~A3)*~A2)*A1)+(((A4*~A3)*~A2)*~A1)+(((~A4*A3)*A2)*A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__16__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="29,9,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="CE"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*~A3)*A2)*A1)+(((~A4*A3)*A2)*A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="0"/>
+					<config name="SRMUX" value="SR_B"/>
+					<config name="SYNC_ATTR" value="SYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__17__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="29,3,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*A2)*~A1)+(((A4*~A3)*A2)*~A1)+(((~A4*A3)*A2)*A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*~A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*A2)*~A1)+(((A4*A3)*~A2)*A1)+(((A4*~A3)*~A2)*A1)+(((~A4*A3)*A2)*A1)+(((~A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*A1)+(((~A4*~A3)*A2)*A1)+(((~A4*~A3)*A2)*~A1)+(((~A4*~A3)*~A2)*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__18__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="31,45,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="1"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*~A2)*A1)+(((A4*~A3)*A2)*A1)+(((~A4*A3)*A2)*A1)+(((~A4*~A3)*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((~A3*A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__19__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="8,6,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="1"/>
+					<config name="F" value="#LUT:D=(((A4*A3)*~A2)*A1)+(((A4*A3)*~A2)*~A1)+(((A4*~A3)*A2)*A1)+(((A4*~A3)*A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*A2)*A1)+(((A4*A3)*A2)*~A1)+(((~A4*A3)*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__20__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="24,18,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=((A3*A2)*A1)+((A3*A2)*~A1)+((A3*~A2)*A1)+((A3*~A2)*~A1)+((~A3*A2)*~A1)+((~A3*~A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((~A3*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__21__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="29,3,1"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(~A2*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((A3*A2)*~A1)+((A3*~A2)*A1)+((~A3*A2)*A1)+((~A3*A2)*~A1)+((~A3*~A2)*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__22__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="1,50,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="1"/>
+					<config name="F" value="#LUT:D=((~A3*A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*~A3)*A2)*~A1)+(((~A4*A3)*A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__23__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="18,7,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="1"/>
+					<config name="F" value="#LUT:D=(((A4*~A3)*A2)*~A1)+(((~A4*A3)*A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*~A2)*A1)+(((A4*~A3)*A2)*A1)+(((~A4*A3)*A2)*A1)+(((~A4*~A3)*A2)*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__24__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="2,45,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="1"/>
+					<config name="F" value="#LUT:D=(((A4*~A3)*A2)*~A1)+(((~A4*A3)*A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#FF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(((A4*A3)*~A2)*A1)+(((A4*~A3)*A2)*A1)+(((~A4*A3)*A2)*A1)+(((~A4*~A3)*A2)*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="LOW"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__25__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="28,24,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(A2*A1)+(~A2*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=(~A2*A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__26__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="8,31,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=((A3*A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((A3*A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__27__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="33,8,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*~A3)*A2)*A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="iSlice__28__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="9,10,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=((A3*A2)*~A1)+((A3*~A2)*A1)+((A3*~A2)*~A1)+((~A3*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((A3*~A2)*A1)+((A3*~A2)*~A1)+((~A3*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__29__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="18,9,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=((A3*A2)*~A1)+((A3*~A2)*A1)+((A3*~A2)*~A1)+((~A3*A2)*A1)+((~A3*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((A3*A2)*A1)+((A3*A2)*~A1)+((A3*~A2)*A1)+((A3*~A2)*~A1)+((~A3*A2)*A1)+((~A3*~A2)*A1)+((~A3*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__30__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="26,29,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="#OFF"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="#OFF"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=((A3*A2)*A1)+((A3*~A2)*~A1)+((~A3*A2)*A1)+((~A3*A2)*~A1)+((~A3*~A2)*A1)+((~A3*~A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#OFF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#LUT:D=((A3*A2)*A1)+((A3*A2)*~A1)+((A3*~A2)*A1)+((~A3*A2)*A1)+((~A3*~A2)*A1)+((~A3*~A2)*~A1)"/>
+					<config name="GYMUX" value="G"/>
+					<config name="INITX" value="#OFF"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="#OFF"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="0"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="0"/>
+				</instance>
+				<instance name="iSlice__31__" moduleRef="slice" libraryRef="template_work_lib">
+					<property name="position" type="point" value="4,4,0"/>
+					<config name="BXMUX" value="#OFF"/>
+					<config name="BYMUX" value="#OFF"/>
+					<config name="CEMUX" value="#OFF"/>
+					<config name="CKINV" value="1"/>
+					<config name="COUTUSED" value="#OFF"/>
+					<config name="CY0F" value="#OFF"/>
+					<config name="CY0G" value="#OFF"/>
+					<config name="CYINIT" value="#OFF"/>
+					<config name="CYSELF" value="#OFF"/>
+					<config name="CYSELG" value="#OFF"/>
+					<config name="DXMUX" value="1"/>
+					<config name="DYMUX" value="#OFF"/>
+					<config name="F" value="#LUT:D=(((A4*~A3)*A2)*~A1)+(((~A4*A3)*A2)*~A1)"/>
+					<config name="F5USED" value="#OFF"/>
+					<config name="FFX" value="#FF"/>
+					<config name="FFY" value="#OFF"/>
+					<config name="FXMUX" value="F"/>
+					<config name="G" value="#OFF"/>
+					<config name="GYMUX" value="#OFF"/>
+					<config name="INITX" value="LOW"/>
+					<config name="INITY" value="#OFF"/>
+					<config name="RAMCONFIG" value="#OFF"/>
+					<config name="REVUSED" value="#OFF"/>
+					<config name="SRFFMUX" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="SYNC_ATTR" value="ASYNC"/>
+					<config name="XBUSED" value="#OFF"/>
+					<config name="XUSED" value="#OFF"/>
+					<config name="YBMUX" value="#OFF"/>
+					<config name="YUSED" value="#OFF"/>
+				</instance>
+				<instance name="seg[6]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="9,1,2"/>
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="seg[5]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="7,1,1"/>
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="seg[4]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="8,1,1"/>
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="seg[3]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="3,1,1"/>
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="seg[2]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="4,1,3"/>
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="seg[1]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="5,1,1"/>
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="seg[0]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="5,1,2"/>
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="timeout" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="9,1,1"/>
+					<config name="DRIVEATTRBOX" value="12"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="#OFF"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="O"/>
+					<config name="OUTMUX" value="1"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="SLOW"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="interval[2]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="5,53,1"/>
+					<config name="DRIVEATTRBOX" value="#OFF"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="#OFF"/>
+					<config name="OUTMUX" value="#OFF"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="interval[0]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="4,53,3"/>
+					<config name="DRIVEATTRBOX" value="#OFF"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="#OFF"/>
+					<config name="OUTMUX" value="#OFF"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="interval[1]" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="7,53,1"/>
+					<config name="DRIVEATTRBOX" value="#OFF"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="#OFF"/>
+					<config name="OUTMUX" value="#OFF"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="dir" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="0,52,1"/>
+					<config name="DRIVEATTRBOX" value="#OFF"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="#OFF"/>
+					<config name="OUTMUX" value="#OFF"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="rst_n" moduleRef="iob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="3,53,1"/>
+					<config name="DRIVEATTRBOX" value="#OFF"/>
+					<config name="FFATTRBOX" value="#OFF"/>
+					<config name="ICEMUX" value="#OFF"/>
+					<config name="ICKINV" value="#OFF"/>
+					<config name="IFF" value="#OFF"/>
+					<config name="IFFINITATTR" value="#OFF"/>
+					<config name="IFFMUX" value="#OFF"/>
+					<config name="IINITMUX" value="#OFF"/>
+					<config name="IMUX" value="1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="OCEMUX" value="#OFF"/>
+					<config name="OCKINV" value="#OFF"/>
+					<config name="OFF" value="#OFF"/>
+					<config name="OFFATTRBOX" value="#OFF"/>
+					<config name="OINITMUX" value="#OFF"/>
+					<config name="OMUX" value="#OFF"/>
+					<config name="OUTMUX" value="#OFF"/>
+					<config name="PULL" value="#OFF"/>
+					<config name="SLEW" value="#OFF"/>
+					<config name="SRMUX" value="#OFF"/>
+					<config name="TCEMUX" value="#OFF"/>
+					<config name="TCKINV" value="#OFF"/>
+					<config name="TFF" value="#OFF"/>
+					<config name="TFFATTRBOX" value="#OFF"/>
+					<config name="TINITMUX" value="#OFF"/>
+					<config name="TRIMUX" value="#OFF"/>
+					<config name="TSEL" value="#OFF"/>
+				</instance>
+				<instance name="iGclk_buf__0__" moduleRef="gclk" libraryRef="template_work_lib">
+					<property name="position" type="point" value="34,27,1"/>
+					<config name="CEMUX" value="1"/>
+					<config name="DISABLE_ATTR" value="LOW"/>
+					<config name="CE_POWER" value="#OFF"/>
+					<config name="GCLK_BUFFER" value="#OFF"/>
+				</instance>
+				<instance name="clk" moduleRef="gclkiob" libraryRef="template_work_lib">
+					<property name="position" type="point" value="34,27,1"/>
+					<config name="IOATTRBOX" value="LVTTL"/>
+					<config name="GCLK_BUF" value="#OFF"/>
+					<config name="PAD" value="#OFF"/>
+				</instance>
+				<net name="net_Buf-pad-interval[2]">
+					<portRef name="IN" instanceRef="interval[2]"/>
+					<portRef name="F4" instanceRef="iSlice__15__"/>
+					<portRef name="G1" instanceRef="iSlice__25__"/>
+					<pip from="RIGHT_I1" to="RIGHT_LLH5" position="5,53" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="5,33" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="5,26" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="11,26" dir="-&gt;"/>
+					<pip from="V6N1" to="S10" position="18,26" dir="-&gt;"/>
+					<pip from="N10" to="N_P10" position="19,26" dir="-&gt;"/>
+					<pip from="N_P10" to="S0_F_B4" position="19,26" dir="-&gt;"/>
+					<pip from="RIGHT_I1" to="RIGHT_LLH4" position="5,53" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="5,32" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="5,25" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="11,25" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="18,25" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="24,25" dir="-&gt;"/>
+					<pip from="V6M1" to="W8" position="27,25" dir="-&gt;"/>
+					<pip from="E8" to="S14" position="27,24" dir="-&gt;"/>
+					<pip from="N14" to="N_P14" position="28,24" dir="-&gt;"/>
+					<pip from="N_P14" to="S0_G_B1" position="28,24" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-interval[1]">
+					<portRef name="IN" instanceRef="interval[1]"/>
+					<portRef name="G1" instanceRef="iSlice__3__"/>
+					<portRef name="F2" instanceRef="iSlice__20__"/>
+					<portRef name="F2" instanceRef="iSlice__25__"/>
+					<pip from="RIGHT_I1" to="RIGHT_LLH7" position="7,53" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E2" position="7,29" dir="-&gt;"/>
+					<pip from="H6E2" to="V6S3" position="7,29" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="13,29" dir="-&gt;"/>
+					<pip from="V6S3" to="N19" position="13,29" dir="-&gt;"/>
+					<pip from="S19" to="E17" position="12,29" dir="-&gt;"/>
+					<pip from="W17" to="W_P17" position="12,30" dir="-&gt;"/>
+					<pip from="W_P17" to="S0_G_B1" position="12,30" dir="-&gt;"/>
+					<pip from="RIGHT_I1" to="RIGHT_LLH4" position="7,53" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="7,19" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="7,19" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="13,19" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="20,19" dir="-&gt;"/>
+					<pip from="V6M1" to="H6W1" position="23,19" dir="-&gt;"/>
+					<pip from="H6W1" to="S8" position="23,19" dir="-&gt;"/>
+					<pip from="N8" to="W13" position="24,19" dir="-&gt;"/>
+					<pip from="E13" to="E_P13" position="24,18" dir="-&gt;"/>
+					<pip from="E_P13" to="S0_F_B2" position="24,18" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E3" position="7,25" dir="-&gt;"/>
+					<pip from="H6E3" to="V6S0" position="7,25" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="13,25" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="20,25" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="26,25" dir="-&gt;"/>
+					<pip from="V6M0" to="W3" position="29,25" dir="-&gt;"/>
+					<pip from="E3" to="N3" position="29,24" dir="-&gt;"/>
+					<pip from="S3" to="S_P3" position="28,24" dir="-&gt;"/>
+					<pip from="S_P3" to="S0_F_B2" position="28,24" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-interval[0]">
+					<portRef name="IN" instanceRef="interval[0]"/>
+					<portRef name="F1" instanceRef="iSlice__1__"/>
+					<portRef name="F2" instanceRef="iSlice__15__"/>
+					<pip from="RIGHT_I3" to="RIGHT_LLH2" position="4,53" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="4,4" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="4,4" dir="-&gt;"/>
+					<pip from="V6M1" to="W8" position="7,4" dir="-&gt;"/>
+					<pip from="E8" to="N12" position="7,3" dir="-&gt;"/>
+					<pip from="S12" to="S_P12" position="6,3" dir="-&gt;"/>
+					<pip from="S_P12" to="S0_F_B1" position="6,3" dir="-&gt;"/>
+					<pip from="RIGHT_I3" to="RIGHT_LLH11" position="4,53" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E1" position="4,26" dir="-&gt;"/>
+					<pip from="H6E1" to="V6S2" position="4,26" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="10,26" dir="-&gt;"/>
+					<pip from="V6N2" to="S14" position="16,26" dir="-&gt;"/>
+					<pip from="N14" to="S14" position="18,26" dir="-&gt;"/>
+					<pip from="N14" to="W19" position="19,26" dir="-&gt;"/>
+					<pip from="W19" to="W_P19" position="19,26" dir="-&gt;"/>
+					<pip from="W_P19" to="S0_F_B2" position="19,26" dir="-&gt;"/>
+				</net>
+				<net name="net_IBuf-clkpad-clk" type="clock">
+					<portRef name="OUT" instanceRef="iGclk_buf__0__"/>
+					<portRef name="CLK" instanceRef="iSlice__1__"/>
+					<portRef name="CLK" instanceRef="iSlice__3__"/>
+					<portRef name="CLK" instanceRef="iSlice__11__"/>
+					<portRef name="CLK" instanceRef="iSlice__12__"/>
+					<portRef name="CLK" instanceRef="iSlice__16__"/>
+					<portRef name="CLK" instanceRef="iSlice__18__"/>
+					<portRef name="CLK" instanceRef="iSlice__19__"/>
+					<portRef name="CLK" instanceRef="iSlice__22__"/>
+					<portRef name="CLK" instanceRef="iSlice__23__"/>
+					<portRef name="CLK" instanceRef="iSlice__24__"/>
+					<portRef name="CLK" instanceRef="iSlice__31__"/>
+					<pip from="CLKB_GCLK1_PW" to="CLKB_GCLK1" position="34,27" dir="-&gt;"/>
+					<pip from="CLKC_GCLK1" to="CLKC_HGCLK1" position="17,27" dir="-&gt;"/>
+					<pip from="BRAM_CLKH_GCLK1" to="BRAM_CLKH_VGCLK1" position="17,0" dir="-&gt;"/>
+					<pip from="BRAM_GCLKIN1" to="LBRAM_GCLK_CLBB1" position="6,0" dir="-&gt;"/>
+					<pip from="GCLK1" to="S0_CLK_B" position="6,3" dir="-&gt;"/>
+					<pip from="CLKC_HGCLK1" to="CLKC_VGCLK1" position="17,27" dir="-&gt;"/>
+					<pip from="CLKV_VGCLK1" to="CLKV_GCLK_BUFR1" position="12,27" dir="-&gt;"/>
+					<pip from="GCLK1" to="S0_CLK_B" position="12,30" dir="-&gt;"/>
+					<pip from="CLKB_GCLK1_PW" to="CLKB_LLH1" position="34,27" dir="-&gt;"/>
+					<pip from="LL_LLH1" to="LL_H6D2" position="34,1" dir="-&gt;"/>
+					<pip from="LL_H6D2" to="LL_V6N2" position="34,1" dir="-&gt;"/>
+					<pip from="LEFT_V6S2" to="LEFT_H6E2" position="28,1" dir="-&gt;"/>
+					<pip from="H6W2" to="V6N2" position="28,7" dir="-&gt;"/>
+					<pip from="V6M2" to="S0_CLK_B" position="25,7" dir="-&gt;"/>
+					<pip from="V6M2" to="H6E2" position="25,7" dir="-&gt;"/>
+					<pip from="H6W2" to="E10" position="25,13" dir="-&gt;"/>
+					<pip from="W10" to="S8" position="25,15" dir="-&gt;"/>
+					<pip from="N8" to="E4" position="26,15" dir="-&gt;"/>
+					<pip from="E4" to="S10" position="26,15" dir="-&gt;"/>
+					<pip from="S10" to="S_P10" position="26,15" dir="-&gt;"/>
+					<pip from="S_P10" to="S0_CLK_B" position="26,15" dir="-&gt;"/>
+					<pip from="H6M2" to="V6S2" position="25,10" dir="-&gt;"/>
+					<pip from="V6M2" to="W15" position="28,10" dir="-&gt;"/>
+					<pip from="E15" to="S13" position="28,9" dir="-&gt;"/>
+					<pip from="N13" to="N_P13" position="29,9" dir="-&gt;"/>
+					<pip from="N_P13" to="S0_CLK_B" position="29,9" dir="-&gt;"/>
+					<pip from="CLKB_GCLK1_PW" to="CLKB_LLH10" position="34,27" dir="-&gt;"/>
+					<pip from="BOT_LLH6" to="BOT_FAKE_LLH6" position="34,44" dir="-&gt;"/>
+					<pip from="BOT_FAKE_LLH6" to="BOT_H6E4" position="34,44" dir="-&gt;"/>
+					<pip from="BOT_H6A4" to="BOT_LLV11" position="34,45" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S2" position="29,45" dir="-&gt;"/>
+					<pip from="V6C2" to="S0_CLK_B" position="31,45" dir="-&gt;"/>
+					<pip from="LL_LLH10" to="LL_H6B5" position="34,1" dir="-&gt;"/>
+					<pip from="BOT_H6C5" to="BOT_LLV2" position="34,3" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S2" position="1,3" dir="-&gt;"/>
+					<pip from="V6N2" to="H6E2" position="7,3" dir="-&gt;"/>
+					<pip from="H6M2" to="V6S2" position="7,6" dir="-&gt;"/>
+					<pip from="V6D2" to="S0_CLK_B" position="8,6" dir="-&gt;"/>
+					<pip from="BRAM_CLKH_GCLK1" to="BRAM_CLKH_VGCLK1" position="17,54" dir="-&gt;"/>
+					<pip from="BRAM_GCLKIN1" to="RBRAM_GCLK_CLBA1" position="1,54" dir="-&gt;"/>
+					<pip from="GCLK1" to="S0_CLK_B" position="1,50" dir="-&gt;"/>
+					<pip from="BRAM_GCLKIN1" to="LBRAM_GCLK_CLBA1" position="18,0" dir="-&gt;"/>
+					<pip from="GCLK1" to="S0_CLK_B" position="18,7" dir="-&gt;"/>
+					<pip from="BRAM_GCLKIN1" to="RBRAM_GCLK_CLBB1" position="2,54" dir="-&gt;"/>
+					<pip from="GCLK1" to="S0_CLK_B" position="2,45" dir="-&gt;"/>
+					<pip from="BRAM_GCLKIN1" to="LBRAM_GCLK_CLBD1" position="4,0" dir="-&gt;"/>
+					<pip from="GCLK1" to="S0_CLK_B" position="4,4" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-rst_n" type="reset">
+					<portRef name="IN" instanceRef="rst_n"/>
+					<portRef name="F2" instanceRef="iSlice__3__"/>
+					<portRef name="F1" instanceRef="iSlice__4__"/>
+					<portRef name="F4" instanceRef="iSlice__10__"/>
+					<portRef name="G2" instanceRef="iSlice__11__"/>
+					<portRef name="G2" instanceRef="iSlice__12__"/>
+					<portRef name="G3" instanceRef="iSlice__13__"/>
+					<portRef name="SR" instanceRef="iSlice__16__"/>
+					<portRef name="F1" instanceRef="iSlice__17__"/>
+					<portRef name="G4" instanceRef="iSlice__17__"/>
+					<portRef name="G2" instanceRef="iSlice__18__"/>
+					<portRef name="F4" instanceRef="iSlice__19__"/>
+					<portRef name="G3" instanceRef="iSlice__19__"/>
+					<portRef name="F2" instanceRef="iSlice__22__"/>
+					<portRef name="G2" instanceRef="iSlice__22__"/>
+					<portRef name="F2" instanceRef="iSlice__23__"/>
+					<portRef name="F2" instanceRef="iSlice__24__"/>
+					<portRef name="F2" instanceRef="iSlice__26__"/>
+					<portRef name="G2" instanceRef="iSlice__26__"/>
+					<portRef name="F4" instanceRef="iSlice__27__"/>
+					<portRef name="F2" instanceRef="iSlice__31__"/>
+					<pip from="RIGHT_I1" to="RIGHT_LLH7" position="3,53" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E2" position="3,29" dir="-&gt;"/>
+					<pip from="H6E2" to="V6S3" position="3,29" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="9,29" dir="-&gt;"/>
+					<pip from="V6M3" to="E19" position="12,29" dir="-&gt;"/>
+					<pip from="W19" to="W_P19" position="12,30" dir="-&gt;"/>
+					<pip from="W_P19" to="S0_F_B2" position="12,30" dir="-&gt;"/>
+					<pip from="RIGHT_I1" to="RIGHT_LLV0" position="3,53" dir="-&gt;"/>
+					<pip from="RIGHT_LLV0" to="RIGHT_V6S0" position="15,53" dir="-&gt;"/>
+					<pip from="RIGHT_V6M0" to="RIGHT_H6D6" position="19,53" dir="-&gt;"/>
+					<pip from="H6E6" to="H6W6" position="19,48" dir="-&gt;"/>
+					<pip from="H6E6" to="H6W6" position="19,42" dir="-&gt;"/>
+					<pip from="H6M6" to="S14" position="19,38" dir="-&gt;"/>
+					<pip from="N14" to="N_P14" position="20,38" dir="-&gt;"/>
+					<pip from="N_P14" to="S0_F_B1" position="20,38" dir="-&gt;"/>
+					<pip from="RIGHT_I1" to="RIGHT_LLV6" position="3,53" dir="-&gt;"/>
+					<pip from="RIGHT_LLV0" to="RIGHT_V6S1" position="22,53" dir="-&gt;"/>
+					<pip from="RIGHT_V6M1" to="RIGHT_H6W4" position="25,53" dir="-&gt;"/>
+					<pip from="H6E4" to="H6W4" position="25,47" dir="-&gt;"/>
+					<pip from="H6E4" to="H6W4" position="25,41" dir="-&gt;"/>
+					<pip from="H6E4" to="H6W4" position="25,34" dir="-&gt;"/>
+					<pip from="H6E4" to="S3" position="25,28" dir="-&gt;"/>
+					<pip from="N3" to="N_P3" position="26,28" dir="-&gt;"/>
+					<pip from="N_P3" to="S0_F_B4" position="26,28" dir="-&gt;"/>
+					<pip from="RIGHT_I1" to="RIGHT_LLH5" position="3,53" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="3,13" dir="-&gt;"/>
+					<pip from="H6E2" to="V6S3" position="3,7" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="9,7" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="15,7" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="22,7" dir="-&gt;"/>
+					<pip from="V6M3" to="W20" position="25,7" dir="-&gt;"/>
+					<pip from="W20" to="W_P20" position="25,7" dir="-&gt;"/>
+					<pip from="W_P20" to="S0_G_B2" position="25,7" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="3,22" dir="-&gt;"/>
+					<pip from="H6E1" to="V6S2" position="3,16" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="9,16" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="15,16" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="22,16" dir="-&gt;"/>
+					<pip from="V6M2" to="W15" position="25,16" dir="-&gt;"/>
+					<pip from="E15" to="S13" position="25,15" dir="-&gt;"/>
+					<pip from="N13" to="E13" position="26,15" dir="-&gt;"/>
+					<pip from="E13" to="E_P13" position="26,15" dir="-&gt;"/>
+					<pip from="E_P13" to="S0_G_B2" position="26,15" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="3,7" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="3,4" dir="-&gt;"/>
+					<pip from="V6N0" to="S2" position="9,4" dir="-&gt;"/>
+					<pip from="N2" to="S2" position="10,4" dir="-&gt;"/>
+					<pip from="N2" to="N_P2" position="11,4" dir="-&gt;"/>
+					<pip from="N_P2" to="S0_G_B3" position="11,4" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="3,9" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="3,9" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="9,9" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="15,9" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="22,9" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="28,9" dir="-&gt;"/>
+					<pip from="V6D1" to="S0_SR_B" position="29,9" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="3,9" dir="-&gt;"/>
+					<pip from="H6E1" to="V6S2" position="3,3" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="9,3" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="15,3" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="22,3" dir="-&gt;"/>
+					<pip from="V6N2" to="S14" position="28,3" dir="-&gt;"/>
+					<pip from="N14" to="N_P14" position="29,3" dir="-&gt;"/>
+					<pip from="N_P14" to="S0_F_B1" position="29,3" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="3,9" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="3,3" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="9,3" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="15,3" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="22,3" dir="-&gt;"/>
+					<pip from="V6N1" to="S10" position="28,3" dir="-&gt;"/>
+					<pip from="N10" to="N_P10" position="29,3" dir="-&gt;"/>
+					<pip from="N_P10" to="S0_G_B4" position="29,3" dir="-&gt;"/>
+					<pip from="RIGHT_LLV6" to="RIGHT_V6S2" position="28,53" dir="-&gt;"/>
+					<pip from="RIGHT_V6M2" to="RIGHT_H6W10" position="31,53" dir="-&gt;"/>
+					<pip from="H6E10" to="W23" position="31,47" dir="-&gt;"/>
+					<pip from="E23" to="W23" position="31,46" dir="-&gt;"/>
+					<pip from="E23" to="E_P23" position="31,45" dir="-&gt;"/>
+					<pip from="E_P23" to="S0_G_B2" position="31,45" dir="-&gt;"/>
+					<pip from="RIGHT_I1" to="RIGHT_LLH4" position="3,53" dir="-&gt;"/>
+					<pip from="LEFT_LLH5" to="LEFT_H6A3" position="3,1" dir="-&gt;"/>
+					<pip from="H6W3" to="V6S3" position="3,6" dir="-&gt;"/>
+					<pip from="V6N3" to="H6E3" position="9,6" dir="-&gt;"/>
+					<pip from="H6E3" to="N18" position="9,6" dir="-&gt;"/>
+					<pip from="S18" to="S_P18" position="8,6" dir="-&gt;"/>
+					<pip from="S_P18" to="S0_F_B4" position="8,6" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W3" position="3,12" dir="-&gt;"/>
+					<pip from="H6E3" to="V6S0" position="3,6" dir="-&gt;"/>
+					<pip from="V6N0" to="H6W0" position="9,6" dir="-&gt;"/>
+					<pip from="H6W0" to="N0" position="9,6" dir="-&gt;"/>
+					<pip from="S0" to="S_P0" position="8,6" dir="-&gt;"/>
+					<pip from="S_P0" to="S0_G_B3" position="8,6" dir="-&gt;"/>
+					<pip from="RIGHT_I1" to="RIGHT_H6W0" position="3,53" dir="-&gt;"/>
+					<pip from="H6M0" to="N4" position="3,50" dir="-&gt;"/>
+					<pip from="S4" to="N4" position="2,50" dir="-&gt;"/>
+					<pip from="S4" to="S_P4" position="1,50" dir="-&gt;"/>
+					<pip from="S_P4" to="S0_F_B2" position="1,50" dir="-&gt;"/>
+					<pip from="S_P4" to="S0_G_B2" position="1,50" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="3,7" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="3,7" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="9,7" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="15,7" dir="-&gt;"/>
+					<pip from="V6M1" to="E7" position="19,7" dir="-&gt;"/>
+					<pip from="E7" to="N7" position="19,7" dir="-&gt;"/>
+					<pip from="S7" to="S_P7" position="18,7" dir="-&gt;"/>
+					<pip from="S_P7" to="S0_F_B2" position="18,7" dir="-&gt;"/>
+					<pip from="RIGHT_I1" to="RIGHT_H6D0" position="3,53" dir="-&gt;"/>
+					<pip from="H6E0" to="H6W0" position="3,48" dir="-&gt;"/>
+					<pip from="H6M0" to="N4" position="3,45" dir="-&gt;"/>
+					<pip from="S4" to="S_P4" position="2,45" dir="-&gt;"/>
+					<pip from="S_P4" to="S0_F_B2" position="2,45" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="3,33" dir="-&gt;"/>
+					<pip from="H6M1" to="V6S1" position="3,30" dir="-&gt;"/>
+					<pip from="V6N1" to="E9" position="9,30" dir="-&gt;"/>
+					<pip from="W9" to="N4" position="9,31" dir="-&gt;"/>
+					<pip from="S4" to="S_P4" position="8,31" dir="-&gt;"/>
+					<pip from="S_P4" to="S0_F_B2" position="8,31" dir="-&gt;"/>
+					<pip from="S_P4" to="S0_G_B2" position="8,31" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W3" position="3,16" dir="-&gt;"/>
+					<pip from="H6E3" to="W18" position="3,9" dir="-&gt;"/>
+					<pip from="E18" to="E_P18" position="3,8" dir="-&gt;"/>
+					<pip from="E_P18" to="LLV6" position="3,8" dir="-&gt;"/>
+					<pip from="BOT_LLV0" to="BOT_V6N1" position="34,8" dir="-&gt;"/>
+					<pip from="BOT_V6N1" to="BOT_H6W1" position="34,8" dir="-&gt;"/>
+					<pip from="BOT_H6W1" to="BOT_N9" position="34,8" dir="-&gt;"/>
+					<pip from="S9" to="S_P9" position="33,8" dir="-&gt;"/>
+					<pip from="S_P9" to="S0_F_B4" position="33,8" dir="-&gt;"/>
+					<pip from="LEFT_LLH6" to="LEFT_H6E2" position="3,1" dir="-&gt;"/>
+					<pip from="H6M2" to="S18" position="3,4" dir="-&gt;"/>
+					<pip from="N18" to="N_P18" position="4,4" dir="-&gt;"/>
+					<pip from="N_P18" to="S0_F_B2" position="4,4" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-dir">
+					<portRef name="IN" instanceRef="dir"/>
+					<portRef name="G2" instanceRef="iSlice__2__"/>
+					<portRef name="F4" instanceRef="iSlice__4__"/>
+					<portRef name="F4" instanceRef="iSlice__13__"/>
+					<portRef name="G1" instanceRef="iSlice__13__"/>
+					<portRef name="G4" instanceRef="iSlice__15__"/>
+					<portRef name="F1" instanceRef="iSlice__16__"/>
+					<portRef name="F4" instanceRef="iSlice__17__"/>
+					<pip from="TOP_I1" to="TOP_LLV4" position="0,52" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N3" position="27,52" dir="-&gt;"/>
+					<pip from="V6N3" to="H6W3" position="27,52" dir="-&gt;"/>
+					<pip from="H6E3" to="N18" position="27,46" dir="-&gt;"/>
+					<pip from="N18" to="N_P18" position="27,46" dir="-&gt;"/>
+					<pip from="N_P18" to="S0_G_B2" position="27,46" dir="-&gt;"/>
+					<pip from="TOP_I1" to="TOP_LLV5" position="0,52" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N3" position="26,52" dir="-&gt;"/>
+					<pip from="V6S3" to="H6W2" position="20,52" dir="-&gt;"/>
+					<pip from="H6E2" to="H6W2" position="20,46" dir="-&gt;"/>
+					<pip from="H6E2" to="W17" position="20,39" dir="-&gt;"/>
+					<pip from="E17" to="E_P17" position="20,38" dir="-&gt;"/>
+					<pip from="E_P17" to="S0_F_B4" position="20,38" dir="-&gt;"/>
+					<pip from="TOP_I1" to="TOP_LLH6" position="0,52" dir="-&gt;"/>
+					<pip from="UL_LLH6" to="UL_H6E2" position="0,1" dir="-&gt;"/>
+					<pip from="TOP_H6M2" to="TOP_V6S3" position="0,4" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="6,4" dir="-&gt;"/>
+					<pip from="V6N3" to="H6E3" position="12,4" dir="-&gt;"/>
+					<pip from="H6E3" to="N18" position="12,4" dir="-&gt;"/>
+					<pip from="S18" to="S_P18" position="11,4" dir="-&gt;"/>
+					<pip from="S_P18" to="S0_F_B4" position="11,4" dir="-&gt;"/>
+					<pip from="TOP_H6M2" to="TOP_V6D10" position="0,4" dir="-&gt;"/>
+					<pip from="V6N10" to="V6S10" position="5,4" dir="-&gt;"/>
+					<pip from="V6N10" to="S17" position="11,4" dir="-&gt;"/>
+					<pip from="S17" to="S_P17" position="11,4" dir="-&gt;"/>
+					<pip from="S_P17" to="S0_G_B1" position="11,4" dir="-&gt;"/>
+					<pip from="TOP_LLH6" to="TOP_FAKE_LLH6" position="0,26" dir="-&gt;"/>
+					<pip from="TOP_FAKE_LLH6" to="TOP_H6W5" position="0,26" dir="-&gt;"/>
+					<pip from="TOP_H6W5" to="TOP_LLV0" position="0,26" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N0" position="25,26" dir="-&gt;"/>
+					<pip from="V6S0" to="E0" position="19,26" dir="-&gt;"/>
+					<pip from="E0" to="E_P0" position="19,26" dir="-&gt;"/>
+					<pip from="E_P0" to="S0_G_B4" position="19,26" dir="-&gt;"/>
+					<pip from="TOP_I1" to="TOP_LLH0" position="0,52" dir="-&gt;"/>
+					<pip from="UL_LLH0" to="UL_H6E5" position="0,1" dir="-&gt;"/>
+					<pip from="TOP_H6C5" to="TOP_LLV2" position="0,5" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N3" position="29,5" dir="-&gt;"/>
+					<pip from="V6N3" to="H6E3" position="29,5" dir="-&gt;"/>
+					<pip from="H6M3" to="V6N3" position="29,8" dir="-&gt;"/>
+					<pip from="V6N3" to="E21" position="29,8" dir="-&gt;"/>
+					<pip from="W21" to="W_P21" position="29,9" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_F_B1" position="29,9" dir="-&gt;"/>
+					<pip from="TOP_H6B5" to="TOP_LLV4" position="0,3" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S3" position="27,3" dir="-&gt;"/>
+					<pip from="V6M3" to="H6E3" position="30,3" dir="-&gt;"/>
+					<pip from="H6E3" to="N18" position="30,3" dir="-&gt;"/>
+					<pip from="S18" to="S_P18" position="29,3" dir="-&gt;"/>
+					<pip from="S_P18" to="S0_F_B4" position="29,3" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-timeout">
+					<portRef name="XQ" instanceRef="iSlice__16__"/>
+					<portRef name="OUT" instanceRef="timeout"/>
+					<pip from="S0_XQ" to="OUT5" position="29,9" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="29,9" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N0" position="10,9" dir="-&gt;"/>
+					<pip from="V6N0" to="H6W0" position="10,9" dir="-&gt;"/>
+					<pip from="H6E0" to="W5" position="10,3" dir="-&gt;"/>
+					<pip from="E5" to="N5" position="10,2" dir="-&gt;"/>
+					<pip from="S5" to="W11" position="9,2" dir="-&gt;"/>
+					<pip from="LEFT_E11" to="LEFT_E_BUF11" position="9,1" dir="-&gt;"/>
+					<pip from="LEFT_E_BUF11" to="LEFT_O1" position="9,1" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[0]">
+					<portRef name="YQ" instanceRef="iSlice__18__"/>
+					<portRef name="G3" instanceRef="iSlice__0__"/>
+					<portRef name="G3" instanceRef="iSlice__14__"/>
+					<portRef name="G3" instanceRef="iSlice__18__"/>
+					<portRef name="F3" instanceRef="iSlice__23__"/>
+					<portRef name="G4" instanceRef="iSlice__23__"/>
+					<pip from="S0_YQ" to="OUT5" position="31,45" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="31,45" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="31,12" dir="-&gt;"/>
+					<pip from="H6M0" to="S6" position="31,9" dir="-&gt;"/>
+					<pip from="N6" to="N_P6" position="32,9" dir="-&gt;"/>
+					<pip from="N_P6" to="S0_G_B3" position="32,9" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="31,12" dir="-&gt;"/>
+					<pip from="H6E1" to="V6N2" position="31,6" dir="-&gt;"/>
+					<pip from="V6M2" to="W15" position="28,6" dir="-&gt;"/>
+					<pip from="E15" to="N15" position="28,5" dir="-&gt;"/>
+					<pip from="S15" to="S_P15" position="27,5" dir="-&gt;"/>
+					<pip from="S_P15" to="S0_G_B3" position="27,5" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT4" position="31,45" dir="-&gt;"/>
+					<pip from="OUT4" to="N13" position="31,45" dir="-&gt;"/>
+					<pip from="N13" to="N_P13" position="31,45" dir="-&gt;"/>
+					<pip from="N_P13" to="S0_G_B3" position="31,45" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="25,6" dir="-&gt;"/>
+					<pip from="V6S2" to="N13" position="19,6" dir="-&gt;"/>
+					<pip from="S13" to="E15" position="18,6" dir="-&gt;"/>
+					<pip from="W15" to="W_P15" position="18,7" dir="-&gt;"/>
+					<pip from="W_P15" to="S0_F_B3" position="18,7" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E3" position="31,6" dir="-&gt;"/>
+					<pip from="H6E3" to="V6N0" position="31,6" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="25,6" dir="-&gt;"/>
+					<pip from="V6S0" to="N1" position="19,6" dir="-&gt;"/>
+					<pip from="S1" to="E3" position="18,6" dir="-&gt;"/>
+					<pip from="W3" to="W_P3" position="18,7" dir="-&gt;"/>
+					<pip from="W_P3" to="S0_G_B4" position="18,7" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[1]">
+					<portRef name="XQ" instanceRef="iSlice__23__"/>
+					<portRef name="G1" instanceRef="iSlice__0__"/>
+					<portRef name="G1" instanceRef="iSlice__14__"/>
+					<portRef name="F4" instanceRef="iSlice__23__"/>
+					<portRef name="G3" instanceRef="iSlice__23__"/>
+					<pip from="S0_XQ" to="OUT2" position="18,7" dir="-&gt;"/>
+					<pip from="OUT2" to="LLV0" position="18,7" dir="-&gt;"/>
+					<pip from="BOT_LLV4" to="BOT_V6B3" position="34,7" dir="-&gt;"/>
+					<pip from="V6M3" to="H6E3" position="33,7" dir="-&gt;"/>
+					<pip from="H6M3" to="N22" position="33,10" dir="-&gt;"/>
+					<pip from="S22" to="W20" position="32,10" dir="-&gt;"/>
+					<pip from="E20" to="E_P20" position="32,9" dir="-&gt;"/>
+					<pip from="E_P20" to="S0_G_B1" position="32,9" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT4" position="18,7" dir="-&gt;"/>
+					<pip from="OUT4" to="V6S2" position="18,7" dir="-&gt;"/>
+					<pip from="V6N2" to="H6W2" position="24,7" dir="-&gt;"/>
+					<pip from="H6M2" to="V6S2" position="24,4" dir="-&gt;"/>
+					<pip from="V6M2" to="E13" position="27,4" dir="-&gt;"/>
+					<pip from="W13" to="W_P13" position="27,5" dir="-&gt;"/>
+					<pip from="W_P13" to="S0_G_B1" position="27,5" dir="-&gt;"/>
+					<pip from="OUT2" to="W9" position="18,7" dir="-&gt;"/>
+					<pip from="W9" to="W_P9" position="18,7" dir="-&gt;"/>
+					<pip from="W_P9" to="S0_F_B4" position="18,7" dir="-&gt;"/>
+					<pip from="OUT4" to="S15" position="18,7" dir="-&gt;"/>
+					<pip from="S15" to="S_P15" position="18,7" dir="-&gt;"/>
+					<pip from="S_P15" to="S0_G_B3" position="18,7" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[2]">
+					<portRef name="YQ" instanceRef="iSlice__23__"/>
+					<portRef name="G2" instanceRef="iSlice__0__"/>
+					<portRef name="G2" instanceRef="iSlice__14__"/>
+					<portRef name="G2" instanceRef="iSlice__23__"/>
+					<pip from="S0_YQ" to="OUT5" position="18,7" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="18,7" dir="-&gt;"/>
+					<pip from="BOT_LLV10" to="BOT_V6B0" position="34,7" dir="-&gt;"/>
+					<pip from="V6M0" to="H6E0" position="33,7" dir="-&gt;"/>
+					<pip from="H6M0" to="N4" position="33,10" dir="-&gt;"/>
+					<pip from="S4" to="W6" position="32,10" dir="-&gt;"/>
+					<pip from="E6" to="E_P6" position="32,9" dir="-&gt;"/>
+					<pip from="E_P6" to="S0_G_B2" position="32,9" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT3" position="18,7" dir="-&gt;"/>
+					<pip from="OUT3" to="V6S8" position="18,7" dir="-&gt;"/>
+					<pip from="V6N8" to="V6S8" position="24,7" dir="-&gt;"/>
+					<pip from="V6M8" to="W13" position="27,7" dir="-&gt;"/>
+					<pip from="E13" to="W13" position="27,6" dir="-&gt;"/>
+					<pip from="E13" to="E_P13" position="27,5" dir="-&gt;"/>
+					<pip from="E_P13" to="S0_G_B2" position="27,5" dir="-&gt;"/>
+					<pip from="OUT3" to="S10" position="18,7" dir="-&gt;"/>
+					<pip from="S10" to="S_P10" position="18,7" dir="-&gt;"/>
+					<pip from="S_P10" to="S0_G_B2" position="18,7" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[3]">
+					<portRef name="XQ" instanceRef="iSlice__19__"/>
+					<portRef name="G4" instanceRef="iSlice__0__"/>
+					<portRef name="F3" instanceRef="iSlice__19__"/>
+					<pip from="S0_XQ" to="OUT5" position="8,6" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="8,6" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N2" position="33,6" dir="-&gt;"/>
+					<pip from="V6N2" to="H6E2" position="33,6" dir="-&gt;"/>
+					<pip from="H6M2" to="N16" position="33,9" dir="-&gt;"/>
+					<pip from="S16" to="S_P16" position="32,9" dir="-&gt;"/>
+					<pip from="S_P16" to="S0_G_B4" position="32,9" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT4" position="8,6" dir="-&gt;"/>
+					<pip from="OUT4" to="N13" position="8,6" dir="-&gt;"/>
+					<pip from="N13" to="N_P13" position="8,6" dir="-&gt;"/>
+					<pip from="N_P13" to="S0_F_B3" position="8,6" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[4]">
+					<portRef name="YQ" instanceRef="iSlice__19__"/>
+					<portRef name="F3" instanceRef="iSlice__5__"/>
+					<portRef name="F2" instanceRef="iSlice__7__"/>
+					<portRef name="G2" instanceRef="iSlice__10__"/>
+					<portRef name="F3" instanceRef="iSlice__11__"/>
+					<portRef name="G4" instanceRef="iSlice__19__"/>
+					<pip from="S0_YQ" to="OUT2" position="8,6" dir="-&gt;"/>
+					<pip from="OUT2" to="H6E9" position="8,6" dir="-&gt;"/>
+					<pip from="H6M9" to="V6N9" position="8,9" dir="-&gt;"/>
+					<pip from="V6M9" to="E4" position="5,9" dir="-&gt;"/>
+					<pip from="W4" to="W_P4" position="5,10" dir="-&gt;"/>
+					<pip from="W_P4" to="S0_F_B3" position="5,10" dir="-&gt;"/>
+					<pip from="OUT2" to="LLV0" position="8,6" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N3" position="27,6" dir="-&gt;"/>
+					<pip from="V6M3" to="H6E3" position="24,6" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="24,12" dir="-&gt;"/>
+					<pip from="H6M3" to="N22" position="24,16" dir="-&gt;"/>
+					<pip from="S22" to="E16" position="23,16" dir="-&gt;"/>
+					<pip from="W16" to="W_P16" position="23,17" dir="-&gt;"/>
+					<pip from="W_P16" to="S0_F_B2" position="23,17" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="8,6" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="8,32" dir="-&gt;"/>
+					<pip from="H6M1" to="V6S1" position="8,29" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="14,29" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="21,29" dir="-&gt;"/>
+					<pip from="V6N1" to="H6E1" position="27,29" dir="-&gt;"/>
+					<pip from="H6E1" to="W6" position="27,29" dir="-&gt;"/>
+					<pip from="E6" to="N10" position="27,28" dir="-&gt;"/>
+					<pip from="S10" to="S_P10" position="26,28" dir="-&gt;"/>
+					<pip from="S_P10" to="S0_G_B2" position="26,28" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N2" position="27,6" dir="-&gt;"/>
+					<pip from="V6M2" to="E13" position="24,6" dir="-&gt;"/>
+					<pip from="W13" to="S11" position="24,7" dir="-&gt;"/>
+					<pip from="N11" to="N_P11" position="25,7" dir="-&gt;"/>
+					<pip from="N_P11" to="S0_F_B3" position="25,7" dir="-&gt;"/>
+					<pip from="OUT2" to="W9" position="8,6" dir="-&gt;"/>
+					<pip from="W9" to="W_P9" position="8,6" dir="-&gt;"/>
+					<pip from="W_P9" to="S0_G_B4" position="8,6" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[5]">
+					<portRef name="XQ" instanceRef="iSlice__11__"/>
+					<portRef name="F2" instanceRef="iSlice__5__"/>
+					<portRef name="F4" instanceRef="iSlice__7__"/>
+					<portRef name="G4" instanceRef="iSlice__10__"/>
+					<portRef name="F2" instanceRef="iSlice__11__"/>
+					<pip from="S0_XQ" to="OUT5" position="25,7" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="25,7" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N0" position="6,7" dir="-&gt;"/>
+					<pip from="V6N0" to="H6E0" position="6,7" dir="-&gt;"/>
+					<pip from="H6M0" to="N4" position="6,10" dir="-&gt;"/>
+					<pip from="S4" to="S_P4" position="5,10" dir="-&gt;"/>
+					<pip from="S_P4" to="S0_F_B2" position="5,10" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT2" position="25,7" dir="-&gt;"/>
+					<pip from="OUT2" to="H6E9" position="25,7" dir="-&gt;"/>
+					<pip from="H6W9" to="H6E9" position="25,13" dir="-&gt;"/>
+					<pip from="H6M9" to="N11" position="25,17" dir="-&gt;"/>
+					<pip from="S11" to="N11" position="24,17" dir="-&gt;"/>
+					<pip from="S11" to="S_P11" position="23,17" dir="-&gt;"/>
+					<pip from="S_P11" to="S0_F_B4" position="23,17" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="25,7" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="25,26" dir="-&gt;"/>
+					<pip from="H6W1" to="E11" position="25,26" dir="-&gt;"/>
+					<pip from="W11" to="S5" position="25,28" dir="-&gt;"/>
+					<pip from="N5" to="N_P5" position="26,28" dir="-&gt;"/>
+					<pip from="N_P5" to="S0_G_B4" position="26,28" dir="-&gt;"/>
+					<pip from="OUT5" to="E15" position="25,7" dir="-&gt;"/>
+					<pip from="E15" to="E_P15" position="25,7" dir="-&gt;"/>
+					<pip from="E_P15" to="S0_F_B2" position="25,7" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[6]">
+					<portRef name="YQ" instanceRef="iSlice__11__"/>
+					<portRef name="F3" instanceRef="iSlice__0__"/>
+					<portRef name="F1" instanceRef="iSlice__7__"/>
+					<portRef name="G1" instanceRef="iSlice__10__"/>
+					<pip from="S0_YQ" to="OUT3" position="25,7" dir="-&gt;"/>
+					<pip from="OUT3" to="V6S8" position="25,7" dir="-&gt;"/>
+					<pip from="V6N8" to="H6E7" position="31,7" dir="-&gt;"/>
+					<pip from="H6M7" to="S16" position="31,10" dir="-&gt;"/>
+					<pip from="N16" to="W21" position="32,10" dir="-&gt;"/>
+					<pip from="E21" to="E_P21" position="32,9" dir="-&gt;"/>
+					<pip from="E_P21" to="S0_F_B3" position="32,9" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT4" position="25,7" dir="-&gt;"/>
+					<pip from="OUT4" to="H6E7" position="25,7" dir="-&gt;"/>
+					<pip from="H6W7" to="H6E7" position="25,13" dir="-&gt;"/>
+					<pip from="H6M7" to="N17" position="25,17" dir="-&gt;"/>
+					<pip from="S17" to="N17" position="24,17" dir="-&gt;"/>
+					<pip from="S17" to="S_P17" position="23,17" dir="-&gt;"/>
+					<pip from="S_P17" to="S0_F_B1" position="23,17" dir="-&gt;"/>
+					<pip from="OUT3" to="LLH0" position="25,7" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="25,20" dir="-&gt;"/>
+					<pip from="H6W0" to="E22" position="25,26" dir="-&gt;"/>
+					<pip from="W22" to="S20" position="25,28" dir="-&gt;"/>
+					<pip from="N20" to="N_P20" position="26,28" dir="-&gt;"/>
+					<pip from="N_P20" to="S0_G_B1" position="26,28" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[7]">
+					<portRef name="XQ" instanceRef="iSlice__24__"/>
+					<portRef name="F1" instanceRef="iSlice__5__"/>
+					<portRef name="G4" instanceRef="iSlice__7__"/>
+					<portRef name="F4" instanceRef="iSlice__8__"/>
+					<portRef name="F3" instanceRef="iSlice__24__"/>
+					<portRef name="G4" instanceRef="iSlice__24__"/>
+					<pip from="S0_XQ" to="OUT5" position="2,45" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="2,45" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="2,12" dir="-&gt;"/>
+					<pip from="H6M1" to="V6S1" position="2,9" dir="-&gt;"/>
+					<pip from="V6M1" to="E7" position="5,9" dir="-&gt;"/>
+					<pip from="W7" to="W_P7" position="5,10" dir="-&gt;"/>
+					<pip from="W_P7" to="S0_F_B1" position="5,10" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E1" position="2,12" dir="-&gt;"/>
+					<pip from="H6M1" to="V6S1" position="2,16" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="8,16" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="14,16" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="21,16" dir="-&gt;"/>
+					<pip from="V6M1" to="E7" position="24,16" dir="-&gt;"/>
+					<pip from="W7" to="N2" position="24,17" dir="-&gt;"/>
+					<pip from="S2" to="S_P2" position="23,17" dir="-&gt;"/>
+					<pip from="S_P2" to="S0_G_B4" position="23,17" dir="-&gt;"/>
+					<pip from="OUT5" to="H6W2" position="2,45" dir="-&gt;"/>
+					<pip from="H6E2" to="V6S3" position="2,38" dir="-&gt;"/>
+					<pip from="V6N3" to="E21" position="8,38" dir="-&gt;"/>
+					<pip from="W21" to="N16" position="8,39" dir="-&gt;"/>
+					<pip from="S16" to="S_P16" position="7,39" dir="-&gt;"/>
+					<pip from="S_P16" to="S0_F_B4" position="7,39" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT7" position="2,45" dir="-&gt;"/>
+					<pip from="OUT7" to="W23" position="2,45" dir="-&gt;"/>
+					<pip from="W23" to="W_P23" position="2,45" dir="-&gt;"/>
+					<pip from="W_P23" to="S0_F_B3" position="2,45" dir="-&gt;"/>
+					<pip from="OUT5" to="E17" position="2,45" dir="-&gt;"/>
+					<pip from="E17" to="E_P17" position="2,45" dir="-&gt;"/>
+					<pip from="E_P17" to="S0_G_B4" position="2,45" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[8]">
+					<portRef name="YQ" instanceRef="iSlice__24__"/>
+					<portRef name="F1" instanceRef="iSlice__0__"/>
+					<portRef name="G2" instanceRef="iSlice__7__"/>
+					<portRef name="F2" instanceRef="iSlice__8__"/>
+					<portRef name="G2" instanceRef="iSlice__24__"/>
+					<pip from="S0_YQ" to="OUT2" position="2,45" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="2,45" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="2,12" dir="-&gt;"/>
+					<pip from="H6M2" to="V6S2" position="2,9" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="8,9" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="14,9" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="21,9" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="27,9" dir="-&gt;"/>
+					<pip from="V6N2" to="H6W2" position="33,9" dir="-&gt;"/>
+					<pip from="H6W2" to="N12" position="33,9" dir="-&gt;"/>
+					<pip from="S12" to="S_P12" position="32,9" dir="-&gt;"/>
+					<pip from="S_P12" to="S0_F_B1" position="32,9" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E3" position="2,12" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="2,16" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="8,16" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="14,16" dir="-&gt;"/>
+					<pip from="V6N3" to="S22" position="21,16" dir="-&gt;"/>
+					<pip from="N22" to="E18" position="22,16" dir="-&gt;"/>
+					<pip from="W18" to="S16" position="22,17" dir="-&gt;"/>
+					<pip from="N16" to="N_P16" position="23,17" dir="-&gt;"/>
+					<pip from="N_P16" to="S0_G_B2" position="23,17" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT1" position="2,45" dir="-&gt;"/>
+					<pip from="OUT1" to="H6W0" position="2,45" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="2,38" dir="-&gt;"/>
+					<pip from="V6N1" to="E9" position="8,38" dir="-&gt;"/>
+					<pip from="W9" to="N4" position="8,39" dir="-&gt;"/>
+					<pip from="S4" to="S_P4" position="7,39" dir="-&gt;"/>
+					<pip from="S_P4" to="S0_F_B2" position="7,39" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT0" position="2,45" dir="-&gt;"/>
+					<pip from="OUT0" to="S1" position="2,45" dir="-&gt;"/>
+					<pip from="S1" to="S_P1" position="2,45" dir="-&gt;"/>
+					<pip from="S_P1" to="S0_G_B2" position="2,45" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[9]">
+					<portRef name="XQ" instanceRef="iSlice__22__"/>
+					<portRef name="F2" instanceRef="iSlice__0__"/>
+					<portRef name="G1" instanceRef="iSlice__7__"/>
+					<portRef name="F1" instanceRef="iSlice__8__"/>
+					<pip from="S0_XQ" to="OUT4" position="1,50" dir="-&gt;"/>
+					<pip from="OUT4" to="LLH6" position="1,50" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="1,5" dir="-&gt;"/>
+					<pip from="H6M0" to="N4" position="1,8" dir="-&gt;"/>
+					<pip from="N4" to="N_P4" position="1,8" dir="-&gt;"/>
+					<pip from="N_P4" to="LLV0" position="1,8" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S2" position="32,8" dir="-&gt;"/>
+					<pip from="V6S2" to="E12" position="32,8" dir="-&gt;"/>
+					<pip from="W12" to="W_P12" position="32,9" dir="-&gt;"/>
+					<pip from="W_P12" to="S0_F_B2" position="32,9" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="1,24" dir="-&gt;"/>
+					<pip from="H6E2" to="V6S3" position="1,18" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="7,18" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="13,18" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="20,18" dir="-&gt;"/>
+					<pip from="V6M3" to="W20" position="23,18" dir="-&gt;"/>
+					<pip from="E20" to="E_P20" position="23,17" dir="-&gt;"/>
+					<pip from="E_P20" to="S0_G_B1" position="23,17" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT6" position="1,50" dir="-&gt;"/>
+					<pip from="OUT6" to="H6W10" position="1,50" dir="-&gt;"/>
+					<pip from="H6E10" to="H6W10" position="1,44" dir="-&gt;"/>
+					<pip from="H6M10" to="V6S10" position="1,41" dir="-&gt;"/>
+					<pip from="V6N10" to="W20" position="7,41" dir="-&gt;"/>
+					<pip from="E20" to="E_P20" position="7,39" dir="-&gt;"/>
+					<pip from="E_P20" to="S0_F_B1" position="7,39" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[10]">
+					<portRef name="YQ" instanceRef="iSlice__22__"/>
+					<portRef name="F2" instanceRef="iSlice__6__"/>
+					<portRef name="G3" instanceRef="iSlice__8__"/>
+					<portRef name="G3" instanceRef="iSlice__9__"/>
+					<portRef name="F4" instanceRef="iSlice__12__"/>
+					<portRef name="F1" instanceRef="iSlice__21__"/>
+					<portRef name="G3" instanceRef="iSlice__22__"/>
+					<pip from="S0_YQ" to="OUT2" position="1,50" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="1,50" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="1,31" dir="-&gt;"/>
+					<pip from="H6M2" to="V6S2" position="1,28" dir="-&gt;"/>
+					<pip from="V6M2" to="H6E2" position="4,28" dir="-&gt;"/>
+					<pip from="H6E2" to="S16" position="4,28" dir="-&gt;"/>
+					<pip from="N16" to="N_P16" position="5,28" dir="-&gt;"/>
+					<pip from="N_P16" to="S0_F_B2" position="5,28" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT5" position="1,50" dir="-&gt;"/>
+					<pip from="OUT5" to="H6W2" position="1,50" dir="-&gt;"/>
+					<pip from="H6E2" to="V6S3" position="1,44" dir="-&gt;"/>
+					<pip from="V6N3" to="H6W3" position="7,44" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="7,41" dir="-&gt;"/>
+					<pip from="V6S3" to="W21" position="7,41" dir="-&gt;"/>
+					<pip from="E21" to="E_P21" position="7,39" dir="-&gt;"/>
+					<pip from="E_P21" to="S0_G_B3" position="7,39" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W3" position="1,18" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="1,15" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="7,15" dir="-&gt;"/>
+					<pip from="V6N3" to="H6W3" position="13,15" dir="-&gt;"/>
+					<pip from="H6W3" to="E23" position="13,15" dir="-&gt;"/>
+					<pip from="W23" to="W_P23" position="13,16" dir="-&gt;"/>
+					<pip from="W_P23" to="S0_G_B3" position="13,16" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="13,15" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="20,15" dir="-&gt;"/>
+					<pip from="V6N3" to="S22" position="26,15" dir="-&gt;"/>
+					<pip from="S22" to="E16" position="26,15" dir="-&gt;"/>
+					<pip from="E16" to="E_P16" position="26,15" dir="-&gt;"/>
+					<pip from="E_P16" to="S0_F_B4" position="26,15" dir="-&gt;"/>
+					<pip from="LEFT_LLH10" to="LEFT_H6B0" position="1,1" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="1,2" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="7,2" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="13,2" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="20,2" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="26,2" dir="-&gt;"/>
+					<pip from="V6M0" to="E1" position="29,2" dir="-&gt;"/>
+					<pip from="W1" to="W_P1" position="29,3" dir="-&gt;"/>
+					<pip from="W_P1" to="S1_F_B1" position="29,3" dir="-&gt;"/>
+					<pip from="OUT2" to="N6" position="1,50" dir="-&gt;"/>
+					<pip from="N6" to="N_P6" position="1,50" dir="-&gt;"/>
+					<pip from="N_P6" to="S0_G_B3" position="1,50" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[11]">
+					<portRef name="XQ" instanceRef="iSlice__12__"/>
+					<portRef name="F3" instanceRef="iSlice__6__"/>
+					<portRef name="G4" instanceRef="iSlice__8__"/>
+					<portRef name="G4" instanceRef="iSlice__9__"/>
+					<portRef name="F2" instanceRef="iSlice__12__"/>
+					<portRef name="F2" instanceRef="iSlice__21__"/>
+					<pip from="S0_XQ" to="OUT2" position="26,15" dir="-&gt;"/>
+					<pip from="OUT2" to="LLV0" position="26,15" dir="-&gt;"/>
+					<pip from="LLV0" to="V6S0" position="1,15" dir="-&gt;"/>
+					<pip from="V6M0" to="H6E0" position="4,15" dir="-&gt;"/>
+					<pip from="H6W0" to="H6E0" position="4,21" dir="-&gt;"/>
+					<pip from="H6W0" to="H6E0" position="4,28" dir="-&gt;"/>
+					<pip from="H6E0" to="S4" position="4,28" dir="-&gt;"/>
+					<pip from="N4" to="N_P4" position="5,28" dir="-&gt;"/>
+					<pip from="N_P4" to="S0_F_B3" position="5,28" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N2" position="7,15" dir="-&gt;"/>
+					<pip from="V6N2" to="H6E2" position="7,15" dir="-&gt;"/>
+					<pip from="H6W2" to="H6E2" position="7,21" dir="-&gt;"/>
+					<pip from="H6W2" to="H6E2" position="7,28" dir="-&gt;"/>
+					<pip from="H6W2" to="H6E2" position="7,34" dir="-&gt;"/>
+					<pip from="H6W2" to="H6E2" position="7,41" dir="-&gt;"/>
+					<pip from="H6E2" to="W17" position="7,41" dir="-&gt;"/>
+					<pip from="E17" to="E_P17" position="7,39" dir="-&gt;"/>
+					<pip from="E_P17" to="S0_G_B4" position="7,39" dir="-&gt;"/>
+					<pip from="OUT2" to="V6N1" position="26,15" dir="-&gt;"/>
+					<pip from="V6S1" to="V6N1" position="20,15" dir="-&gt;"/>
+					<pip from="V6S1" to="V6N1" position="13,15" dir="-&gt;"/>
+					<pip from="V6N1" to="E9" position="13,15" dir="-&gt;"/>
+					<pip from="W9" to="W_P9" position="13,16" dir="-&gt;"/>
+					<pip from="W_P9" to="S0_G_B4" position="13,16" dir="-&gt;"/>
+					<pip from="OUT2" to="S7" position="26,15" dir="-&gt;"/>
+					<pip from="S7" to="S_P7" position="26,15" dir="-&gt;"/>
+					<pip from="S_P7" to="S0_F_B2" position="26,15" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT0" position="26,15" dir="-&gt;"/>
+					<pip from="OUT0" to="H6W4" position="26,15" dir="-&gt;"/>
+					<pip from="H6E4" to="H6W4" position="26,8" dir="-&gt;"/>
+					<pip from="H6E4" to="V6S4" position="26,2" dir="-&gt;"/>
+					<pip from="V6M4" to="E0" position="29,2" dir="-&gt;"/>
+					<pip from="W0" to="W_P0" position="29,3" dir="-&gt;"/>
+					<pip from="W_P0" to="S1_F_B2" position="29,3" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[12]">
+					<portRef name="YQ" instanceRef="iSlice__12__"/>
+					<portRef name="G3" instanceRef="iSlice__5__"/>
+					<portRef name="F4" instanceRef="iSlice__6__"/>
+					<portRef name="G1" instanceRef="iSlice__8__"/>
+					<portRef name="G2" instanceRef="iSlice__9__"/>
+					<pip from="S0_YQ" to="OUT6" position="26,15" dir="-&gt;"/>
+					<pip from="OUT6" to="LLV6" position="26,15" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N1" position="7,15" dir="-&gt;"/>
+					<pip from="V6M1" to="H6W1" position="4,15" dir="-&gt;"/>
+					<pip from="H6M1" to="S9" position="4,11" dir="-&gt;"/>
+					<pip from="N9" to="W10" position="5,11" dir="-&gt;"/>
+					<pip from="E10" to="E_P10" position="5,10" dir="-&gt;"/>
+					<pip from="E_P10" to="S0_G_B3" position="5,10" dir="-&gt;"/>
+					<pip from="V6M1" to="H6E1" position="4,15" dir="-&gt;"/>
+					<pip from="H6W1" to="H6E1" position="4,21" dir="-&gt;"/>
+					<pip from="H6W1" to="V6N1" position="4,28" dir="-&gt;"/>
+					<pip from="V6N1" to="S10" position="4,28" dir="-&gt;"/>
+					<pip from="N10" to="N_P10" position="5,28" dir="-&gt;"/>
+					<pip from="N_P10" to="S0_F_B4" position="5,28" dir="-&gt;"/>
+					<pip from="LLV0" to="V6S0" position="7,15" dir="-&gt;"/>
+					<pip from="V6S0" to="H6E3" position="7,15" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="7,21" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="7,28" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="7,34" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="7,41" dir="-&gt;"/>
+					<pip from="H6E3" to="W18" position="7,41" dir="-&gt;"/>
+					<pip from="E18" to="N22" position="7,39" dir="-&gt;"/>
+					<pip from="N22" to="N_P22" position="7,39" dir="-&gt;"/>
+					<pip from="N_P22" to="S0_G_B1" position="7,39" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT1" position="26,15" dir="-&gt;"/>
+					<pip from="OUT1" to="V6N5" position="26,15" dir="-&gt;"/>
+					<pip from="V6S5" to="V6N5" position="20,15" dir="-&gt;"/>
+					<pip from="V6S5" to="E5" position="13,15" dir="-&gt;"/>
+					<pip from="W5" to="S3" position="13,16" dir="-&gt;"/>
+					<pip from="S3" to="S_P3" position="13,16" dir="-&gt;"/>
+					<pip from="S_P3" to="S0_G_B2" position="13,16" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[13]">
+					<portRef name="XQ" instanceRef="iSlice__31__"/>
+					<portRef name="F4" instanceRef="iSlice__5__"/>
+					<portRef name="G3" instanceRef="iSlice__6__"/>
+					<portRef name="F4" instanceRef="iSlice__18__"/>
+					<portRef name="F3" instanceRef="iSlice__31__"/>
+					<pip from="S0_XQ" to="OUT3" position="4,4" dir="-&gt;"/>
+					<pip from="OUT3" to="H6E1" position="4,4" dir="-&gt;"/>
+					<pip from="H6W1" to="V6N1" position="4,10" dir="-&gt;"/>
+					<pip from="V6N1" to="S10" position="4,10" dir="-&gt;"/>
+					<pip from="N10" to="N_P10" position="5,10" dir="-&gt;"/>
+					<pip from="N_P10" to="S0_F_B4" position="5,10" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT4" position="4,4" dir="-&gt;"/>
+					<pip from="OUT4" to="LLH6" position="4,4" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="4,23" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="4,26" dir="-&gt;"/>
+					<pip from="V6S0" to="E0" position="4,26" dir="-&gt;"/>
+					<pip from="W0" to="S2" position="4,28" dir="-&gt;"/>
+					<pip from="N2" to="N_P2" position="5,28" dir="-&gt;"/>
+					<pip from="N_P2" to="S0_G_B3" position="5,28" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E3" position="4,43" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="4,46" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="10,46" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="16,46" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="23,46" dir="-&gt;"/>
+					<pip from="V6N3" to="S22" position="29,46" dir="-&gt;"/>
+					<pip from="N22" to="W3" position="30,46" dir="-&gt;"/>
+					<pip from="E3" to="S1" position="30,45" dir="-&gt;"/>
+					<pip from="N1" to="N_P1" position="31,45" dir="-&gt;"/>
+					<pip from="N_P1" to="S0_F_B4" position="31,45" dir="-&gt;"/>
+					<pip from="OUT4" to="S15" position="4,4" dir="-&gt;"/>
+					<pip from="S15" to="S_P15" position="4,4" dir="-&gt;"/>
+					<pip from="S_P15" to="S0_F_B3" position="4,4" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[14]">
+					<portRef name="XQ" instanceRef="iSlice__18__"/>
+					<portRef name="F4" instanceRef="iSlice__0__"/>
+					<portRef name="G4" instanceRef="iSlice__6__"/>
+					<portRef name="F2" instanceRef="iSlice__18__"/>
+					<pip from="S0_XQ" to="OUT2" position="31,45" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="31,45" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="31,12" dir="-&gt;"/>
+					<pip from="H6M2" to="S18" position="31,9" dir="-&gt;"/>
+					<pip from="N18" to="S18" position="32,9" dir="-&gt;"/>
+					<pip from="S18" to="S_P18" position="32,9" dir="-&gt;"/>
+					<pip from="S_P18" to="S0_F_B4" position="32,9" dir="-&gt;"/>
+					<pip from="OUT2" to="LLV0" position="31,45" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N1" position="6,45" dir="-&gt;"/>
+					<pip from="V6N1" to="H6W1" position="6,45" dir="-&gt;"/>
+					<pip from="H6E1" to="H6W1" position="6,38" dir="-&gt;"/>
+					<pip from="H6E1" to="H6W1" position="6,32" dir="-&gt;"/>
+					<pip from="H6M1" to="N10" position="6,29" dir="-&gt;"/>
+					<pip from="S10" to="W8" position="5,29" dir="-&gt;"/>
+					<pip from="E8" to="E_P8" position="5,28" dir="-&gt;"/>
+					<pip from="E_P8" to="S0_G_B4" position="5,28" dir="-&gt;"/>
+					<pip from="OUT2" to="S7" position="31,45" dir="-&gt;"/>
+					<pip from="S7" to="S_P7" position="31,45" dir="-&gt;"/>
+					<pip from="S_P7" to="S0_F_B2" position="31,45" dir="-&gt;"/>
+				</net>
+				<net name="u_interval/clk_div[15]">
+					<portRef name="XQ" instanceRef="iSlice__3__"/>
+					<portRef name="G1" instanceRef="iSlice__5__"/>
+					<portRef name="G1" instanceRef="iSlice__6__"/>
+					<portRef name="F1" instanceRef="iSlice__9__"/>
+					<portRef name="F1" instanceRef="iSlice__14__"/>
+					<pip from="S0_XQ" to="OUT3" position="12,30" dir="-&gt;"/>
+					<pip from="OUT3" to="LLH0" position="12,30" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="12,17" dir="-&gt;"/>
+					<pip from="H6E1" to="V6N2" position="12,10" dir="-&gt;"/>
+					<pip from="V6S2" to="N13" position="6,10" dir="-&gt;"/>
+					<pip from="S13" to="S_P13" position="5,10" dir="-&gt;"/>
+					<pip from="S_P13" to="S0_G_B1" position="5,10" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT7" position="12,30" dir="-&gt;"/>
+					<pip from="OUT7" to="V6N11" position="12,30" dir="-&gt;"/>
+					<pip from="V6S11" to="H6W10" position="6,30" dir="-&gt;"/>
+					<pip from="H6M10" to="N19" position="6,26" dir="-&gt;"/>
+					<pip from="S19" to="E17" position="5,26" dir="-&gt;"/>
+					<pip from="W17" to="W_P17" position="5,28" dir="-&gt;"/>
+					<pip from="W_P17" to="S0_G_B1" position="5,28" dir="-&gt;"/>
+					<pip from="OUT7" to="H6W3" position="12,30" dir="-&gt;"/>
+					<pip from="H6E3" to="H6W3" position="12,23" dir="-&gt;"/>
+					<pip from="H6E3" to="W18" position="12,17" dir="-&gt;"/>
+					<pip from="E18" to="S20" position="12,16" dir="-&gt;"/>
+					<pip from="N20" to="N_P20" position="13,16" dir="-&gt;"/>
+					<pip from="N_P20" to="S0_F_B1" position="13,16" dir="-&gt;"/>
+					<pip from="LEFT_LLH3" to="LEFT_H6M3" position="12,1" dir="-&gt;"/>
+					<pip from="H6W3" to="V6S3" position="12,4" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="19,4" dir="-&gt;"/>
+					<pip from="V6N3" to="E21" position="25,4" dir="-&gt;"/>
+					<pip from="W21" to="S19" position="25,5" dir="-&gt;"/>
+					<pip from="N19" to="S19" position="26,5" dir="-&gt;"/>
+					<pip from="N19" to="N_P19" position="27,5" dir="-&gt;"/>
+					<pip from="N_P19" to="S0_F_B1" position="27,5" dir="-&gt;"/>
+				</net>
+				<net name="net_L31">
+					<portRef name="X" instanceRef="iSlice__10__"/>
+					<portRef name="F1" instanceRef="iSlice__11__"/>
+					<portRef name="F1" instanceRef="iSlice__12__"/>
+					<portRef name="F1" instanceRef="iSlice__18__"/>
+					<portRef name="G1" instanceRef="iSlice__23__"/>
+					<portRef name="G1" instanceRef="iSlice__24__"/>
+					<pip from="S0_X" to="OUT4" position="26,28" dir="-&gt;"/>
+					<pip from="OUT4" to="LLH6" position="26,28" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="26,15" dir="-&gt;"/>
+					<pip from="H6E2" to="W17" position="26,8" dir="-&gt;"/>
+					<pip from="E17" to="N17" position="26,7" dir="-&gt;"/>
+					<pip from="S17" to="S_P17" position="25,7" dir="-&gt;"/>
+					<pip from="S_P17" to="S0_F_B1" position="25,7" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT7" position="26,28" dir="-&gt;"/>
+					<pip from="OUT7" to="H6W3" position="26,28" dir="-&gt;"/>
+					<pip from="H6E3" to="H6W3" position="26,21" dir="-&gt;"/>
+					<pip from="H6E3" to="W18" position="26,15" dir="-&gt;"/>
+					<pip from="W18" to="W_P18" position="26,15" dir="-&gt;"/>
+					<pip from="W_P18" to="S0_F_B1" position="26,15" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="26,47" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="26,44" dir="-&gt;"/>
+					<pip from="V6N0" to="H6W0" position="32,44" dir="-&gt;"/>
+					<pip from="H6W0" to="E22" position="32,44" dir="-&gt;"/>
+					<pip from="W22" to="N21" position="32,45" dir="-&gt;"/>
+					<pip from="S21" to="S_P21" position="31,45" dir="-&gt;"/>
+					<pip from="S_P21" to="S0_F_B1" position="31,45" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E3" position="26,2" dir="-&gt;"/>
+					<pip from="H6W3" to="V6N3" position="26,8" dir="-&gt;"/>
+					<pip from="V6S3" to="N19" position="20,8" dir="-&gt;"/>
+					<pip from="S19" to="W21" position="19,8" dir="-&gt;"/>
+					<pip from="E21" to="N21" position="19,7" dir="-&gt;"/>
+					<pip from="S21" to="S_P21" position="18,7" dir="-&gt;"/>
+					<pip from="S_P21" to="S0_G_B1" position="18,7" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT2" position="26,28" dir="-&gt;"/>
+					<pip from="OUT2" to="LLV0" position="26,28" dir="-&gt;"/>
+					<pip from="TOP_LLV11" to="TOP_V6A3" position="0,28" dir="-&gt;"/>
+					<pip from="V6N3" to="H6E3" position="1,28" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="1,34" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="1,41" dir="-&gt;"/>
+					<pip from="H6M3" to="S21" position="1,44" dir="-&gt;"/>
+					<pip from="N21" to="E21" position="2,44" dir="-&gt;"/>
+					<pip from="W21" to="W_P21" position="2,45" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_G_B1" position="2,45" dir="-&gt;"/>
+				</net>
+				<net name="net_L33">
+					<portRef name="Y" instanceRef="iSlice__14__"/>
+					<portRef name="F2" instanceRef="iSlice__19__"/>
+					<pip from="S0_Y" to="OUT5" position="27,5" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="27,5" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N2" position="14,5" dir="-&gt;"/>
+					<pip from="V6S2" to="E12" position="8,5" dir="-&gt;"/>
+					<pip from="W12" to="W_P12" position="8,6" dir="-&gt;"/>
+					<pip from="W_P12" to="S0_F_B2" position="8,6" dir="-&gt;"/>
+				</net>
+				<net name="net_L30">
+					<portRef name="Y" instanceRef="iSlice__0__"/>
+					<portRef name="F3" instanceRef="iSlice__7__"/>
+					<portRef name="F4" instanceRef="iSlice__9__"/>
+					<portRef name="F3" instanceRef="iSlice__10__"/>
+					<portRef name="G3" instanceRef="iSlice__10__"/>
+					<portRef name="F4" instanceRef="iSlice__11__"/>
+					<portRef name="G2" instanceRef="iSlice__19__"/>
+					<portRef name="F3" instanceRef="iSlice__27__"/>
+					<pip from="S0_Y" to="OUT4" position="32,9" dir="-&gt;"/>
+					<pip from="OUT4" to="H6E7" position="32,9" dir="-&gt;"/>
+					<pip from="H6W7" to="V6N9" position="32,16" dir="-&gt;"/>
+					<pip from="V6S9" to="V6N9" position="26,16" dir="-&gt;"/>
+					<pip from="V6M9" to="E4" position="23,16" dir="-&gt;"/>
+					<pip from="W4" to="W_P4" position="23,17" dir="-&gt;"/>
+					<pip from="W_P4" to="S0_F_B3" position="23,17" dir="-&gt;"/>
+					<pip from="S0_Y" to="OUT6" position="32,9" dir="-&gt;"/>
+					<pip from="OUT6" to="LLV6" position="32,9" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N0" position="13,9" dir="-&gt;"/>
+					<pip from="V6N0" to="H6E0" position="13,9" dir="-&gt;"/>
+					<pip from="H6W0" to="E22" position="13,16" dir="-&gt;"/>
+					<pip from="E22" to="E_P22" position="13,16" dir="-&gt;"/>
+					<pip from="E_P22" to="S0_F_B4" position="13,16" dir="-&gt;"/>
+					<pip from="S0_Y" to="OUT2" position="32,9" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="32,9" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="32,35" dir="-&gt;"/>
+					<pip from="H6E0" to="V6N1" position="32,29" dir="-&gt;"/>
+					<pip from="V6S1" to="W9" position="26,29" dir="-&gt;"/>
+					<pip from="E9" to="E_P9" position="26,28" dir="-&gt;"/>
+					<pip from="E_P9" to="S0_F_B3" position="26,28" dir="-&gt;"/>
+					<pip from="E_P9" to="S0_G_B3" position="26,28" dir="-&gt;"/>
+					<pip from="OUT2" to="V6N1" position="32,9" dir="-&gt;"/>
+					<pip from="V6S1" to="W9" position="26,9" dir="-&gt;"/>
+					<pip from="E9" to="W9" position="26,8" dir="-&gt;"/>
+					<pip from="E9" to="N9" position="26,7" dir="-&gt;"/>
+					<pip from="S9" to="S_P9" position="25,7" dir="-&gt;"/>
+					<pip from="S_P9" to="S0_F_B4" position="25,7" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N3" position="7,9" dir="-&gt;"/>
+					<pip from="V6N3" to="H6W3" position="7,9" dir="-&gt;"/>
+					<pip from="H6M3" to="S21" position="7,6" dir="-&gt;"/>
+					<pip from="N21" to="N_P21" position="8,6" dir="-&gt;"/>
+					<pip from="N_P21" to="S0_G_B2" position="8,6" dir="-&gt;"/>
+					<pip from="OUT2" to="W9" position="32,9" dir="-&gt;"/>
+					<pip from="E9" to="S11" position="32,8" dir="-&gt;"/>
+					<pip from="N11" to="N_P11" position="33,8" dir="-&gt;"/>
+					<pip from="N_P11" to="S0_F_B3" position="33,8" dir="-&gt;"/>
+				</net>
+				<net name="net_L34">
+					<portRef name="Y" instanceRef="iSlice__10__"/>
+					<portRef name="G3" instanceRef="iSlice__11__"/>
+					<pip from="S0_Y" to="OUT3" position="26,28" dir="-&gt;"/>
+					<pip from="OUT3" to="LLH0" position="26,28" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E3" position="26,8" dir="-&gt;"/>
+					<pip from="H6E3" to="W18" position="26,8" dir="-&gt;"/>
+					<pip from="E18" to="N22" position="26,7" dir="-&gt;"/>
+					<pip from="S22" to="S_P22" position="25,7" dir="-&gt;"/>
+					<pip from="S_P22" to="S0_G_B3" position="25,7" dir="-&gt;"/>
+				</net>
+				<net name="net_L35">
+					<portRef name="X" instanceRef="iSlice__7__"/>
+					<portRef name="G3" instanceRef="iSlice__7__"/>
+					<portRef name="F3" instanceRef="iSlice__8__"/>
+					<portRef name="F4" instanceRef="iSlice__24__"/>
+					<portRef name="G3" instanceRef="iSlice__24__"/>
+					<pip from="S0_X" to="OUT2" position="23,17" dir="-&gt;"/>
+					<pip from="OUT2" to="N6" position="23,17" dir="-&gt;"/>
+					<pip from="N6" to="N_P6" position="23,17" dir="-&gt;"/>
+					<pip from="N_P6" to="S0_G_B3" position="23,17" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="23,17" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="23,43" dir="-&gt;"/>
+					<pip from="H6M0" to="V6N0" position="23,39" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="16,39" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="10,39" dir="-&gt;"/>
+					<pip from="V6M0" to="E1" position="7,39" dir="-&gt;"/>
+					<pip from="E1" to="E_P1" position="7,39" dir="-&gt;"/>
+					<pip from="E_P1" to="S0_F_B3" position="7,39" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="23,43" dir="-&gt;"/>
+					<pip from="H6M0" to="V6N0" position="23,46" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="16,46" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="10,46" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="4,46" dir="-&gt;"/>
+					<pip from="V6M0" to="W3" position="1,46" dir="-&gt;"/>
+					<pip from="E3" to="S1" position="1,45" dir="-&gt;"/>
+					<pip from="N1" to="N_P1" position="2,45" dir="-&gt;"/>
+					<pip from="N_P1" to="S0_F_B4" position="2,45" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="23,49" dir="-&gt;"/>
+					<pip from="H6M2" to="V6N2" position="23,46" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="16,46" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="10,46" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="4,46" dir="-&gt;"/>
+					<pip from="V6M2" to="W15" position="1,46" dir="-&gt;"/>
+					<pip from="E15" to="S13" position="1,45" dir="-&gt;"/>
+					<pip from="N13" to="N_P13" position="2,45" dir="-&gt;"/>
+					<pip from="N_P13" to="S0_G_B3" position="2,45" dir="-&gt;"/>
+				</net>
+				<net name="net_L36">
+					<portRef name="Y" instanceRef="iSlice__7__"/>
+					<portRef name="F3" instanceRef="iSlice__22__"/>
+					<pip from="S0_Y" to="OUT5" position="23,17" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="23,17" dir="-&gt;"/>
+					<pip from="RIGHT_LLH8" to="RIGHT_H6C2" position="23,53" dir="-&gt;"/>
+					<pip from="H6E2" to="V6N3" position="23,49" dir="-&gt;"/>
+					<pip from="V6S3" to="V6N3" position="16,49" dir="-&gt;"/>
+					<pip from="V6S3" to="V6N3" position="10,49" dir="-&gt;"/>
+					<pip from="V6S3" to="V6N3" position="4,49" dir="-&gt;"/>
+					<pip from="V6M3" to="H6W3" position="1,49" dir="-&gt;"/>
+					<pip from="H6W3" to="E23" position="1,49" dir="-&gt;"/>
+					<pip from="W23" to="W_P23" position="1,50" dir="-&gt;"/>
+					<pip from="W_P23" to="S0_F_B3" position="1,50" dir="-&gt;"/>
+				</net>
+				<net name="net_L37">
+					<portRef name="X" instanceRef="iSlice__8__"/>
+					<portRef name="F1" instanceRef="iSlice__6__"/>
+					<portRef name="G2" instanceRef="iSlice__8__"/>
+					<portRef name="F3" instanceRef="iSlice__12__"/>
+					<portRef name="G4" instanceRef="iSlice__22__"/>
+					<pip from="S0_X" to="OUT7" position="7,39" dir="-&gt;"/>
+					<pip from="OUT7" to="H6W3" position="7,39" dir="-&gt;"/>
+					<pip from="H6E3" to="H6W3" position="7,33" dir="-&gt;"/>
+					<pip from="H6E3" to="V6N0" position="7,26" dir="-&gt;"/>
+					<pip from="V6M0" to="E1" position="4,26" dir="-&gt;"/>
+					<pip from="W1" to="S23" position="4,28" dir="-&gt;"/>
+					<pip from="N23" to="N_P23" position="5,28" dir="-&gt;"/>
+					<pip from="N_P23" to="S0_F_B1" position="5,28" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT4" position="7,39" dir="-&gt;"/>
+					<pip from="OUT4" to="W19" position="7,39" dir="-&gt;"/>
+					<pip from="W19" to="W_P19" position="7,39" dir="-&gt;"/>
+					<pip from="W_P19" to="S0_G_B2" position="7,39" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT5" position="7,39" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="7,39" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="7,20" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="7,13" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="13,13" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="20,13" dir="-&gt;"/>
+					<pip from="V6N1" to="E9" position="26,13" dir="-&gt;"/>
+					<pip from="W9" to="E9" position="26,15" dir="-&gt;"/>
+					<pip from="E9" to="E_P9" position="26,15" dir="-&gt;"/>
+					<pip from="E_P9" to="S0_F_B3" position="26,15" dir="-&gt;"/>
+					<pip from="OUT5" to="H6E2" position="7,39" dir="-&gt;"/>
+					<pip from="H6M2" to="V6N2" position="7,43" dir="-&gt;"/>
+					<pip from="V6S2" to="H6E1" position="1,43" dir="-&gt;"/>
+					<pip from="H6W1" to="E11" position="1,49" dir="-&gt;"/>
+					<pip from="W11" to="W_P11" position="1,50" dir="-&gt;"/>
+					<pip from="W_P11" to="S0_G_B4" position="1,50" dir="-&gt;"/>
+				</net>
+				<net name="net_L38">
+					<portRef name="Y" instanceRef="iSlice__8__"/>
+					<portRef name="G3" instanceRef="iSlice__12__"/>
+					<pip from="S0_Y" to="OUT2" position="7,39" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="7,39" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="7,20" dir="-&gt;"/>
+					<pip from="H6E2" to="V6S3" position="7,13" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="13,13" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="20,13" dir="-&gt;"/>
+					<pip from="V6N3" to="E21" position="26,13" dir="-&gt;"/>
+					<pip from="W21" to="E21" position="26,15" dir="-&gt;"/>
+					<pip from="E21" to="E_P21" position="26,15" dir="-&gt;"/>
+					<pip from="E_P21" to="S0_G_B3" position="26,15" dir="-&gt;"/>
+				</net>
+				<net name="net_L39">
+					<portRef name="X" instanceRef="iSlice__6__"/>
+					<portRef name="G2" instanceRef="iSlice__6__"/>
+					<portRef name="F3" instanceRef="iSlice__18__"/>
+					<portRef name="F4" instanceRef="iSlice__31__"/>
+					<pip from="S0_X" to="OUT5" position="5,28" dir="-&gt;"/>
+					<pip from="OUT5" to="W16" position="5,28" dir="-&gt;"/>
+					<pip from="W16" to="W_P16" position="5,28" dir="-&gt;"/>
+					<pip from="W_P16" to="S0_G_B2" position="5,28" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT2" position="5,28" dir="-&gt;"/>
+					<pip from="OUT2" to="LLV0" position="5,28" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N0" position="30,28" dir="-&gt;"/>
+					<pip from="V6N0" to="H6E0" position="30,28" dir="-&gt;"/>
+					<pip from="H6W0" to="H6E0" position="30,34" dir="-&gt;"/>
+					<pip from="H6W0" to="H6E0" position="30,41" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="30,44" dir="-&gt;"/>
+					<pip from="V6S0" to="E0" position="30,44" dir="-&gt;"/>
+					<pip from="W0" to="S2" position="30,45" dir="-&gt;"/>
+					<pip from="N2" to="N_P2" position="31,45" dir="-&gt;"/>
+					<pip from="N_P2" to="S0_F_B3" position="31,45" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="5,28" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E1" position="5,2" dir="-&gt;"/>
+					<pip from="H6M1" to="N10" position="5,5" dir="-&gt;"/>
+					<pip from="S10" to="W8" position="4,5" dir="-&gt;"/>
+					<pip from="E8" to="E_P8" position="4,4" dir="-&gt;"/>
+					<pip from="E_P8" to="S0_F_B4" position="4,4" dir="-&gt;"/>
+				</net>
+				<net name="net_L40">
+					<portRef name="Y" instanceRef="iSlice__6__"/>
+					<portRef name="F3" instanceRef="iSlice__3__"/>
+					<pip from="S0_Y" to="OUT3" position="5,28" dir="-&gt;"/>
+					<pip from="OUT3" to="V6S8" position="5,28" dir="-&gt;"/>
+					<pip from="V6N8" to="H6E7" position="11,28" dir="-&gt;"/>
+					<pip from="H6M7" to="S16" position="11,31" dir="-&gt;"/>
+					<pip from="N16" to="W21" position="12,31" dir="-&gt;"/>
+					<pip from="E21" to="E_P21" position="12,30" dir="-&gt;"/>
+					<pip from="E_P21" to="S0_F_B3" position="12,30" dir="-&gt;"/>
+				</net>
+				<net name="net_L57">
+					<portRef name="X" instanceRef="iSlice__20__"/>
+					<portRef name="G1" instanceRef="iSlice__2__"/>
+					<pip from="S0_X" to="OUT2" position="24,18" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="24,18" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W3" position="24,50" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="24,47" dir="-&gt;"/>
+					<pip from="V6M3" to="W20" position="27,47" dir="-&gt;"/>
+					<pip from="E20" to="E_P20" position="27,46" dir="-&gt;"/>
+					<pip from="E_P20" to="S0_G_B1" position="27,46" dir="-&gt;"/>
+				</net>
+				<net name="net_L43">
+					<portRef name="Y" instanceRef="iSlice__15__"/>
+					<portRef name="F4" instanceRef="iSlice__16__"/>
+					<pip from="S0_Y" to="OUT2" position="19,26" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="19,26" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="19,13" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="19,10" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="25,10" dir="-&gt;"/>
+					<pip from="V6M0" to="W3" position="28,10" dir="-&gt;"/>
+					<pip from="E3" to="S1" position="28,9" dir="-&gt;"/>
+					<pip from="N1" to="N_P1" position="29,9" dir="-&gt;"/>
+					<pip from="N_P1" to="S0_F_B4" position="29,9" dir="-&gt;"/>
+				</net>
+				<net name="net_L55">
+					<portRef name="X" instanceRef="iSlice__13__"/>
+					<portRef name="F2" instanceRef="iSlice__4__"/>
+					<portRef name="F2" instanceRef="iSlice__17__"/>
+					<pip from="S0_X" to="OUT2" position="11,4" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="11,4" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="11,43" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="11,39" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="18,39" dir="-&gt;"/>
+					<pip from="V6M0" to="W3" position="21,39" dir="-&gt;"/>
+					<pip from="E3" to="N3" position="21,38" dir="-&gt;"/>
+					<pip from="S3" to="S_P3" position="20,38" dir="-&gt;"/>
+					<pip from="S_P3" to="S0_F_B2" position="20,38" dir="-&gt;"/>
+					<pip from="OUT2" to="LLV0" position="11,4" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S3" position="30,4" dir="-&gt;"/>
+					<pip from="V6S3" to="N19" position="30,4" dir="-&gt;"/>
+					<pip from="S19" to="W21" position="29,4" dir="-&gt;"/>
+					<pip from="E21" to="S23" position="29,3" dir="-&gt;"/>
+					<pip from="S23" to="S_P23" position="29,3" dir="-&gt;"/>
+					<pip from="S_P23" to="S0_F_B2" position="29,3" dir="-&gt;"/>
+				</net>
+				<net name="net_L44">
+					<portRef name="X" instanceRef="iSlice__17__"/>
+					<portRef name="F2" instanceRef="iSlice__1__"/>
+					<pip from="S0_X" to="OUT4" position="29,3" dir="-&gt;"/>
+					<pip from="OUT4" to="V6N2" position="29,3" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="23,3" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="16,3" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="10,3" dir="-&gt;"/>
+					<pip from="V6M2" to="W15" position="7,3" dir="-&gt;"/>
+					<pip from="W15" to="N10" position="7,3" dir="-&gt;"/>
+					<pip from="S10" to="S_P10" position="6,3" dir="-&gt;"/>
+					<pip from="S_P10" to="S0_F_B2" position="6,3" dir="-&gt;"/>
+				</net>
+				<net name="net_L45">
+					<portRef name="Y" instanceRef="iSlice__17__"/>
+					<portRef name="F3" instanceRef="iSlice__1__"/>
+					<pip from="S0_Y" to="OUT0" position="29,3" dir="-&gt;"/>
+					<pip from="OUT0" to="V6N0" position="29,3" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="23,3" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="16,3" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="10,3" dir="-&gt;"/>
+					<pip from="V6M0" to="H6W0" position="7,3" dir="-&gt;"/>
+					<pip from="H6W0" to="N0" position="7,3" dir="-&gt;"/>
+					<pip from="S0" to="S_P0" position="6,3" dir="-&gt;"/>
+					<pip from="S_P0" to="S0_F_B3" position="6,3" dir="-&gt;"/>
+				</net>
+				<net name="net_L52">
+					<portRef name="Y" instanceRef="iSlice__2__"/>
+					<portRef name="G4" instanceRef="iSlice__1__"/>
+					<portRef name="G1" instanceRef="iSlice__4__"/>
+					<portRef name="G1" instanceRef="iSlice__17__"/>
+					<pip from="S0_Y" to="OUT5" position="27,46" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="27,46" dir="-&gt;"/>
+					<pip from="LEFT_LLH0" to="LEFT_H6E0" position="27,1" dir="-&gt;"/>
+					<pip from="H6M0" to="V6N0" position="27,4" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="21,4" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="14,4" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="8,4" dir="-&gt;"/>
+					<pip from="V6M0" to="W3" position="5,4" dir="-&gt;"/>
+					<pip from="E3" to="S1" position="5,3" dir="-&gt;"/>
+					<pip from="N1" to="N_P1" position="6,3" dir="-&gt;"/>
+					<pip from="N_P1" to="S0_G_B4" position="6,3" dir="-&gt;"/>
+					<pip from="OUT5" to="H6W2" position="27,46" dir="-&gt;"/>
+					<pip from="H6E2" to="V6N3" position="27,39" dir="-&gt;"/>
+					<pip from="V6S3" to="W21" position="21,39" dir="-&gt;"/>
+					<pip from="E21" to="N21" position="21,38" dir="-&gt;"/>
+					<pip from="S21" to="S_P21" position="20,38" dir="-&gt;"/>
+					<pip from="S_P21" to="S0_G_B1" position="20,38" dir="-&gt;"/>
+					<pip from="LEFT_LLH0" to="LEFT_H6E1" position="27,1" dir="-&gt;"/>
+					<pip from="H6M1" to="V6S1" position="27,4" dir="-&gt;"/>
+					<pip from="V6M1" to="W8" position="30,4" dir="-&gt;"/>
+					<pip from="E8" to="N12" position="30,3" dir="-&gt;"/>
+					<pip from="S12" to="S_P12" position="29,3" dir="-&gt;"/>
+					<pip from="S_P12" to="S0_G_B1" position="29,3" dir="-&gt;"/>
+				</net>
+				<net name="net_L46">
+					<portRef name="X" instanceRef="iSlice__4__"/>
+					<portRef name="G2" instanceRef="iSlice__3__"/>
+					<portRef name="G2" instanceRef="iSlice__25__"/>
+					<pip from="S0_X" to="OUT2" position="20,38" dir="-&gt;"/>
+					<pip from="OUT2" to="V6N1" position="20,38" dir="-&gt;"/>
+					<pip from="V6S1" to="H6W0" position="13,38" dir="-&gt;"/>
+					<pip from="H6E0" to="H6W0" position="13,32" dir="-&gt;"/>
+					<pip from="H6M0" to="N4" position="13,29" dir="-&gt;"/>
+					<pip from="S4" to="E2" position="12,29" dir="-&gt;"/>
+					<pip from="W2" to="W_P2" position="12,30" dir="-&gt;"/>
+					<pip from="W_P2" to="S0_G_B2" position="12,30" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT4" position="20,38" dir="-&gt;"/>
+					<pip from="OUT4" to="H6W6" position="20,38" dir="-&gt;"/>
+					<pip from="H6E6" to="V6S6" position="20,32" dir="-&gt;"/>
+					<pip from="V6N6" to="H6W10" position="26,32" dir="-&gt;"/>
+					<pip from="H6E10" to="V6S10" position="26,25" dir="-&gt;"/>
+					<pip from="V6M10" to="W1" position="29,25" dir="-&gt;"/>
+					<pip from="E1" to="N1" position="29,24" dir="-&gt;"/>
+					<pip from="S1" to="S_P1" position="28,24" dir="-&gt;"/>
+					<pip from="S_P1" to="S0_G_B2" position="28,24" dir="-&gt;"/>
+				</net>
+				<net name="net_L56">
+					<portRef name="Y" instanceRef="iSlice__13__"/>
+					<portRef name="F4" instanceRef="iSlice__2__"/>
+					<portRef name="G4" instanceRef="iSlice__4__"/>
+					<pip from="S0_Y" to="OUT5" position="11,4" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="11,4" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="11,49" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="11,46" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="18,46" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="24,46" dir="-&gt;"/>
+					<pip from="V6M0" to="W3" position="27,46" dir="-&gt;"/>
+					<pip from="W3" to="W_P3" position="27,46" dir="-&gt;"/>
+					<pip from="W_P3" to="S0_F_B4" position="27,46" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W3" position="11,43" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="11,39" dir="-&gt;"/>
+					<pip from="V6N3" to="S22" position="18,39" dir="-&gt;"/>
+					<pip from="N22" to="W3" position="19,39" dir="-&gt;"/>
+					<pip from="E3" to="S1" position="19,38" dir="-&gt;"/>
+					<pip from="N1" to="N_P1" position="20,38" dir="-&gt;"/>
+					<pip from="N_P1" to="S0_G_B4" position="20,38" dir="-&gt;"/>
+				</net>
+				<net name="net_L51">
+					<portRef name="X" instanceRef="iSlice__2__"/>
+					<portRef name="G3" instanceRef="iSlice__1__"/>
+					<pip from="S0_X" to="OUT2" position="27,46" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="27,46" dir="-&gt;"/>
+					<pip from="LEFT_LLH6" to="LEFT_H6E2" position="27,1" dir="-&gt;"/>
+					<pip from="H6M2" to="V6N2" position="27,4" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="21,4" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="14,4" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="8,4" dir="-&gt;"/>
+					<pip from="V6M2" to="W15" position="5,4" dir="-&gt;"/>
+					<pip from="E15" to="S13" position="5,3" dir="-&gt;"/>
+					<pip from="N13" to="N_P13" position="6,3" dir="-&gt;"/>
+					<pip from="N_P13" to="S0_G_B3" position="6,3" dir="-&gt;"/>
+				</net>
+				<net name="net_L59">
+					<portRef name="Y" instanceRef="iSlice__20__"/>
+					<portRef name="G4" instanceRef="iSlice__2__"/>
+					<portRef name="G4" instanceRef="iSlice__13__"/>
+					<pip from="S0_Y" to="OUT5" position="24,18" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="24,18" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="24,50" dir="-&gt;"/>
+					<pip from="H6M1" to="V6S1" position="24,47" dir="-&gt;"/>
+					<pip from="V6M1" to="W8" position="27,47" dir="-&gt;"/>
+					<pip from="E8" to="E_P8" position="27,46" dir="-&gt;"/>
+					<pip from="E_P8" to="S0_G_B4" position="27,46" dir="-&gt;"/>
+					<pip from="OUT5" to="H6W2" position="24,18" dir="-&gt;"/>
+					<pip from="H6E2" to="V6N3" position="24,11" dir="-&gt;"/>
+					<pip from="V6S3" to="V6N3" position="18,11" dir="-&gt;"/>
+					<pip from="V6S3" to="H6W2" position="11,11" dir="-&gt;"/>
+					<pip from="H6E2" to="W17" position="11,5" dir="-&gt;"/>
+					<pip from="E17" to="E_P17" position="11,4" dir="-&gt;"/>
+					<pip from="E_P17" to="S0_G_B4" position="11,4" dir="-&gt;"/>
+				</net>
+				<net name="net_L58">
+					<portRef name="X" instanceRef="iSlice__27__"/>
+					<portRef name="G3" instanceRef="iSlice__2__"/>
+					<pip from="S0_X" to="OUT2" position="33,8" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="33,8" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="33,47" dir="-&gt;"/>
+					<pip from="H6E0" to="V6N1" position="33,47" dir="-&gt;"/>
+					<pip from="V6S1" to="W9" position="27,47" dir="-&gt;"/>
+					<pip from="E9" to="E_P9" position="27,46" dir="-&gt;"/>
+					<pip from="E_P9" to="S0_G_B3" position="27,46" dir="-&gt;"/>
+				</net>
+				<net name="net_L41">
+					<portRef name="X" instanceRef="iSlice__25__"/>
+					<portRef name="F2" instanceRef="iSlice__16__"/>
+					<pip from="S0_X" to="OUT2" position="28,24" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="28,24" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="28,11" dir="-&gt;"/>
+					<pip from="H6M0" to="S6" position="28,8" dir="-&gt;"/>
+					<pip from="N6" to="E2" position="29,8" dir="-&gt;"/>
+					<pip from="W2" to="W_P2" position="29,9" dir="-&gt;"/>
+					<pip from="W_P2" to="S0_F_B2" position="29,9" dir="-&gt;"/>
+				</net>
+				<net name="net_L32">
+					<portRef name="X" instanceRef="iSlice__14__"/>
+					<portRef name="F1" instanceRef="iSlice__19__"/>
+					<portRef name="G1" instanceRef="iSlice__19__"/>
+					<pip from="S0_X" to="OUT2" position="27,5" dir="-&gt;"/>
+					<pip from="OUT2" to="LLV0" position="27,5" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N3" position="8,5" dir="-&gt;"/>
+					<pip from="V6N3" to="E21" position="8,5" dir="-&gt;"/>
+					<pip from="W21" to="W_P21" position="8,6" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_F_B1" position="8,6" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_G_B1" position="8,6" dir="-&gt;"/>
+				</net>
+				<net name="net_L28">
+					<portRef name="Y" instanceRef="iSlice__9__"/>
+					<portRef name="F2" instanceRef="iSlice__9__"/>
+					<portRef name="F2" instanceRef="iSlice__14__"/>
+					<pip from="S0_Y" to="OUT3" position="13,16" dir="-&gt;"/>
+					<pip from="OUT3" to="W10" position="13,16" dir="-&gt;"/>
+					<pip from="W10" to="W_P10" position="13,16" dir="-&gt;"/>
+					<pip from="W_P10" to="S0_F_B2" position="13,16" dir="-&gt;"/>
+					<pip from="OUT3" to="H6W1" position="13,16" dir="-&gt;"/>
+					<pip from="H6E1" to="V6S2" position="13,9" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="20,9" dir="-&gt;"/>
+					<pip from="V6N2" to="H6W2" position="26,9" dir="-&gt;"/>
+					<pip from="H6M2" to="S18" position="26,6" dir="-&gt;"/>
+					<pip from="N18" to="W23" position="27,6" dir="-&gt;"/>
+					<pip from="E23" to="E_P23" position="27,5" dir="-&gt;"/>
+					<pip from="E_P23" to="S0_F_B2" position="27,5" dir="-&gt;"/>
+				</net>
+				<net name="net_L53">
+					<portRef name="X" instanceRef="iSlice__5__"/>
+					<portRef name="G2" instanceRef="iSlice__5__"/>
+					<portRef name="G1" instanceRef="iSlice__9__"/>
+					<pip from="S0_X" to="OUT4" position="5,10" dir="-&gt;"/>
+					<pip from="OUT4" to="W19" position="5,10" dir="-&gt;"/>
+					<pip from="W19" to="W_P19" position="5,10" dir="-&gt;"/>
+					<pip from="W_P19" to="S0_G_B2" position="5,10" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT3" position="5,10" dir="-&gt;"/>
+					<pip from="OUT3" to="V6S8" position="5,10" dir="-&gt;"/>
+					<pip from="V6N8" to="H6E7" position="11,10" dir="-&gt;"/>
+					<pip from="H6W7" to="V6S8" position="11,17" dir="-&gt;"/>
+					<pip from="V6M8" to="W13" position="14,17" dir="-&gt;"/>
+					<pip from="E13" to="N13" position="14,16" dir="-&gt;"/>
+					<pip from="S13" to="S_P13" position="13,16" dir="-&gt;"/>
+					<pip from="S_P13" to="S0_G_B1" position="13,16" dir="-&gt;"/>
+				</net>
+				<net name="net_L7">
+					<portRef name="X" instanceRef="iSlice__9__"/>
+					<portRef name="F1" instanceRef="iSlice__3__"/>
+					<portRef name="F3" instanceRef="iSlice__4__"/>
+					<portRef name="G1" instanceRef="iSlice__11__"/>
+					<portRef name="G1" instanceRef="iSlice__12__"/>
+					<portRef name="G2" instanceRef="iSlice__13__"/>
+					<portRef name="CE" instanceRef="iSlice__16__"/>
+					<portRef name="F3" instanceRef="iSlice__17__"/>
+					<portRef name="G3" instanceRef="iSlice__17__"/>
+					<portRef name="G1" instanceRef="iSlice__18__"/>
+					<portRef name="F1" instanceRef="iSlice__22__"/>
+					<portRef name="G1" instanceRef="iSlice__22__"/>
+					<portRef name="F1" instanceRef="iSlice__23__"/>
+					<portRef name="F1" instanceRef="iSlice__24__"/>
+					<portRef name="F1" instanceRef="iSlice__26__"/>
+					<portRef name="G1" instanceRef="iSlice__26__"/>
+					<portRef name="F1" instanceRef="iSlice__31__"/>
+					<pip from="S0_X" to="OUT1" position="13,16" dir="-&gt;"/>
+					<pip from="OUT1" to="H6E0" position="13,16" dir="-&gt;"/>
+					<pip from="H6W0" to="H6E0" position="13,22" dir="-&gt;"/>
+					<pip from="H6W0" to="N0" position="13,29" dir="-&gt;"/>
+					<pip from="S0" to="E22" position="12,29" dir="-&gt;"/>
+					<pip from="W22" to="W_P22" position="12,30" dir="-&gt;"/>
+					<pip from="W_P22" to="S0_F_B1" position="12,30" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT4" position="13,16" dir="-&gt;"/>
+					<pip from="OUT4" to="LLH6" position="13,16" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="13,42" dir="-&gt;"/>
+					<pip from="H6M2" to="V6S2" position="13,38" dir="-&gt;"/>
+					<pip from="V6N2" to="S14" position="20,38" dir="-&gt;"/>
+					<pip from="S14" to="S_P14" position="20,38" dir="-&gt;"/>
+					<pip from="S_P14" to="S0_F_B3" position="20,38" dir="-&gt;"/>
+					<pip from="OUT4" to="H6W6" position="13,16" dir="-&gt;"/>
+					<pip from="H6E6" to="V6S6" position="13,9" dir="-&gt;"/>
+					<pip from="V6N6" to="V6S6" position="20,9" dir="-&gt;"/>
+					<pip from="V6N6" to="H6W10" position="26,9" dir="-&gt;"/>
+					<pip from="H6M10" to="N19" position="26,6" dir="-&gt;"/>
+					<pip from="S19" to="E17" position="25,6" dir="-&gt;"/>
+					<pip from="W17" to="W_P17" position="25,7" dir="-&gt;"/>
+					<pip from="W_P17" to="S0_G_B1" position="25,7" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT7" position="13,16" dir="-&gt;"/>
+					<pip from="OUT7" to="V6S10" position="13,16" dir="-&gt;"/>
+					<pip from="V6N10" to="V6S10" position="20,16" dir="-&gt;"/>
+					<pip from="V6N10" to="W20" position="26,16" dir="-&gt;"/>
+					<pip from="E20" to="E_P20" position="26,15" dir="-&gt;"/>
+					<pip from="E_P20" to="S0_G_B1" position="26,15" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E3" position="13,3" dir="-&gt;"/>
+					<pip from="H6E3" to="N18" position="13,3" dir="-&gt;"/>
+					<pip from="S18" to="N18" position="12,3" dir="-&gt;"/>
+					<pip from="S18" to="E12" position="11,3" dir="-&gt;"/>
+					<pip from="W12" to="W_P12" position="11,4" dir="-&gt;"/>
+					<pip from="W_P12" to="S0_G_B2" position="11,4" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT5" position="13,16" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="13,16" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S2" position="26,16" dir="-&gt;"/>
+					<pip from="V6M2" to="H6W2" position="29,16" dir="-&gt;"/>
+					<pip from="H6E2" to="V6N3" position="29,9" dir="-&gt;"/>
+					<pip from="V6N3" to="S0_CE_B" position="29,9" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N1" position="32,16" dir="-&gt;"/>
+					<pip from="V6M1" to="H6W1" position="29,16" dir="-&gt;"/>
+					<pip from="H6E1" to="H6W1" position="29,9" dir="-&gt;"/>
+					<pip from="H6E1" to="N6" position="29,3" dir="-&gt;"/>
+					<pip from="N6" to="N_P6" position="29,3" dir="-&gt;"/>
+					<pip from="N_P6" to="S0_F_B3" position="29,3" dir="-&gt;"/>
+					<pip from="N_P6" to="S0_G_B3" position="29,3" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="13,48" dir="-&gt;"/>
+					<pip from="H6M1" to="V6S1" position="13,45" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="20,45" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="26,45" dir="-&gt;"/>
+					<pip from="V6N1" to="H6E1" position="32,45" dir="-&gt;"/>
+					<pip from="H6E1" to="N6" position="32,45" dir="-&gt;"/>
+					<pip from="S6" to="S_P6" position="31,45" dir="-&gt;"/>
+					<pip from="S_P6" to="S0_G_B1" position="31,45" dir="-&gt;"/>
+					<pip from="RIGHT_LLH7" to="RIGHT_H6D3" position="13,53" dir="-&gt;"/>
+					<pip from="H6M3" to="V6N3" position="13,51" dir="-&gt;"/>
+					<pip from="V6S3" to="V6N3" position="7,51" dir="-&gt;"/>
+					<pip from="V6S3" to="W21" position="1,51" dir="-&gt;"/>
+					<pip from="E21" to="W21" position="1,50" dir="-&gt;"/>
+					<pip from="W21" to="W_P21" position="1,50" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_F_B1" position="1,50" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_G_B1" position="1,50" dir="-&gt;"/>
+					<pip from="OUT5" to="H6W2" position="13,16" dir="-&gt;"/>
+					<pip from="H6E2" to="V6S3" position="13,9" dir="-&gt;"/>
+					<pip from="V6M3" to="H6W3" position="16,9" dir="-&gt;"/>
+					<pip from="H6M3" to="S21" position="16,6" dir="-&gt;"/>
+					<pip from="N21" to="E21" position="18,6" dir="-&gt;"/>
+					<pip from="W21" to="W_P21" position="18,7" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_F_B1" position="18,7" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="13,48" dir="-&gt;"/>
+					<pip from="H6M0" to="V6N0" position="13,45" dir="-&gt;"/>
+					<pip from="V6S0" to="V6N0" position="7,45" dir="-&gt;"/>
+					<pip from="V6S0" to="H6W3" position="1,45" dir="-&gt;"/>
+					<pip from="H6W3" to="S20" position="1,45" dir="-&gt;"/>
+					<pip from="N20" to="N_P20" position="2,45" dir="-&gt;"/>
+					<pip from="N_P20" to="S0_F_B1" position="2,45" dir="-&gt;"/>
+					<pip from="OUT5" to="H6E2" position="13,16" dir="-&gt;"/>
+					<pip from="H6W2" to="H6E2" position="13,22" dir="-&gt;"/>
+					<pip from="H6W2" to="V6N2" position="13,29" dir="-&gt;"/>
+					<pip from="V6S2" to="E12" position="7,29" dir="-&gt;"/>
+					<pip from="W12" to="E12" position="7,30" dir="-&gt;"/>
+					<pip from="W12" to="S14" position="7,31" dir="-&gt;"/>
+					<pip from="N14" to="N_P14" position="8,31" dir="-&gt;"/>
+					<pip from="N_P14" to="S0_F_B1" position="8,31" dir="-&gt;"/>
+					<pip from="N_P14" to="S0_G_B1" position="8,31" dir="-&gt;"/>
+					<pip from="H6E6" to="V6N7" position="13,9" dir="-&gt;"/>
+					<pip from="V6M7" to="H6W6" position="10,9" dir="-&gt;"/>
+					<pip from="H6E6" to="V6N7" position="10,3" dir="-&gt;"/>
+					<pip from="V6S7" to="E17" position="4,3" dir="-&gt;"/>
+					<pip from="W17" to="W_P17" position="4,4" dir="-&gt;"/>
+					<pip from="W_P17" to="S0_F_B1" position="4,4" dir="-&gt;"/>
+				</net>
+				<net name="count[2]">
+					<portRef name="YQ" instanceRef="iSlice__1__"/>
+					<portRef name="F1" instanceRef="iSlice__2__"/>
+					<portRef name="F3" instanceRef="iSlice__13__"/>
+					<portRef name="F3" instanceRef="iSlice__15__"/>
+					<portRef name="G3" instanceRef="iSlice__15__"/>
+					<portRef name="G3" instanceRef="iSlice__20__"/>
+					<portRef name="G2" instanceRef="iSlice__21__"/>
+					<portRef name="G3" instanceRef="iSlice__26__"/>
+					<portRef name="F3" instanceRef="iSlice__28__"/>
+					<portRef name="G1" instanceRef="iSlice__28__"/>
+					<portRef name="F1" instanceRef="iSlice__29__"/>
+					<portRef name="G1" instanceRef="iSlice__29__"/>
+					<portRef name="F3" instanceRef="iSlice__30__"/>
+					<portRef name="G2" instanceRef="iSlice__30__"/>
+					<pip from="S0_YQ" to="OUT4" position="6,3" dir="-&gt;"/>
+					<pip from="OUT4" to="LLH6" position="6,3" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="6,48" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="6,45" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="12,45" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="19,45" dir="-&gt;"/>
+					<pip from="V6N0" to="S2" position="25,45" dir="-&gt;"/>
+					<pip from="N2" to="E22" position="26,45" dir="-&gt;"/>
+					<pip from="W22" to="S20" position="26,46" dir="-&gt;"/>
+					<pip from="N20" to="N_P20" position="27,46" dir="-&gt;"/>
+					<pip from="N_P20" to="S0_F_B1" position="27,46" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT1" position="6,3" dir="-&gt;"/>
+					<pip from="OUT1" to="V6S4" position="6,3" dir="-&gt;"/>
+					<pip from="V6N4" to="E1" position="12,3" dir="-&gt;"/>
+					<pip from="W1" to="N20" position="12,4" dir="-&gt;"/>
+					<pip from="S20" to="S_P20" position="11,4" dir="-&gt;"/>
+					<pip from="S_P20" to="S0_F_B3" position="11,4" dir="-&gt;"/>
+					<pip from="LLH0" to="H6E0" position="6,22" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="6,25" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="12,25" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="19,25" dir="-&gt;"/>
+					<pip from="V6S0" to="E0" position="19,25" dir="-&gt;"/>
+					<pip from="W0" to="W_P0" position="19,26" dir="-&gt;"/>
+					<pip from="W_P0" to="S0_F_B3" position="19,26" dir="-&gt;"/>
+					<pip from="W_P0" to="S0_G_B3" position="19,26" dir="-&gt;"/>
+					<pip from="OUT1" to="LLV0" position="6,3" dir="-&gt;"/>
+					<pip from="LLV0" to="V6S0" position="19,3" dir="-&gt;"/>
+					<pip from="V6N0" to="H6E0" position="25,3" dir="-&gt;"/>
+					<pip from="H6W0" to="H6E0" position="25,9" dir="-&gt;"/>
+					<pip from="H6W0" to="E22" position="25,16" dir="-&gt;"/>
+					<pip from="W22" to="N21" position="25,17" dir="-&gt;"/>
+					<pip from="S21" to="E23" position="24,17" dir="-&gt;"/>
+					<pip from="W23" to="W_P23" position="24,18" dir="-&gt;"/>
+					<pip from="W_P23" to="S0_G_B3" position="24,18" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N1" position="31,3" dir="-&gt;"/>
+					<pip from="V6M1" to="H6W1" position="28,3" dir="-&gt;"/>
+					<pip from="H6W1" to="S8" position="28,3" dir="-&gt;"/>
+					<pip from="N8" to="N_P8" position="29,3" dir="-&gt;"/>
+					<pip from="N_P8" to="S1_G_B2" position="29,3" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E3" position="6,29" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="6,32" dir="-&gt;"/>
+					<pip from="V6M3" to="W20" position="9,32" dir="-&gt;"/>
+					<pip from="E20" to="N0" position="9,31" dir="-&gt;"/>
+					<pip from="S0" to="S_P0" position="8,31" dir="-&gt;"/>
+					<pip from="S_P0" to="S0_G_B3" position="8,31" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT2" position="6,3" dir="-&gt;"/>
+					<pip from="OUT2" to="H6E9" position="6,3" dir="-&gt;"/>
+					<pip from="H6W9" to="V6S4" position="6,9" dir="-&gt;"/>
+					<pip from="V6M4" to="E0" position="9,9" dir="-&gt;"/>
+					<pip from="W0" to="W_P0" position="9,10" dir="-&gt;"/>
+					<pip from="W_P0" to="S0_F_B3" position="9,10" dir="-&gt;"/>
+					<pip from="OUT1" to="H6E0" position="6,3" dir="-&gt;"/>
+					<pip from="H6W0" to="V6S0" position="6,9" dir="-&gt;"/>
+					<pip from="V6M0" to="H6W0" position="9,9" dir="-&gt;"/>
+					<pip from="H6W0" to="E22" position="9,9" dir="-&gt;"/>
+					<pip from="W22" to="W_P22" position="9,10" dir="-&gt;"/>
+					<pip from="W_P22" to="S0_G_B1" position="9,10" dir="-&gt;"/>
+					<pip from="OUT4" to="V6S2" position="6,3" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="12,3" dir="-&gt;"/>
+					<pip from="V6N2" to="H6E2" position="19,3" dir="-&gt;"/>
+					<pip from="H6W2" to="N12" position="19,9" dir="-&gt;"/>
+					<pip from="S12" to="S_P12" position="18,9" dir="-&gt;"/>
+					<pip from="S_P12" to="S0_F_B1" position="18,9" dir="-&gt;"/>
+					<pip from="S_P12" to="S0_G_B1" position="18,9" dir="-&gt;"/>
+					<pip from="H6E3" to="V6S0" position="6,29" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="12,29" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="19,29" dir="-&gt;"/>
+					<pip from="V6N0" to="S2" position="25,29" dir="-&gt;"/>
+					<pip from="N2" to="N_P2" position="26,29" dir="-&gt;"/>
+					<pip from="N_P2" to="S0_F_B3" position="26,29" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="6,35" dir="-&gt;"/>
+					<pip from="H6E1" to="V6S2" position="6,29" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="12,29" dir="-&gt;"/>
+					<pip from="V6N2" to="V6S2" position="19,29" dir="-&gt;"/>
+					<pip from="V6N2" to="H6E2" position="25,29" dir="-&gt;"/>
+					<pip from="H6E2" to="S16" position="25,29" dir="-&gt;"/>
+					<pip from="N16" to="N_P16" position="26,29" dir="-&gt;"/>
+					<pip from="N_P16" to="S0_G_B2" position="26,29" dir="-&gt;"/>
+				</net>
+				<net name="count[1]">
+					<portRef name="YQ" instanceRef="iSlice__3__"/>
+					<portRef name="F2" instanceRef="iSlice__2__"/>
+					<portRef name="G2" instanceRef="iSlice__4__"/>
+					<portRef name="F2" instanceRef="iSlice__13__"/>
+					<portRef name="G2" instanceRef="iSlice__15__"/>
+					<portRef name="F1" instanceRef="iSlice__20__"/>
+					<portRef name="G2" instanceRef="iSlice__20__"/>
+					<portRef name="G1" instanceRef="iSlice__21__"/>
+					<portRef name="F1" instanceRef="iSlice__25__"/>
+					<portRef name="F3" instanceRef="iSlice__26__"/>
+					<portRef name="F2" instanceRef="iSlice__28__"/>
+					<portRef name="G3" instanceRef="iSlice__28__"/>
+					<portRef name="F3" instanceRef="iSlice__29__"/>
+					<portRef name="G2" instanceRef="iSlice__29__"/>
+					<portRef name="F1" instanceRef="iSlice__30__"/>
+					<portRef name="G1" instanceRef="iSlice__30__"/>
+					<pip from="S0_YQ" to="OUT1" position="12,30" dir="-&gt;"/>
+					<pip from="OUT1" to="LLV0" position="12,30" dir="-&gt;"/>
+					<pip from="LLV0" to="V6S0" position="25,30" dir="-&gt;"/>
+					<pip from="V6M0" to="H6E0" position="28,30" dir="-&gt;"/>
+					<pip from="H6W0" to="H6E0" position="28,36" dir="-&gt;"/>
+					<pip from="H6W0" to="H6E0" position="28,43" dir="-&gt;"/>
+					<pip from="H6M0" to="N4" position="28,46" dir="-&gt;"/>
+					<pip from="S4" to="S_P4" position="27,46" dir="-&gt;"/>
+					<pip from="S_P4" to="S0_F_B2" position="27,46" dir="-&gt;"/>
+					<pip from="OUT1" to="V6S4" position="12,30" dir="-&gt;"/>
+					<pip from="V6N4" to="H6E9" position="19,30" dir="-&gt;"/>
+					<pip from="H6W9" to="H6E9" position="19,36" dir="-&gt;"/>
+					<pip from="H6M9" to="S8" position="19,39" dir="-&gt;"/>
+					<pip from="N8" to="W13" position="20,39" dir="-&gt;"/>
+					<pip from="E13" to="E_P13" position="20,38" dir="-&gt;"/>
+					<pip from="E_P13" to="S0_G_B2" position="20,38" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT4" position="12,30" dir="-&gt;"/>
+					<pip from="OUT4" to="LLH6" position="12,30" dir="-&gt;"/>
+					<pip from="LEFT_LLH9" to="LEFT_H6M0" position="12,1" dir="-&gt;"/>
+					<pip from="H6W0" to="V6S0" position="12,4" dir="-&gt;"/>
+					<pip from="V6S0" to="N1" position="12,4" dir="-&gt;"/>
+					<pip from="S1" to="S_P1" position="11,4" dir="-&gt;"/>
+					<pip from="S_P1" to="S0_F_B2" position="11,4" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT5" position="12,30" dir="-&gt;"/>
+					<pip from="OUT5" to="V6S6" position="12,30" dir="-&gt;"/>
+					<pip from="V6N6" to="H6W10" position="19,30" dir="-&gt;"/>
+					<pip from="H6M10" to="S23" position="19,26" dir="-&gt;"/>
+					<pip from="S23" to="S_P23" position="19,26" dir="-&gt;"/>
+					<pip from="S_P23" to="S0_G_B2" position="19,26" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT6" position="12,30" dir="-&gt;"/>
+					<pip from="OUT6" to="V6S3" position="12,30" dir="-&gt;"/>
+					<pip from="V6N3" to="H6W3" position="19,30" dir="-&gt;"/>
+					<pip from="H6E3" to="H6W3" position="19,23" dir="-&gt;"/>
+					<pip from="H6E3" to="V6S0" position="19,17" dir="-&gt;"/>
+					<pip from="V6N0" to="H6W0" position="25,17" dir="-&gt;"/>
+					<pip from="H6W0" to="E22" position="25,17" dir="-&gt;"/>
+					<pip from="W22" to="N21" position="25,18" dir="-&gt;"/>
+					<pip from="S21" to="S_P21" position="24,18" dir="-&gt;"/>
+					<pip from="S_P21" to="S0_F_B1" position="24,18" dir="-&gt;"/>
+					<pip from="S0_YQ" to="OUT0" position="12,30" dir="-&gt;"/>
+					<pip from="OUT0" to="V6S0" position="12,30" dir="-&gt;"/>
+					<pip from="V6N0" to="H6W0" position="19,30" dir="-&gt;"/>
+					<pip from="H6E0" to="H6W0" position="19,23" dir="-&gt;"/>
+					<pip from="H6E0" to="V6S1" position="19,17" dir="-&gt;"/>
+					<pip from="V6N1" to="E9" position="25,17" dir="-&gt;"/>
+					<pip from="W9" to="N4" position="25,18" dir="-&gt;"/>
+					<pip from="S4" to="S_P4" position="24,18" dir="-&gt;"/>
+					<pip from="S_P4" to="S0_G_B2" position="24,18" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="19,4" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="25,4" dir="-&gt;"/>
+					<pip from="V6M0" to="W3" position="28,4" dir="-&gt;"/>
+					<pip from="E3" to="S1" position="28,3" dir="-&gt;"/>
+					<pip from="N1" to="N_P1" position="29,3" dir="-&gt;"/>
+					<pip from="N_P1" to="S1_G_B1" position="29,3" dir="-&gt;"/>
+					<pip from="OUT6" to="LLV6" position="12,30" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S2" position="25,30" dir="-&gt;"/>
+					<pip from="V6M2" to="H6W2" position="28,30" dir="-&gt;"/>
+					<pip from="H6E2" to="V6N3" position="28,23" dir="-&gt;"/>
+					<pip from="V6N3" to="E21" position="28,23" dir="-&gt;"/>
+					<pip from="W21" to="W_P21" position="28,24" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_F_B1" position="28,24" dir="-&gt;"/>
+					<pip from="OUT0" to="V6N0" position="12,30" dir="-&gt;"/>
+					<pip from="V6M0" to="E1" position="9,30" dir="-&gt;"/>
+					<pip from="W1" to="N20" position="9,31" dir="-&gt;"/>
+					<pip from="S20" to="S_P20" position="8,31" dir="-&gt;"/>
+					<pip from="S_P20" to="S0_F_B3" position="8,31" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="12,17" dir="-&gt;"/>
+					<pip from="H6E2" to="V6N3" position="12,10" dir="-&gt;"/>
+					<pip from="V6M3" to="W20" position="9,10" dir="-&gt;"/>
+					<pip from="W20" to="W_P20" position="9,10" dir="-&gt;"/>
+					<pip from="W_P20" to="S0_F_B2" position="9,10" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W3" position="12,17" dir="-&gt;"/>
+					<pip from="H6E3" to="V6N0" position="12,10" dir="-&gt;"/>
+					<pip from="V6M0" to="E1" position="9,10" dir="-&gt;"/>
+					<pip from="E1" to="E_P1" position="9,10" dir="-&gt;"/>
+					<pip from="E_P1" to="S0_G_B3" position="9,10" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E2" position="12,4" dir="-&gt;"/>
+					<pip from="H6W2" to="V6S2" position="12,10" dir="-&gt;"/>
+					<pip from="V6N2" to="W16" position="19,10" dir="-&gt;"/>
+					<pip from="E16" to="N20" position="19,9" dir="-&gt;"/>
+					<pip from="S20" to="S_P20" position="18,9" dir="-&gt;"/>
+					<pip from="S_P20" to="S0_F_B3" position="18,9" dir="-&gt;"/>
+					<pip from="S20" to="E18" position="18,9" dir="-&gt;"/>
+					<pip from="E18" to="E_P18" position="18,9" dir="-&gt;"/>
+					<pip from="E_P18" to="S0_G_B2" position="18,9" dir="-&gt;"/>
+					<pip from="V6N4" to="V6S4" position="19,30" dir="-&gt;"/>
+					<pip from="V6N4" to="S1" position="25,30" dir="-&gt;"/>
+					<pip from="N1" to="W2" position="26,30" dir="-&gt;"/>
+					<pip from="E2" to="E_P2" position="26,29" dir="-&gt;"/>
+					<pip from="E_P2" to="S0_F_B1" position="26,29" dir="-&gt;"/>
+					<pip from="E_P2" to="S0_G_B1" position="26,29" dir="-&gt;"/>
+				</net>
+				<net name="count[0]">
+					<portRef name="XQ" instanceRef="iSlice__1__"/>
+					<portRef name="F3" instanceRef="iSlice__2__"/>
+					<portRef name="G3" instanceRef="iSlice__4__"/>
+					<portRef name="F1" instanceRef="iSlice__13__"/>
+					<portRef name="F1" instanceRef="iSlice__15__"/>
+					<portRef name="G1" instanceRef="iSlice__15__"/>
+					<portRef name="G2" instanceRef="iSlice__17__"/>
+					<portRef name="G1" instanceRef="iSlice__20__"/>
+					<portRef name="G3" instanceRef="iSlice__21__"/>
+					<portRef name="F1" instanceRef="iSlice__28__"/>
+					<portRef name="G2" instanceRef="iSlice__28__"/>
+					<portRef name="F2" instanceRef="iSlice__29__"/>
+					<portRef name="G3" instanceRef="iSlice__29__"/>
+					<portRef name="F2" instanceRef="iSlice__30__"/>
+					<portRef name="G3" instanceRef="iSlice__30__"/>
+					<pip from="S0_XQ" to="OUT3" position="6,3" dir="-&gt;"/>
+					<pip from="OUT3" to="LLH0" position="6,3" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W3" position="6,48" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="6,45" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="12,45" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="19,45" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="25,45" dir="-&gt;"/>
+					<pip from="V6M3" to="E19" position="28,45" dir="-&gt;"/>
+					<pip from="W19" to="N14" position="28,46" dir="-&gt;"/>
+					<pip from="S14" to="S_P14" position="27,46" dir="-&gt;"/>
+					<pip from="S_P14" to="S0_F_B3" position="27,46" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W0" position="6,42" dir="-&gt;"/>
+					<pip from="H6M0" to="V6S0" position="6,38" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="12,38" dir="-&gt;"/>
+					<pip from="V6N0" to="S2" position="19,38" dir="-&gt;"/>
+					<pip from="N2" to="N_P2" position="20,38" dir="-&gt;"/>
+					<pip from="N_P2" to="S0_G_B3" position="20,38" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT5" position="6,3" dir="-&gt;"/>
+					<pip from="OUT5" to="V6S6" position="6,3" dir="-&gt;"/>
+					<pip from="V6N6" to="E13" position="12,3" dir="-&gt;"/>
+					<pip from="W13" to="E13" position="12,4" dir="-&gt;"/>
+					<pip from="E13" to="N13" position="12,4" dir="-&gt;"/>
+					<pip from="S13" to="S_P13" position="11,4" dir="-&gt;"/>
+					<pip from="S_P13" to="S0_F_B1" position="11,4" dir="-&gt;"/>
+					<pip from="LLH6" to="H6E3" position="6,22" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="6,25" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="12,25" dir="-&gt;"/>
+					<pip from="V6N3" to="E21" position="19,25" dir="-&gt;"/>
+					<pip from="W21" to="W_P21" position="19,26" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_F_B1" position="19,26" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_G_B1" position="19,26" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="6,3" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N2" position="31,3" dir="-&gt;"/>
+					<pip from="V6M2" to="H6E2" position="28,3" dir="-&gt;"/>
+					<pip from="H6E2" to="S16" position="28,3" dir="-&gt;"/>
+					<pip from="N16" to="N_P16" position="29,3" dir="-&gt;"/>
+					<pip from="N_P16" to="S0_G_B2" position="29,3" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S3" position="19,3" dir="-&gt;"/>
+					<pip from="V6N3" to="H6E3" position="25,3" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="25,9" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="25,16" dir="-&gt;"/>
+					<pip from="H6M3" to="N22" position="25,19" dir="-&gt;"/>
+					<pip from="S22" to="W20" position="24,19" dir="-&gt;"/>
+					<pip from="E20" to="E_P20" position="24,18" dir="-&gt;"/>
+					<pip from="E_P20" to="S0_G_B1" position="24,18" dir="-&gt;"/>
+					<pip from="N_P16" to="S1_G_B3" position="29,3" dir="-&gt;"/>
+					<pip from="OUT5" to="H6E2" position="6,3" dir="-&gt;"/>
+					<pip from="H6W2" to="V6S2" position="6,9" dir="-&gt;"/>
+					<pip from="V6M2" to="E13" position="9,9" dir="-&gt;"/>
+					<pip from="W13" to="W_P13" position="9,10" dir="-&gt;"/>
+					<pip from="W_P13" to="S0_F_B1" position="9,10" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT6" position="6,3" dir="-&gt;"/>
+					<pip from="OUT6" to="H6E11" position="6,3" dir="-&gt;"/>
+					<pip from="H6W11" to="V6S6" position="6,9" dir="-&gt;"/>
+					<pip from="V6M6" to="E12" position="9,9" dir="-&gt;"/>
+					<pip from="W12" to="W_P12" position="9,10" dir="-&gt;"/>
+					<pip from="W_P12" to="S0_G_B2" position="9,10" dir="-&gt;"/>
+					<pip from="S0_XQ" to="OUT0" position="6,3" dir="-&gt;"/>
+					<pip from="OUT0" to="V6S0" position="6,3" dir="-&gt;"/>
+					<pip from="V6N0" to="H6E0" position="12,3" dir="-&gt;"/>
+					<pip from="H6W0" to="V6S0" position="12,9" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="19,9" dir="-&gt;"/>
+					<pip from="V6S0" to="N1" position="19,9" dir="-&gt;"/>
+					<pip from="S1" to="S_P1" position="18,9" dir="-&gt;"/>
+					<pip from="S_P1" to="S0_F_B2" position="18,9" dir="-&gt;"/>
+					<pip from="V6N0" to="V6S0" position="12,3" dir="-&gt;"/>
+					<pip from="V6N0" to="H6E0" position="19,3" dir="-&gt;"/>
+					<pip from="H6W0" to="N0" position="19,9" dir="-&gt;"/>
+					<pip from="S0" to="S_P0" position="18,9" dir="-&gt;"/>
+					<pip from="S_P0" to="S0_G_B3" position="18,9" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="6,29" dir="-&gt;"/>
+					<pip from="H6W1" to="V6S1" position="6,29" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="12,29" dir="-&gt;"/>
+					<pip from="V6N1" to="V6S1" position="19,29" dir="-&gt;"/>
+					<pip from="V6N1" to="S10" position="25,29" dir="-&gt;"/>
+					<pip from="N10" to="E6" position="26,29" dir="-&gt;"/>
+					<pip from="E6" to="E_P6" position="26,29" dir="-&gt;"/>
+					<pip from="E_P6" to="S0_F_B2" position="26,29" dir="-&gt;"/>
+					<pip from="V6N1" to="H6W1" position="25,29" dir="-&gt;"/>
+					<pip from="H6W1" to="S8" position="25,29" dir="-&gt;"/>
+					<pip from="N8" to="N_P8" position="26,29" dir="-&gt;"/>
+					<pip from="N_P8" to="S0_G_B3" position="26,29" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-seg[0]">
+					<portRef name="Y" instanceRef="iSlice__21__"/>
+					<portRef name="OUT" instanceRef="seg[0]"/>
+					<pip from="S1_Y" to="OUT2" position="29,3" dir="-&gt;"/>
+					<pip from="OUT2" to="LLV0" position="29,3" dir="-&gt;"/>
+					<pip from="LLV0" to="V6N0" position="4,3" dir="-&gt;"/>
+					<pip from="V6N0" to="W4" position="4,3" dir="-&gt;"/>
+					<pip from="E4" to="S10" position="4,2" dir="-&gt;"/>
+					<pip from="N10" to="W15" position="5,2" dir="-&gt;"/>
+					<pip from="LEFT_E15" to="LEFT_E_BUF15" position="5,1" dir="-&gt;"/>
+					<pip from="LEFT_E_BUF15" to="LEFT_O2" position="5,1" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-seg[1]">
+					<portRef name="X" instanceRef="iSlice__28__"/>
+					<portRef name="OUT" instanceRef="seg[1]"/>
+					<pip from="S0_X" to="OUT6" position="9,10" dir="-&gt;"/>
+					<pip from="OUT6" to="H6W10" position="9,10" dir="-&gt;"/>
+					<pip from="H6E10" to="V6N11" position="9,4" dir="-&gt;"/>
+					<pip from="V6M11" to="H6W10" position="6,4" dir="-&gt;"/>
+					<pip from="LEFT_H6M10" to="LEFT_H6B11" position="6,1" dir="-&gt;"/>
+					<pip from="H6M11" to="N23" position="6,2" dir="-&gt;"/>
+					<pip from="S23" to="W1" position="5,2" dir="-&gt;"/>
+					<pip from="LEFT_E1" to="LEFT_E_BUF1" position="5,1" dir="-&gt;"/>
+					<pip from="LEFT_E_BUF1" to="LEFT_O1" position="5,1" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-seg[2]">
+					<portRef name="Y" instanceRef="iSlice__28__"/>
+					<portRef name="OUT" instanceRef="seg[2]"/>
+					<pip from="S0_Y" to="OUT4" position="9,10" dir="-&gt;"/>
+					<pip from="OUT4" to="H6W6" position="9,10" dir="-&gt;"/>
+					<pip from="H6E6" to="V6N7" position="9,4" dir="-&gt;"/>
+					<pip from="V6S7" to="H6W6" position="3,4" dir="-&gt;"/>
+					<pip from="LEFT_H6M6" to="LEFT_H6B7" position="3,1" dir="-&gt;"/>
+					<pip from="H6M7" to="S16" position="3,2" dir="-&gt;"/>
+					<pip from="N16" to="W21" position="4,2" dir="-&gt;"/>
+					<pip from="LEFT_E21" to="LEFT_E_BUF21" position="4,1" dir="-&gt;"/>
+					<pip from="LEFT_E_BUF21" to="LEFT_O3" position="4,1" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-seg[3]">
+					<portRef name="X" instanceRef="iSlice__29__"/>
+					<portRef name="OUT" instanceRef="seg[3]"/>
+					<pip from="S0_X" to="OUT5" position="18,9" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="18,9" dir="-&gt;"/>
+					<pip from="TOP_LLV1" to="TOP_V6D0" position="0,9" dir="-&gt;"/>
+					<pip from="V6M0" to="H6W0" position="2,9" dir="-&gt;"/>
+					<pip from="H6E0" to="S4" position="2,3" dir="-&gt;"/>
+					<pip from="N4" to="W9" position="3,3" dir="-&gt;"/>
+					<pip from="E9" to="W9" position="3,2" dir="-&gt;"/>
+					<pip from="LEFT_E9" to="LEFT_E_BUF9" position="3,1" dir="-&gt;"/>
+					<pip from="LEFT_E_BUF9" to="LEFT_O1" position="3,1" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-seg[4]">
+					<portRef name="Y" instanceRef="iSlice__29__"/>
+					<portRef name="OUT" instanceRef="seg[4]"/>
+					<pip from="S0_Y" to="OUT4" position="18,9" dir="-&gt;"/>
+					<pip from="OUT4" to="V6N2" position="18,9" dir="-&gt;"/>
+					<pip from="V6S2" to="H6W1" position="11,9" dir="-&gt;"/>
+					<pip from="H6M1" to="V6N1" position="11,6" dir="-&gt;"/>
+					<pip from="V6M1" to="H6W1" position="8,6" dir="-&gt;"/>
+					<pip from="LEFT_H6A1" to="LEFT_H6A_BUF1" position="8,1" dir="-&gt;"/>
+					<pip from="LEFT_H6A_BUF1" to="LEFT_O1" position="8,1" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-seg[5]">
+					<portRef name="X" instanceRef="iSlice__30__"/>
+					<portRef name="OUT" instanceRef="seg[5]"/>
+					<pip from="S0_X" to="OUT2" position="26,29" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="26,29" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="26,3" dir="-&gt;"/>
+					<pip from="H6W1" to="V6N1" position="26,3" dir="-&gt;"/>
+					<pip from="V6S1" to="V6N1" position="20,3" dir="-&gt;"/>
+					<pip from="V6S1" to="V6N1" position="13,3" dir="-&gt;"/>
+					<pip from="V6S1" to="W9" position="7,3" dir="-&gt;"/>
+					<pip from="E9" to="W9" position="7,2" dir="-&gt;"/>
+					<pip from="LEFT_E9" to="LEFT_E_BUF9" position="7,1" dir="-&gt;"/>
+					<pip from="LEFT_E_BUF9" to="LEFT_O1" position="7,1" dir="-&gt;"/>
+				</net>
+				<net name="net_Buf-pad-seg[6]">
+					<portRef name="Y" instanceRef="iSlice__30__"/>
+					<portRef name="OUT" instanceRef="seg[6]"/>
+					<pip from="S0_Y" to="OUT5" position="26,29" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="26,29" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W2" position="26,3" dir="-&gt;"/>
+					<pip from="H6W2" to="V6N2" position="26,3" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="20,3" dir="-&gt;"/>
+					<pip from="V6S2" to="V6N2" position="13,3" dir="-&gt;"/>
+					<pip from="V6M2" to="W15" position="10,3" dir="-&gt;"/>
+					<pip from="E15" to="N15" position="10,2" dir="-&gt;"/>
+					<pip from="S15" to="W17" position="9,2" dir="-&gt;"/>
+					<pip from="LEFT_E17" to="LEFT_E_BUF17" position="9,1" dir="-&gt;"/>
+					<pip from="LEFT_E_BUF17" to="LEFT_O2" position="9,1" dir="-&gt;"/>
+				</net>
+				<net name="net_L47">
+					<portRef name="X" instanceRef="iSlice__26__"/>
+					<portRef name="G3" instanceRef="iSlice__3__"/>
+					<pip from="S0_X" to="OUT4" position="8,31" dir="-&gt;"/>
+					<pip from="OUT4" to="V6S2" position="8,31" dir="-&gt;"/>
+					<pip from="V6M2" to="W15" position="11,31" dir="-&gt;"/>
+					<pip from="E15" to="S13" position="11,30" dir="-&gt;"/>
+					<pip from="N13" to="N_P13" position="12,30" dir="-&gt;"/>
+					<pip from="N_P13" to="S0_G_B3" position="12,30" dir="-&gt;"/>
+				</net>
+				<net name="net_L48">
+					<portRef name="Y" instanceRef="iSlice__4__"/>
+					<portRef name="G4" instanceRef="iSlice__3__"/>
+					<pip from="S0_Y" to="OUT5" position="20,38" dir="-&gt;"/>
+					<pip from="OUT5" to="V6N7" position="20,38" dir="-&gt;"/>
+					<pip from="V6S7" to="H6W6" position="13,38" dir="-&gt;"/>
+					<pip from="H6E6" to="W15" position="13,32" dir="-&gt;"/>
+					<pip from="E15" to="N15" position="13,31" dir="-&gt;"/>
+					<pip from="S15" to="W17" position="12,31" dir="-&gt;"/>
+					<pip from="E17" to="E_P17" position="12,30" dir="-&gt;"/>
+					<pip from="E_P17" to="S0_G_B4" position="12,30" dir="-&gt;"/>
+				</net>
+				<net name="net_L50">
+					<portRef name="Y" instanceRef="iSlice__26__"/>
+					<portRef name="G2" instanceRef="iSlice__1__"/>
+					<pip from="S0_Y" to="OUT2" position="8,31" dir="-&gt;"/>
+					<pip from="OUT2" to="LLH0" position="8,31" dir="-&gt;"/>
+					<pip from="LLH0" to="H6W1" position="8,5" dir="-&gt;"/>
+					<pip from="H6M1" to="N10" position="8,2" dir="-&gt;"/>
+					<pip from="S10" to="E4" position="7,2" dir="-&gt;"/>
+					<pip from="W4" to="N3" position="7,3" dir="-&gt;"/>
+					<pip from="S3" to="S_P3" position="6,3" dir="-&gt;"/>
+					<pip from="S_P3" to="S0_G_B2" position="6,3" dir="-&gt;"/>
+				</net>
+				<net name="net_L49">
+					<portRef name="Y" instanceRef="iSlice__25__"/>
+					<portRef name="G1" instanceRef="iSlice__1__"/>
+					<pip from="S0_Y" to="OUT5" position="28,24" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="28,24" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S3" position="3,24" dir="-&gt;"/>
+					<pip from="V6M3" to="H6W3" position="6,24" dir="-&gt;"/>
+					<pip from="H6E3" to="H6W3" position="6,18" dir="-&gt;"/>
+					<pip from="H6E3" to="H6W3" position="6,11" dir="-&gt;"/>
+					<pip from="H6E3" to="H6W3" position="6,5" dir="-&gt;"/>
+					<pip from="H6M3" to="V6N3" position="6,2" dir="-&gt;"/>
+					<pip from="V6N3" to="E21" position="6,2" dir="-&gt;"/>
+					<pip from="W21" to="W_P21" position="6,3" dir="-&gt;"/>
+					<pip from="W_P21" to="S0_G_B1" position="6,3" dir="-&gt;"/>
+				</net>
+				<net name="net_L42">
+					<portRef name="X" instanceRef="iSlice__15__"/>
+					<portRef name="F3" instanceRef="iSlice__16__"/>
+					<portRef name="F3" instanceRef="iSlice__20__"/>
+					<pip from="S0_X" to="OUT5" position="19,26" dir="-&gt;"/>
+					<pip from="OUT5" to="LLH6" position="19,26" dir="-&gt;"/>
+					<pip from="LLH6" to="H6W3" position="19,13" dir="-&gt;"/>
+					<pip from="H6M3" to="V6S3" position="19,10" dir="-&gt;"/>
+					<pip from="V6N3" to="V6S3" position="25,10" dir="-&gt;"/>
+					<pip from="V6M3" to="W20" position="28,10" dir="-&gt;"/>
+					<pip from="E20" to="S2" position="28,9" dir="-&gt;"/>
+					<pip from="N2" to="N_P2" position="29,9" dir="-&gt;"/>
+					<pip from="N_P2" to="S0_F_B3" position="29,9" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT3" position="19,26" dir="-&gt;"/>
+					<pip from="OUT3" to="H6W1" position="19,26" dir="-&gt;"/>
+					<pip from="H6E1" to="V6S2" position="19,20" dir="-&gt;"/>
+					<pip from="V6N2" to="W16" position="25,20" dir="-&gt;"/>
+					<pip from="E16" to="W16" position="25,19" dir="-&gt;"/>
+					<pip from="E16" to="N20" position="25,18" dir="-&gt;"/>
+					<pip from="S20" to="S_P20" position="24,18" dir="-&gt;"/>
+					<pip from="S_P20" to="S0_F_B3" position="24,18" dir="-&gt;"/>
+				</net>
+				<net name="net_L54">
+					<portRef name="Y" instanceRef="iSlice__5__"/>
+					<portRef name="F1" instanceRef="iSlice__10__"/>
+					<portRef name="F1" instanceRef="iSlice__27__"/>
+					<pip from="S0_Y" to="OUT5" position="5,10" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="5,10" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N2" position="30,10" dir="-&gt;"/>
+					<pip from="V6M2" to="H6E2" position="27,10" dir="-&gt;"/>
+					<pip from="H6W2" to="H6E2" position="27,17" dir="-&gt;"/>
+					<pip from="H6W2" to="H6E2" position="27,23" dir="-&gt;"/>
+					<pip from="H6M2" to="N16" position="27,26" dir="-&gt;"/>
+					<pip from="S16" to="E14" position="26,26" dir="-&gt;"/>
+					<pip from="W14" to="S12" position="26,28" dir="-&gt;"/>
+					<pip from="S12" to="S_P12" position="26,28" dir="-&gt;"/>
+					<pip from="S_P12" to="S0_F_B1" position="26,28" dir="-&gt;"/>
+					<pip from="LLV6" to="V6S3" position="30,10" dir="-&gt;"/>
+					<pip from="V6M3" to="W20" position="33,10" dir="-&gt;"/>
+					<pip from="E20" to="W20" position="33,9" dir="-&gt;"/>
+					<pip from="E20" to="E_P20" position="33,8" dir="-&gt;"/>
+					<pip from="E_P20" to="S0_F_B1" position="33,8" dir="-&gt;"/>
+				</net>
+				<net name="net_L29">
+					<portRef name="X" instanceRef="iSlice__0__"/>
+					<portRef name="F3" instanceRef="iSlice__9__"/>
+					<portRef name="F2" instanceRef="iSlice__10__"/>
+					<portRef name="F3" instanceRef="iSlice__14__"/>
+					<portRef name="F2" instanceRef="iSlice__27__"/>
+					<pip from="S0_X" to="OUT1" position="32,9" dir="-&gt;"/>
+					<pip from="OUT1" to="LLV0" position="32,9" dir="-&gt;"/>
+					<pip from="LLV6" to="V6N3" position="13,9" dir="-&gt;"/>
+					<pip from="V6N3" to="H6E3" position="13,9" dir="-&gt;"/>
+					<pip from="H6W3" to="S20" position="13,16" dir="-&gt;"/>
+					<pip from="S20" to="S_P20" position="13,16" dir="-&gt;"/>
+					<pip from="S_P20" to="S0_F_B3" position="13,16" dir="-&gt;"/>
+					<pip from="OUT1" to="H6E0" position="32,9" dir="-&gt;"/>
+					<pip from="H6W0" to="H6E0" position="32,16" dir="-&gt;"/>
+					<pip from="H6W0" to="V6N0" position="32,22" dir="-&gt;"/>
+					<pip from="V6S0" to="H6E3" position="26,22" dir="-&gt;"/>
+					<pip from="H6W3" to="H6E3" position="26,29" dir="-&gt;"/>
+					<pip from="H6E3" to="W18" position="26,29" dir="-&gt;"/>
+					<pip from="E18" to="E_P18" position="26,28" dir="-&gt;"/>
+					<pip from="E_P18" to="S0_F_B2" position="26,28" dir="-&gt;"/>
+					<pip from="S0_X" to="OUT3" position="32,9" dir="-&gt;"/>
+					<pip from="OUT3" to="H6W1" position="32,9" dir="-&gt;"/>
+					<pip from="H6M1" to="V6N1" position="32,6" dir="-&gt;"/>
+					<pip from="V6S1" to="W9" position="26,6" dir="-&gt;"/>
+					<pip from="E9" to="S11" position="26,5" dir="-&gt;"/>
+					<pip from="N11" to="N_P11" position="27,5" dir="-&gt;"/>
+					<pip from="N_P11" to="S0_F_B3" position="27,5" dir="-&gt;"/>
+					<pip from="OUT3" to="W10" position="32,9" dir="-&gt;"/>
+					<pip from="E10" to="S12" position="32,8" dir="-&gt;"/>
+					<pip from="N12" to="N_P12" position="33,8" dir="-&gt;"/>
+					<pip from="N_P12" to="S0_F_B2" position="33,8" dir="-&gt;"/>
+				</net>
+				<net name="net_L60">
+					<portRef name="X" instanceRef="iSlice__21__"/>
+					<portRef name="G4" instanceRef="iSlice__5__"/>
+					<pip from="S1_X" to="OUT5" position="29,3" dir="-&gt;"/>
+					<pip from="OUT5" to="LLV6" position="29,3" dir="-&gt;"/>
+					<pip from="TOP_LLV2" to="TOP_V6C1" position="0,3" dir="-&gt;"/>
+					<pip from="V6N1" to="H6E1" position="4,3" dir="-&gt;"/>
+					<pip from="H6W1" to="E11" position="4,9" dir="-&gt;"/>
+					<pip from="W11" to="S5" position="4,10" dir="-&gt;"/>
+					<pip from="N5" to="N_P5" position="5,10" dir="-&gt;"/>
+					<pip from="N_P5" to="S0_G_B4" position="5,10" dir="-&gt;"/>
+				</net>
+				<net name="interval[2]">
+					<portRef name="interval[2]"/>
+					<portRef name="PAD" instanceRef="interval[2]"/>
+				</net>
+				<net name="interval[1]">
+					<portRef name="interval[1]"/>
+					<portRef name="PAD" instanceRef="interval[1]"/>
+				</net>
+				<net name="interval[0]">
+					<portRef name="interval[0]"/>
+					<portRef name="PAD" instanceRef="interval[0]"/>
+				</net>
+				<net name="clk">
+					<portRef name="clk"/>
+					<portRef name="PAD" instanceRef="clk"/>
+				</net>
+				<net name="net_Buf-pad-clk" type="clock">
+					<portRef name="GCLKOUT" instanceRef="clk"/>
+					<portRef name="IN" instanceRef="iGclk_buf__0__"/>
+					<pip from="CLKB_CLKPAD1" to="CLKB_GCLKBUF1_IN" position="34,27" dir="-&gt;"/>
+				</net>
+				<net name="rst_n">
+					<portRef name="rst_n"/>
+					<portRef name="PAD" instanceRef="rst_n"/>
+				</net>
+				<net name="dir">
+					<portRef name="dir"/>
+					<portRef name="PAD" instanceRef="dir"/>
+				</net>
+				<net name="seg[6]">
+					<portRef name="PAD" instanceRef="seg[6]"/>
+					<portRef name="seg[6]"/>
+				</net>
+				<net name="seg[5]">
+					<portRef name="PAD" instanceRef="seg[5]"/>
+					<portRef name="seg[5]"/>
+				</net>
+				<net name="seg[4]">
+					<portRef name="PAD" instanceRef="seg[4]"/>
+					<portRef name="seg[4]"/>
+				</net>
+				<net name="seg[3]">
+					<portRef name="PAD" instanceRef="seg[3]"/>
+					<portRef name="seg[3]"/>
+				</net>
+				<net name="seg[2]">
+					<portRef name="PAD" instanceRef="seg[2]"/>
+					<portRef name="seg[2]"/>
+				</net>
+				<net name="seg[1]">
+					<portRef name="PAD" instanceRef="seg[1]"/>
+					<portRef name="seg[1]"/>
+				</net>
+				<net name="seg[0]">
+					<portRef name="PAD" instanceRef="seg[0]"/>
+					<portRef name="seg[0]"/>
+				</net>
+				<net name="timeout">
+					<portRef name="PAD" instanceRef="timeout"/>
+					<portRef name="timeout"/>
+				</net>
+			</contents>
+		</module>
+	</library>
+	<topModule name="timer_display" libraryRef="work_lib"/>
+</design>
+

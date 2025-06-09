@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Rabbit Project File-->
+<project name="whackamole" constraint="../whackamole_ufde/whackamole_ufde_cons.xml" bitstream="../whackamole_ufde/whackamole_ufde_dc_bit.bit">
+    <panel grid_width="50" grid_height="50"/>
+    <components>
+        <component type="SegmentDisplay" name="等级" grid_x="12" grid_y="4">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P36" port="A"/>
+                <output pin="P30" port="B"/>
+                <output pin="P31" port="C"/>
+                <output pin="P24" port="D"/>
+                <output pin="P27" port="E"/>
+                <output pin="P29" port="F"/>
+                <output pin="P110" port="G"/>
+                <output pin="" port="DP"/>
+            </outputs>
+        </component>
+        <component type="Button" name="地鼠5" grid_x="9" grid_y="10">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P162" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="FourDigitSegmentDisplay" name="分数" grid_x="1" grid_y="4">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="vision_persistence" value="350"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P18" port="SEL0"/>
+                <output pin="P20" port="SEL1"/>
+                <output pin="P10" port="SEL2"/>
+                <output pin="P11" port="SEL3"/>
+                <output pin="P17" port="A"/>
+                <output pin="P22" port="B"/>
+                <output pin="P21" port="C"/>
+                <output pin="P23" port="D"/>
+                <output pin="P44" port="E"/>
+                <output pin="P45" port="F"/>
+                <output pin="P46" port="G"/>
+                <output pin="" port="DP"/>
+            </outputs>
+        </component>
+        <component type="Button" name="开始" grid_x="3" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P148" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="SegmentDisplay" name="加分系数" grid_x="15" grid_y="4">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P109" port="A"/>
+                <output pin="P99" port="B"/>
+                <output pin="P98" port="C"/>
+                <output pin="P94" port="D"/>
+                <output pin="P93" port="E"/>
+                <output pin="P84" port="F"/>
+                <output pin="P83" port="G"/>
+                <output pin="" port="DP"/>
+            </outputs>
+        </component>
+        <component type="LED" name="地鼠6" grid_x="11" grid_y="8">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P8" port="LED"/>
+            </outputs>
+        </component>
+        <component type="LED" name="地鼠7" grid_x="13" grid_y="8">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P16" port="LED"/>
+            </outputs>
+        </component>
+        <component type="Button" name="地鼠3" grid_x="5" grid_y="10">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P160" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="LED" name="地鼠1" grid_x="1" grid_y="8">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P7" port="LED"/>
+            </outputs>
+        </component>
+        <component type="LED" name="结束" grid_x="7" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P82" port="LED"/>
+            </outputs>
+        </component>
+        <component type="SegmentDisplay" name="计时器" grid_x="9" grid_y="4">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P43" port="A"/>
+                <output pin="P40" port="B"/>
+                <output pin="P41" port="C"/>
+                <output pin="P42" port="D"/>
+                <output pin="P33" port="E"/>
+                <output pin="P34" port="F"/>
+                <output pin="P35" port="G"/>
+                <output pin="" port="DP"/>
+            </outputs>
+        </component>
+        <component type="LED" name="击中" grid_x="9" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P73" port="LED"/>
+            </outputs>
+        </component>
+        <component type="Button" name="地鼠2" grid_x="3" grid_y="10">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P152" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="LED" name="地鼠4" grid_x="7" grid_y="8">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P4" port="LED"/>
+            </outputs>
+        </component>
+        <component type="Button" name="地鼠7" grid_x="13" grid_y="10">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P164" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Button" name="RST_N" grid_x="1" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="true"/>
+            </settings>
+            <inputs>
+                <input pin="P151" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Button" name="地鼠4" grid_x="7" grid_y="10">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P161" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="LED" name="地鼠2" grid_x="3" grid_y="8">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P6" port="LED"/>
+            </outputs>
+        </component>
+        <component type="Button" name="地鼠1" grid_x="1" grid_y="10">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P150" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="LED" name="地鼠5" grid_x="9" grid_y="8">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P9" port="LED"/>
+            </outputs>
+        </component>
+        <component type="LED" name="地鼠8" grid_x="15" grid_y="8">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P15" port="LED"/>
+            </outputs>
+        </component>
+        <component type="LED" name="地鼠3" grid_x="5" grid_y="8">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P5" port="LED"/>
+            </outputs>
+        </component>
+        <component type="Button" name="地鼠6" grid_x="11" grid_y="10">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P163" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Button" name="地鼠8" grid_x="15" grid_y="10">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P165" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+    </components>
+</project>

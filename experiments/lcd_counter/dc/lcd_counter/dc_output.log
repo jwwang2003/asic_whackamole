@@ -1,0 +1,393 @@
+dc_shell> source compile.tcl
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/lcd_counter/v_src/top.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/lcd_counter/v_src/defines.vh
+Opening include file /home/allenwalker/project/lcd_counter/v_src/defines.vh
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Warning:  /home/allenwalker/project/lcd_counter/v_src/top.v:30: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine top line 25 in file
+		'/home/allenwalker/project/lcd_counter/v_src/top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   counter_reg_reg   | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     ms_cnt_reg      | Flip-flop |  23   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/allenwalker/project/lcd_counter/top.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'top'.
+Information: Re-analyzing the out of date architecture 'four_digit_display(verilog)'. (LBR-15)
+Compiling source file /home/allenwalker/project/lcd_counter/v_src/four_digit_display.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/lcd_counter/v_src/defines.vh
+Opening include file /home/allenwalker/project/lcd_counter/v_src/defines.vh
+Presto compilation completed successfully.
+Information: Building the design 'four_digit_display'. (HDL-193)
+Warning:  /home/allenwalker/project/lcd_counter/v_src/four_digit_display.v:64: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 60 in file
+	'/home/allenwalker/project/lcd_counter/v_src/four_digit_display.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            64            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine four_digit_display line 28 in file
+		'/home/allenwalker/project/lcd_counter/v_src/four_digit_display.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    digit_idx_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'seven_seg'. (HDL-193)
+Warning:  /home/allenwalker/project/lcd_counter/v_src/seven_seg.v:20: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Error:  Unable to open file `/home/allenwalker/project/lcd_counter/v_src/defines.v': No such file or directory. (VER-41)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't find the architecture 'defines(verilog)' in the library 'WORK'
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/lcd_counter/v_src/four_digit_display.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/lcd_counter/v_src/defines.vh
+Opening include file /home/allenwalker/project/lcd_counter/v_src/defines.vh
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Warning:  /home/allenwalker/project/lcd_counter/v_src/four_digit_display.v:64: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 60 in file
+	'/home/allenwalker/project/lcd_counter/v_src/four_digit_display.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            64            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine four_digit_display line 28 in file
+		'/home/allenwalker/project/lcd_counter/v_src/four_digit_display.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    digit_idx_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/allenwalker/project/lcd_counter/four_digit_display.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'four_digit_display'.
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/lcd_counter/v_src/seven_seg.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/lcd_counter/v_src/defines.vh
+Opening include file /home/allenwalker/project/lcd_counter/v_src/defines.vh
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Warning:  /home/allenwalker/project/lcd_counter/v_src/seven_seg.v:20: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/allenwalker/project/lcd_counter/seven_seg.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'seven_seg'.
+Current design is 'top'.
+Current design is 'top'.
+
+  Linking design 'top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               /home/allenwalker/project/lcd_counter/top.db, etc
+  fde_dc (library)            /home/allenwalker/project/lib/fde_dc.db
+
+Information: Updating graph... (UID-83)
+Alib files are up-to-date.
+Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'top'
+Information: Added key list 'DesignWare' to design 'top'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'top' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Mapping 'DW01_add'
+  Mapping 'DW01_cmp2'
+
+  Beginning Mapping Optimizations  (Ultra Medium effort)
+  -------------------------------
+  Structuring 'top'
+  Mapping 'top'
+Information: The register 'ms_cnt_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ms_cnt_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ms_cnt_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ms_cnt_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ms_cnt_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ms_cnt_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ms_cnt_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ms_cnt_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ms_cnt_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'ms_cnt_reg[22]' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     434.0      0.00       0.0       5.7                          
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     434.0      0.00       0.0       5.7                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01     442.0      0.00       0.0       0.0                          
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+    0:00:01     442.0      0.00       0.0       0.0                          
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+
+  Optimization Complete
+  ---------------------
+Warning: Design has no hierarchy.  No cells can be ungrouped. (UID-228)
+Alib files are up-to-date.
+Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'top' has no optimization constraints set. (OPT-108)
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     442.0      0.00       0.0       0.0                          
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+    0:00:00     442.0      0.00       0.0       0.0                          
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/home/allenwalker/project/lcd_counter/result/top_gate.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+dc_shell> 
+

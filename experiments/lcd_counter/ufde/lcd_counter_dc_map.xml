@@ -1,0 +1,1589 @@
+<design name="top">
+	<external name="cell_lib">
+		<module name="DFFRHQ" type="FFLATCH">
+			<property name="edge" value="rise"/>
+			<port name="D" direction="input"/>
+			<port name="CK" direction="input" type="clock"/>
+			<port name="RN" direction="input" type="reset"/>
+			<port name="Q" direction="output"/>
+		</module>
+		<module name="LUT2" type="LUT">
+			<port name="ADR0" direction="input"/>
+			<port name="ADR1" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="LUT4" type="LUT">
+			<port name="ADR0" direction="input"/>
+			<port name="ADR1" direction="input"/>
+			<port name="ADR2" direction="input"/>
+			<port name="ADR3" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="LUT3" type="LUT">
+			<port name="ADR0" direction="input"/>
+			<port name="ADR1" direction="input"/>
+			<port name="ADR2" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="CLKBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="IBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="IPAD" type="MACRO">
+			<port name="PAD" direction="input"/>
+		</module>
+		<module name="OBUF" type="COMB">
+			<property name="truthtable" value="1"/>
+			<port name="I" direction="input"/>
+			<port name="O" direction="output"/>
+		</module>
+		<module name="OPAD" type="MACRO">
+			<port name="PAD" direction="output"/>
+		</module>
+		<module name="LOGIC_1" type="MACRO">
+			<property name="truthtable" value="|1"/>
+			<port name="LOGIC_1_PIN" direction="output"/>
+		</module>
+		<module name="LOGIC_0" type="MACRO">
+			<property name="truthtable" value="|0"/>
+			<port name="LOGIC_0_PIN" direction="output"/>
+		</module>
+	</external>
+	<library name="work_lib">
+		<module name="top" type="GENERIC">
+			<port name="seg" msb="6" lsb="0" direction="output"/>
+			<port name="digit_en" msb="3" lsb="0" direction="output"/>
+			<port name="clk" direction="input"/>
+			<port name="rst_n" direction="input"/>
+			<contents>
+				<instance name="ms_cnt_reg[0]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[0]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[1]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[2]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[3]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[4]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[5]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[6]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[7]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[8]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[9]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[10]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[11]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[12]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[13]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[14]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="counter_reg_reg[15]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[1]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[2]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[3]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[4]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[5]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[6]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[7]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[8]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[9]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[10]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[11]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[12]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[13]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[14]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[15]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="ms_cnt_reg[16]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_display/scan_cnt_reg[4]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_display/scan_cnt_reg[3]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_display/scan_cnt_reg[0]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_display/scan_cnt_reg[1]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_display/scan_cnt_reg[2]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_display/digit_idx_reg[0]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_display/digit_idx_reg[1]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="L0" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="8"/>
+				</instance>
+				<instance name="L1" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="L2" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="2"/>
+				</instance>
+				<instance name="L3" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="2"/>
+				</instance>
+				<instance name="L4" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="D3FE"/>
+				</instance>
+				<instance name="L5" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="E8F7"/>
+				</instance>
+				<instance name="L6" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="2AEF"/>
+				</instance>
+				<instance name="L7" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="DBE6"/>
+				</instance>
+				<instance name="L8" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="5DEF"/>
+				</instance>
+				<instance name="L9" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="6F1D"/>
+				</instance>
+				<instance name="L10" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="79DF"/>
+				</instance>
+				<instance name="L11" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="06"/>
+				</instance>
+				<instance name="L12" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="2"/>
+				</instance>
+				<instance name="L13" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="006A"/>
+				</instance>
+				<instance name="L14" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="06"/>
+				</instance>
+				<instance name="L15" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="L16" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="99AA"/>
+				</instance>
+				<instance name="L17" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="66AA"/>
+				</instance>
+				<instance name="L18" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="99AA"/>
+				</instance>
+				<instance name="L19" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="99AA"/>
+				</instance>
+				<instance name="L20" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="66AA"/>
+				</instance>
+				<instance name="L21" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="99AA"/>
+				</instance>
+				<instance name="L22" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="99AA"/>
+				</instance>
+				<instance name="L23" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="66AA"/>
+				</instance>
+				<instance name="L24" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="66AA"/>
+				</instance>
+				<instance name="L25" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="99AA"/>
+				</instance>
+				<instance name="L26" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="99AA"/>
+				</instance>
+				<instance name="L27" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="9A"/>
+				</instance>
+				<instance name="L28" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="9AAA"/>
+				</instance>
+				<instance name="L29" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="9AAA"/>
+				</instance>
+				<instance name="L30" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="6"/>
+				</instance>
+				<instance name="L31" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="6A"/>
+				</instance>
+				<instance name="L32" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="9595"/>
+				</instance>
+				<instance name="L33" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="66AA"/>
+				</instance>
+				<instance name="L34" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0000"/>
+				</instance>
+				<instance name="L35" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0000"/>
+				</instance>
+				<instance name="L36" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0000"/>
+				</instance>
+				<instance name="L37" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="C0"/>
+				</instance>
+				<instance name="L38" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4488"/>
+				</instance>
+				<instance name="L39" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="006A"/>
+				</instance>
+				<instance name="L40" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4488"/>
+				</instance>
+				<instance name="L41" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4488"/>
+				</instance>
+				<instance name="L42" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="006A"/>
+				</instance>
+				<instance name="L43" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4488"/>
+				</instance>
+				<instance name="L44" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4488"/>
+				</instance>
+				<instance name="L45" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="006A"/>
+				</instance>
+				<instance name="L46" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4488"/>
+				</instance>
+				<instance name="L47" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4488"/>
+				</instance>
+				<instance name="L48" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="006A"/>
+				</instance>
+				<instance name="L49" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0606"/>
+				</instance>
+				<instance name="L50" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4040"/>
+				</instance>
+				<instance name="L51" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="E"/>
+				</instance>
+				<instance name="L52" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="E"/>
+				</instance>
+				<instance name="L53" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="L54" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="E"/>
+				</instance>
+				<instance name="L55" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="L56" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="E"/>
+				</instance>
+				<instance name="L57" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="L58" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L59" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L60" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="6AAA"/>
+				</instance>
+				<instance name="L61" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0200"/>
+				</instance>
+				<instance name="L62" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A808"/>
+				</instance>
+				<instance name="L63" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="FDFF"/>
+				</instance>
+				<instance name="L64" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="80"/>
+				</instance>
+				<instance name="L65" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L66" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L67" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="80"/>
+				</instance>
+				<instance name="L68" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L69" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L70" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="80"/>
+				</instance>
+				<instance name="L71" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="FDFF"/>
+				</instance>
+				<instance name="L72" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L73" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L74" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="80"/>
+				</instance>
+				<instance name="L75" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L76" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="8000"/>
+				</instance>
+				<instance name="L77" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="B000"/>
+				</instance>
+				<instance name="L78" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="FDFF"/>
+				</instance>
+				<instance name="L79" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L80" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L81" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L82" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L83" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L84" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L85" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L86" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L87" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L88" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4151"/>
+				</instance>
+				<instance name="L89" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4445"/>
+				</instance>
+				<instance name="L90" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4151"/>
+				</instance>
+				<instance name="L91" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4445"/>
+				</instance>
+				<instance name="L92" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4151"/>
+				</instance>
+				<instance name="L93" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4445"/>
+				</instance>
+				<instance name="L94" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4151"/>
+				</instance>
+				<instance name="L95" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="4445"/>
+				</instance>
+				<instance name="L96" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="000B"/>
+				</instance>
+				<instance name="L97" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L98" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L99" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L100" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="BF80"/>
+				</instance>
+				<instance name="L101" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="2AAA"/>
+				</instance>
+				<instance name="L102" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="0015"/>
+				</instance>
+				<instance name="L103" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="L104" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="L105" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="C202"/>
+				</instance>
+				<instance name="L106" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="51"/>
+				</instance>
+				<instance name="L107" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="C202"/>
+				</instance>
+				<instance name="L108" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="51"/>
+				</instance>
+				<instance name="L109" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="C202"/>
+				</instance>
+				<instance name="L110" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="51"/>
+				</instance>
+				<instance name="L111" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="C202"/>
+				</instance>
+				<instance name="L112" moduleRef="LUT3" libraryRef="cell_lib">
+					<property name="INIT" value="51"/>
+				</instance>
+				<instance name="L113" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="8"/>
+				</instance>
+				<instance name="L114" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="A2AA"/>
+				</instance>
+				<instance name="L115" moduleRef="LUT4" libraryRef="cell_lib">
+					<property name="INIT" value="1333"/>
+				</instance>
+				<instance name="L116" moduleRef="LUT2" libraryRef="cell_lib">
+					<property name="INIT" value="1"/>
+				</instance>
+				<instance name="Buf-pad-clk" moduleRef="CLKBUF" libraryRef="cell_lib"/>
+				<instance name="IBuf-clkpad-clk" moduleRef="CLKBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-rst_n" moduleRef="IBUF" libraryRef="cell_lib"/>
+				<instance name="clk_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="rst_n_ipad" moduleRef="IPAD" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[6]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[5]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[4]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[3]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[2]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[1]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-seg[0]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-digit_en[3]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-digit_en[2]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-digit_en[1]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="Buf-pad-digit_en[0]" moduleRef="OBUF" libraryRef="cell_lib"/>
+				<instance name="seg[6]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[5]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[4]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[3]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[2]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[1]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="seg[0]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="digit_en[3]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="digit_en[2]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="digit_en[1]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="digit_en[0]_opad" moduleRef="OPAD" libraryRef="cell_lib"/>
+				<instance name="VCC" moduleRef="LOGIC_1" libraryRef="cell_lib"/>
+				<instance name="GND" moduleRef="LOGIC_0" libraryRef="cell_lib"/>
+				<net name="net_Buf-pad-digit_en[2]">
+					<portRef name="O" instanceRef="L3"/>
+					<portRef name="I" instanceRef="Buf-pad-digit_en[2]"/>
+				</net>
+				<net name="net_Buf-pad-digit_en[1]">
+					<portRef name="O" instanceRef="L2"/>
+					<portRef name="I" instanceRef="Buf-pad-digit_en[1]"/>
+				</net>
+				<net name="net_IBuf-clkpad-clk">
+					<portRef name="O" instanceRef="IBuf-clkpad-clk"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[0]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[0]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[1]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[2]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[3]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[4]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[5]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[6]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[7]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[8]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[9]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[10]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[11]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[12]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[13]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[14]"/>
+					<portRef name="CK" instanceRef="counter_reg_reg[15]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[1]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[2]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[3]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[4]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[5]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[6]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[7]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[8]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[9]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[10]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[11]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[12]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[13]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[14]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[15]"/>
+					<portRef name="CK" instanceRef="ms_cnt_reg[16]"/>
+					<portRef name="CK" instanceRef="u_display/scan_cnt_reg[4]"/>
+					<portRef name="CK" instanceRef="u_display/scan_cnt_reg[3]"/>
+					<portRef name="CK" instanceRef="u_display/scan_cnt_reg[0]"/>
+					<portRef name="CK" instanceRef="u_display/scan_cnt_reg[1]"/>
+					<portRef name="CK" instanceRef="u_display/scan_cnt_reg[2]"/>
+					<portRef name="CK" instanceRef="u_display/digit_idx_reg[0]"/>
+					<portRef name="CK" instanceRef="u_display/digit_idx_reg[1]"/>
+				</net>
+				<net name="net_Buf-pad-rst_n">
+					<portRef name="O" instanceRef="Buf-pad-rst_n"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[0]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[0]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[1]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[2]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[3]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[4]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[5]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[6]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[7]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[8]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[9]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[10]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[11]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[12]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[13]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[14]"/>
+					<portRef name="RN" instanceRef="counter_reg_reg[15]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[1]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[2]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[3]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[4]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[5]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[6]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[7]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[8]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[9]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[10]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[11]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[12]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[13]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[14]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[15]"/>
+					<portRef name="RN" instanceRef="ms_cnt_reg[16]"/>
+					<portRef name="RN" instanceRef="u_display/scan_cnt_reg[4]"/>
+					<portRef name="RN" instanceRef="u_display/scan_cnt_reg[3]"/>
+					<portRef name="RN" instanceRef="u_display/scan_cnt_reg[0]"/>
+					<portRef name="RN" instanceRef="u_display/scan_cnt_reg[1]"/>
+					<portRef name="RN" instanceRef="u_display/scan_cnt_reg[2]"/>
+					<portRef name="RN" instanceRef="u_display/digit_idx_reg[0]"/>
+					<portRef name="RN" instanceRef="u_display/digit_idx_reg[1]"/>
+				</net>
+				<net name="net_L50">
+					<portRef name="O" instanceRef="L50"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[0]"/>
+				</net>
+				<net name="net_L49">
+					<portRef name="O" instanceRef="L49"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[1]"/>
+				</net>
+				<net name="net_L48">
+					<portRef name="O" instanceRef="L48"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[2]"/>
+				</net>
+				<net name="net_L47">
+					<portRef name="O" instanceRef="L47"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[3]"/>
+				</net>
+				<net name="net_L46">
+					<portRef name="O" instanceRef="L46"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[4]"/>
+				</net>
+				<net name="net_L45">
+					<portRef name="O" instanceRef="L45"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[5]"/>
+				</net>
+				<net name="net_L44">
+					<portRef name="O" instanceRef="L44"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[6]"/>
+				</net>
+				<net name="net_L43">
+					<portRef name="O" instanceRef="L43"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[7]"/>
+				</net>
+				<net name="net_L42">
+					<portRef name="O" instanceRef="L42"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[8]"/>
+				</net>
+				<net name="net_L41">
+					<portRef name="O" instanceRef="L41"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[9]"/>
+				</net>
+				<net name="net_L40">
+					<portRef name="O" instanceRef="L40"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[10]"/>
+				</net>
+				<net name="net_L39">
+					<portRef name="O" instanceRef="L39"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[11]"/>
+				</net>
+				<net name="net_L38">
+					<portRef name="O" instanceRef="L38"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[12]"/>
+				</net>
+				<net name="net_L37">
+					<portRef name="O" instanceRef="L37"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[13]"/>
+				</net>
+				<net name="net_L36">
+					<portRef name="O" instanceRef="L36"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[14]"/>
+				</net>
+				<net name="net_L35">
+					<portRef name="O" instanceRef="L35"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[15]"/>
+				</net>
+				<net name="net_L34">
+					<portRef name="O" instanceRef="L34"/>
+					<portRef name="D" instanceRef="ms_cnt_reg[16]"/>
+				</net>
+				<net name="net_L11">
+					<portRef name="O" instanceRef="L11"/>
+					<portRef name="D" instanceRef="u_display/scan_cnt_reg[4]"/>
+				</net>
+				<net name="net_L12">
+					<portRef name="O" instanceRef="L12"/>
+					<portRef name="D" instanceRef="u_display/scan_cnt_reg[3]"/>
+				</net>
+				<net name="net_L13">
+					<portRef name="O" instanceRef="L13"/>
+					<portRef name="D" instanceRef="u_display/scan_cnt_reg[2]"/>
+				</net>
+				<net name="net_L14">
+					<portRef name="O" instanceRef="L14"/>
+					<portRef name="D" instanceRef="u_display/scan_cnt_reg[1]"/>
+				</net>
+				<net name="net_L15">
+					<portRef name="O" instanceRef="L15"/>
+					<portRef name="D" instanceRef="u_display/scan_cnt_reg[0]"/>
+				</net>
+				<net name="net_L60">
+					<portRef name="O" instanceRef="L60"/>
+					<portRef name="ADR0" instanceRef="L12"/>
+				</net>
+				<net name="u_display/digit_idx[0]">
+					<portRef name="Q" instanceRef="u_display/digit_idx_reg[0]"/>
+					<portRef name="ADR1" instanceRef="L0"/>
+					<portRef name="ADR0" instanceRef="L1"/>
+					<portRef name="ADR0" instanceRef="L2"/>
+					<portRef name="ADR1" instanceRef="L3"/>
+					<portRef name="ADR1" instanceRef="L30"/>
+					<portRef name="ADR2" instanceRef="L31"/>
+					<portRef name="ADR1" instanceRef="L88"/>
+					<portRef name="ADR1" instanceRef="L90"/>
+					<portRef name="ADR1" instanceRef="L92"/>
+					<portRef name="ADR1" instanceRef="L94"/>
+					<portRef name="ADR2" instanceRef="L105"/>
+					<portRef name="ADR2" instanceRef="L106"/>
+					<portRef name="ADR2" instanceRef="L107"/>
+					<portRef name="ADR2" instanceRef="L108"/>
+					<portRef name="ADR2" instanceRef="L109"/>
+					<portRef name="ADR2" instanceRef="L110"/>
+					<portRef name="ADR2" instanceRef="L111"/>
+					<portRef name="ADR2" instanceRef="L112"/>
+				</net>
+				<net name="u_display/digit_idx[1]">
+					<portRef name="Q" instanceRef="u_display/digit_idx_reg[1]"/>
+					<portRef name="ADR0" instanceRef="L0"/>
+					<portRef name="ADR1" instanceRef="L1"/>
+					<portRef name="ADR1" instanceRef="L2"/>
+					<portRef name="ADR0" instanceRef="L3"/>
+					<portRef name="ADR0" instanceRef="L31"/>
+					<portRef name="ADR2" instanceRef="L88"/>
+					<portRef name="ADR2" instanceRef="L90"/>
+					<portRef name="ADR2" instanceRef="L92"/>
+					<portRef name="ADR2" instanceRef="L94"/>
+					<portRef name="ADR1" instanceRef="L105"/>
+					<portRef name="ADR1" instanceRef="L106"/>
+					<portRef name="ADR1" instanceRef="L107"/>
+					<portRef name="ADR1" instanceRef="L108"/>
+					<portRef name="ADR1" instanceRef="L109"/>
+					<portRef name="ADR1" instanceRef="L110"/>
+					<portRef name="ADR1" instanceRef="L111"/>
+					<portRef name="ADR1" instanceRef="L112"/>
+				</net>
+				<net name="u_display/scan_cnt[0]">
+					<portRef name="Q" instanceRef="u_display/scan_cnt_reg[0]"/>
+					<portRef name="ADR2" instanceRef="L13"/>
+					<portRef name="ADR1" instanceRef="L14"/>
+					<portRef name="ADR1" instanceRef="L15"/>
+					<portRef name="ADR3" instanceRef="L58"/>
+					<portRef name="ADR3" instanceRef="L60"/>
+				</net>
+				<net name="u_display/scan_cnt[1]">
+					<portRef name="Q" instanceRef="u_display/scan_cnt_reg[1]"/>
+					<portRef name="ADR1" instanceRef="L13"/>
+					<portRef name="ADR0" instanceRef="L14"/>
+					<portRef name="ADR2" instanceRef="L58"/>
+					<portRef name="ADR3" instanceRef="L59"/>
+					<portRef name="ADR2" instanceRef="L60"/>
+				</net>
+				<net name="u_display/scan_cnt[2]">
+					<portRef name="Q" instanceRef="u_display/scan_cnt_reg[2]"/>
+					<portRef name="ADR0" instanceRef="L13"/>
+					<portRef name="ADR1" instanceRef="L58"/>
+					<portRef name="ADR2" instanceRef="L59"/>
+					<portRef name="ADR1" instanceRef="L60"/>
+				</net>
+				<net name="u_display/scan_cnt[3]">
+					<portRef name="Q" instanceRef="u_display/scan_cnt_reg[3]"/>
+					<portRef name="ADR0" instanceRef="L58"/>
+					<portRef name="ADR1" instanceRef="L59"/>
+					<portRef name="ADR0" instanceRef="L60"/>
+				</net>
+				<net name="u_display/scan_cnt[4]">
+					<portRef name="Q" instanceRef="u_display/scan_cnt_reg[4]"/>
+					<portRef name="ADR0" instanceRef="L11"/>
+					<portRef name="ADR0" instanceRef="L59"/>
+				</net>
+				<net name="net_L79">
+					<portRef name="O" instanceRef="L79"/>
+					<portRef name="ADR3" instanceRef="L33"/>
+					<portRef name="ADR2" instanceRef="L48"/>
+					<portRef name="ADR2" instanceRef="L64"/>
+					<portRef name="ADR3" instanceRef="L65"/>
+				</net>
+				<net name="net_L87">
+					<portRef name="O" instanceRef="L87"/>
+					<portRef name="ADR1" instanceRef="L48"/>
+					<portRef name="ADR0" instanceRef="L49"/>
+					<portRef name="ADR0" instanceRef="L62"/>
+					<portRef name="ADR1" instanceRef="L64"/>
+					<portRef name="ADR2" instanceRef="L65"/>
+				</net>
+				<net name="net_L86">
+					<portRef name="O" instanceRef="L86"/>
+					<portRef name="ADR0" instanceRef="L48"/>
+					<portRef name="ADR0" instanceRef="L64"/>
+					<portRef name="ADR1" instanceRef="L65"/>
+					<portRef name="ADR2" instanceRef="L66"/>
+				</net>
+				<net name="net_L97">
+					<portRef name="O" instanceRef="L97"/>
+					<portRef name="ADR0" instanceRef="L65"/>
+					<portRef name="ADR1" instanceRef="L66"/>
+				</net>
+				<net name="net_L85">
+					<portRef name="O" instanceRef="L85"/>
+					<portRef name="ADR1" instanceRef="L45"/>
+					<portRef name="ADR0" instanceRef="L66"/>
+					<portRef name="ADR1" instanceRef="L67"/>
+					<portRef name="ADR2" instanceRef="L68"/>
+				</net>
+				<net name="net_L84">
+					<portRef name="O" instanceRef="L84"/>
+					<portRef name="ADR0" instanceRef="L45"/>
+					<portRef name="ADR0" instanceRef="L67"/>
+					<portRef name="ADR1" instanceRef="L68"/>
+					<portRef name="ADR2" instanceRef="L69"/>
+				</net>
+				<net name="net_L98">
+					<portRef name="O" instanceRef="L98"/>
+					<portRef name="ADR0" instanceRef="L68"/>
+					<portRef name="ADR1" instanceRef="L69"/>
+				</net>
+				<net name="net_L83">
+					<portRef name="O" instanceRef="L83"/>
+					<portRef name="ADR1" instanceRef="L42"/>
+					<portRef name="ADR0" instanceRef="L69"/>
+					<portRef name="ADR1" instanceRef="L70"/>
+					<portRef name="ADR2" instanceRef="L72"/>
+				</net>
+				<net name="net_L82">
+					<portRef name="O" instanceRef="L82"/>
+					<portRef name="ADR0" instanceRef="L42"/>
+					<portRef name="ADR0" instanceRef="L70"/>
+					<portRef name="ADR1" instanceRef="L72"/>
+					<portRef name="ADR2" instanceRef="L73"/>
+				</net>
+				<net name="net_L99">
+					<portRef name="O" instanceRef="L99"/>
+					<portRef name="ADR0" instanceRef="L72"/>
+					<portRef name="ADR1" instanceRef="L73"/>
+				</net>
+				<net name="net_L81">
+					<portRef name="O" instanceRef="L81"/>
+					<portRef name="ADR1" instanceRef="L39"/>
+					<portRef name="ADR0" instanceRef="L73"/>
+					<portRef name="ADR1" instanceRef="L74"/>
+					<portRef name="ADR2" instanceRef="L75"/>
+				</net>
+				<net name="net_L80">
+					<portRef name="O" instanceRef="L80"/>
+					<portRef name="ADR0" instanceRef="L39"/>
+					<portRef name="ADR0" instanceRef="L74"/>
+					<portRef name="ADR1" instanceRef="L75"/>
+					<portRef name="ADR2" instanceRef="L76"/>
+				</net>
+				<net name="net_L100">
+					<portRef name="O" instanceRef="L100"/>
+					<portRef name="ADR0" instanceRef="L75"/>
+					<portRef name="ADR1" instanceRef="L76"/>
+				</net>
+				<net name="net_L101">
+					<portRef name="O" instanceRef="L101"/>
+					<portRef name="ADR0" instanceRef="L76"/>
+				</net>
+				<net name="net_L31">
+					<portRef name="O" instanceRef="L31"/>
+					<portRef name="D" instanceRef="u_display/digit_idx_reg[1]"/>
+				</net>
+				<net name="net_L30">
+					<portRef name="O" instanceRef="L30"/>
+					<portRef name="D" instanceRef="u_display/digit_idx_reg[0]"/>
+				</net>
+				<net name="net_L29">
+					<portRef name="O" instanceRef="L29"/>
+					<portRef name="D" instanceRef="counter_reg_reg[15]"/>
+				</net>
+				<net name="net_L28">
+					<portRef name="O" instanceRef="L28"/>
+					<portRef name="D" instanceRef="counter_reg_reg[14]"/>
+				</net>
+				<net name="net_L27">
+					<portRef name="O" instanceRef="L27"/>
+					<portRef name="D" instanceRef="counter_reg_reg[13]"/>
+				</net>
+				<net name="net_L26">
+					<portRef name="O" instanceRef="L26"/>
+					<portRef name="D" instanceRef="counter_reg_reg[12]"/>
+				</net>
+				<net name="net_L25">
+					<portRef name="O" instanceRef="L25"/>
+					<portRef name="D" instanceRef="counter_reg_reg[11]"/>
+				</net>
+				<net name="net_L24">
+					<portRef name="O" instanceRef="L24"/>
+					<portRef name="D" instanceRef="counter_reg_reg[10]"/>
+				</net>
+				<net name="net_L23">
+					<portRef name="O" instanceRef="L23"/>
+					<portRef name="D" instanceRef="counter_reg_reg[9]"/>
+				</net>
+				<net name="net_L22">
+					<portRef name="O" instanceRef="L22"/>
+					<portRef name="D" instanceRef="counter_reg_reg[8]"/>
+				</net>
+				<net name="net_L21">
+					<portRef name="O" instanceRef="L21"/>
+					<portRef name="D" instanceRef="counter_reg_reg[7]"/>
+				</net>
+				<net name="net_L20">
+					<portRef name="O" instanceRef="L20"/>
+					<portRef name="D" instanceRef="counter_reg_reg[6]"/>
+				</net>
+				<net name="net_L19">
+					<portRef name="O" instanceRef="L19"/>
+					<portRef name="D" instanceRef="counter_reg_reg[5]"/>
+				</net>
+				<net name="net_L18">
+					<portRef name="O" instanceRef="L18"/>
+					<portRef name="D" instanceRef="counter_reg_reg[4]"/>
+				</net>
+				<net name="net_L17">
+					<portRef name="O" instanceRef="L17"/>
+					<portRef name="D" instanceRef="counter_reg_reg[3]"/>
+				</net>
+				<net name="net_L16">
+					<portRef name="O" instanceRef="L16"/>
+					<portRef name="D" instanceRef="counter_reg_reg[2]"/>
+				</net>
+				<net name="net_L33">
+					<portRef name="O" instanceRef="L33"/>
+					<portRef name="D" instanceRef="counter_reg_reg[1]"/>
+				</net>
+				<net name="net_L32">
+					<portRef name="O" instanceRef="L32"/>
+					<portRef name="D" instanceRef="counter_reg_reg[0]"/>
+				</net>
+				<net name="n104">
+					<portRef name="LOGIC_1_PIN" instanceRef="VCC"/>
+					<portRef name="ADR2" instanceRef="L32"/>
+					<portRef name="ADR2" instanceRef="L50"/>
+					<portRef name="ADR3" instanceRef="L61"/>
+					<portRef name="ADR3" instanceRef="L63"/>
+					<portRef name="ADR3" instanceRef="L71"/>
+					<portRef name="ADR3" instanceRef="L78"/>
+					<portRef name="ADR2" instanceRef="L79"/>
+					<portRef name="ADR2" instanceRef="L80"/>
+					<portRef name="ADR2" instanceRef="L81"/>
+					<portRef name="ADR2" instanceRef="L82"/>
+					<portRef name="ADR2" instanceRef="L83"/>
+					<portRef name="ADR2" instanceRef="L84"/>
+					<portRef name="ADR2" instanceRef="L85"/>
+					<portRef name="ADR2" instanceRef="L86"/>
+					<portRef name="ADR2" instanceRef="L87"/>
+					<portRef name="ADR2" instanceRef="L97"/>
+					<portRef name="ADR2" instanceRef="L98"/>
+					<portRef name="ADR2" instanceRef="L99"/>
+					<portRef name="ADR2" instanceRef="L100"/>
+					<portRef name="ADR3" instanceRef="L101"/>
+				</net>
+				<net name="net_L62">
+					<portRef name="O" instanceRef="L62"/>
+					<portRef name="ADR3" instanceRef="L16"/>
+					<portRef name="ADR3" instanceRef="L66"/>
+				</net>
+				<net name="net_L64">
+					<portRef name="O" instanceRef="L64"/>
+					<portRef name="ADR3" instanceRef="L17"/>
+					<portRef name="ADR3" instanceRef="L47"/>
+				</net>
+				<net name="net_L65">
+					<portRef name="O" instanceRef="L65"/>
+					<portRef name="ADR3" instanceRef="L18"/>
+					<portRef name="ADR2" instanceRef="L45"/>
+					<portRef name="ADR3" instanceRef="L46"/>
+					<portRef name="ADR2" instanceRef="L67"/>
+					<portRef name="ADR3" instanceRef="L68"/>
+				</net>
+				<net name="net_L66">
+					<portRef name="O" instanceRef="L66"/>
+					<portRef name="ADR3" instanceRef="L19"/>
+					<portRef name="ADR3" instanceRef="L69"/>
+				</net>
+				<net name="net_L67">
+					<portRef name="O" instanceRef="L67"/>
+					<portRef name="ADR3" instanceRef="L20"/>
+					<portRef name="ADR3" instanceRef="L44"/>
+				</net>
+				<net name="net_L68">
+					<portRef name="O" instanceRef="L68"/>
+					<portRef name="ADR3" instanceRef="L21"/>
+					<portRef name="ADR2" instanceRef="L42"/>
+					<portRef name="ADR3" instanceRef="L43"/>
+					<portRef name="ADR2" instanceRef="L70"/>
+					<portRef name="ADR3" instanceRef="L72"/>
+				</net>
+				<net name="net_L69">
+					<portRef name="O" instanceRef="L69"/>
+					<portRef name="ADR3" instanceRef="L22"/>
+					<portRef name="ADR3" instanceRef="L73"/>
+				</net>
+				<net name="net_L70">
+					<portRef name="O" instanceRef="L70"/>
+					<portRef name="ADR3" instanceRef="L23"/>
+					<portRef name="ADR3" instanceRef="L41"/>
+				</net>
+				<net name="net_L72">
+					<portRef name="O" instanceRef="L72"/>
+					<portRef name="ADR3" instanceRef="L24"/>
+					<portRef name="ADR2" instanceRef="L39"/>
+					<portRef name="ADR3" instanceRef="L40"/>
+					<portRef name="ADR2" instanceRef="L74"/>
+					<portRef name="ADR3" instanceRef="L75"/>
+				</net>
+				<net name="net_L73">
+					<portRef name="O" instanceRef="L73"/>
+					<portRef name="ADR3" instanceRef="L25"/>
+					<portRef name="ADR3" instanceRef="L76"/>
+				</net>
+				<net name="net_L74">
+					<portRef name="O" instanceRef="L74"/>
+					<portRef name="ADR3" instanceRef="L26"/>
+					<portRef name="ADR3" instanceRef="L38"/>
+				</net>
+				<net name="net_L75">
+					<portRef name="O" instanceRef="L75"/>
+					<portRef name="ADR2" instanceRef="L27"/>
+					<portRef name="ADR3" instanceRef="L28"/>
+					<portRef name="ADR3" instanceRef="L36"/>
+					<portRef name="ADR2" instanceRef="L37"/>
+				</net>
+				<net name="net_L76">
+					<portRef name="O" instanceRef="L76"/>
+					<portRef name="ADR3" instanceRef="L29"/>
+					<portRef name="ADR3" instanceRef="L34"/>
+					<portRef name="ADR3" instanceRef="L35"/>
+				</net>
+				<net name="net_L58">
+					<portRef name="O" instanceRef="L58"/>
+					<portRef name="ADR1" instanceRef="L11"/>
+				</net>
+				<net name="net_L78">
+					<portRef name="O" instanceRef="L78"/>
+					<portRef name="ADR1" instanceRef="L33"/>
+					<portRef name="ADR3" instanceRef="L39"/>
+					<portRef name="ADR3" instanceRef="L42"/>
+					<portRef name="ADR3" instanceRef="L45"/>
+					<portRef name="ADR3" instanceRef="L48"/>
+				</net>
+				<net name="net_L71">
+					<portRef name="O" instanceRef="L71"/>
+					<portRef name="ADR1" instanceRef="L24"/>
+				</net>
+				<net name="net_L51">
+					<portRef name="O" instanceRef="L51"/>
+					<portRef name="ADR0" instanceRef="L4"/>
+					<portRef name="ADR2" instanceRef="L5"/>
+					<portRef name="ADR0" instanceRef="L6"/>
+					<portRef name="ADR0" instanceRef="L7"/>
+					<portRef name="ADR2" instanceRef="L8"/>
+					<portRef name="ADR1" instanceRef="L9"/>
+				</net>
+				<net name="net_L53">
+					<portRef name="O" instanceRef="L53"/>
+					<portRef name="ADR2" instanceRef="L4"/>
+					<portRef name="ADR2" instanceRef="L7"/>
+					<portRef name="ADR3" instanceRef="L8"/>
+					<portRef name="ADR0" instanceRef="L9"/>
+					<portRef name="ADR2" instanceRef="L10"/>
+				</net>
+				<net name="net_L52">
+					<portRef name="O" instanceRef="L52"/>
+					<portRef name="ADR1" instanceRef="L4"/>
+					<portRef name="ADR3" instanceRef="L7"/>
+				</net>
+				<net name="net_L56">
+					<portRef name="O" instanceRef="L56"/>
+					<portRef name="ADR3" instanceRef="L5"/>
+					<portRef name="ADR3" instanceRef="L6"/>
+				</net>
+				<net name="net_L55">
+					<portRef name="O" instanceRef="L55"/>
+					<portRef name="ADR0" instanceRef="L5"/>
+					<portRef name="ADR1" instanceRef="L6"/>
+					<portRef name="ADR0" instanceRef="L8"/>
+					<portRef name="ADR2" instanceRef="L9"/>
+					<portRef name="ADR1" instanceRef="L10"/>
+				</net>
+				<net name="net_L54">
+					<portRef name="O" instanceRef="L54"/>
+					<portRef name="ADR3" instanceRef="L4"/>
+					<portRef name="ADR1" instanceRef="L5"/>
+					<portRef name="ADR2" instanceRef="L6"/>
+					<portRef name="ADR1" instanceRef="L7"/>
+					<portRef name="ADR1" instanceRef="L8"/>
+					<portRef name="ADR3" instanceRef="L9"/>
+					<portRef name="ADR3" instanceRef="L10"/>
+				</net>
+				<net name="net_L57">
+					<portRef name="O" instanceRef="L57"/>
+					<portRef name="ADR0" instanceRef="L10"/>
+				</net>
+				<net name="net_L111">
+					<portRef name="O" instanceRef="L111"/>
+					<portRef name="ADR0" instanceRef="L94"/>
+					<portRef name="ADR0" instanceRef="L95"/>
+				</net>
+				<net name="net_L109">
+					<portRef name="O" instanceRef="L109"/>
+					<portRef name="ADR0" instanceRef="L92"/>
+					<portRef name="ADR0" instanceRef="L93"/>
+				</net>
+				<net name="net_L107">
+					<portRef name="O" instanceRef="L107"/>
+					<portRef name="ADR0" instanceRef="L90"/>
+					<portRef name="ADR0" instanceRef="L91"/>
+				</net>
+				<net name="net_L105">
+					<portRef name="O" instanceRef="L105"/>
+					<portRef name="ADR0" instanceRef="L88"/>
+					<portRef name="ADR0" instanceRef="L89"/>
+				</net>
+				<net name="net_L59">
+					<portRef name="O" instanceRef="L59"/>
+					<portRef name="ADR2" instanceRef="L11"/>
+					<portRef name="ADR1" instanceRef="L12"/>
+					<portRef name="ADR3" instanceRef="L13"/>
+					<portRef name="ADR2" instanceRef="L14"/>
+					<portRef name="ADR0" instanceRef="L15"/>
+					<portRef name="ADR0" instanceRef="L30"/>
+					<portRef name="ADR1" instanceRef="L31"/>
+				</net>
+				<net name="net_L63">
+					<portRef name="O" instanceRef="L63"/>
+					<portRef name="ADR1" instanceRef="L17"/>
+					<portRef name="ADR1" instanceRef="L20"/>
+					<portRef name="ADR1" instanceRef="L23"/>
+					<portRef name="ADR2" instanceRef="L49"/>
+					<portRef name="ADR2" instanceRef="L62"/>
+				</net>
+				<net name="net_L61">
+					<portRef name="O" instanceRef="L61"/>
+					<portRef name="ADR1" instanceRef="L16"/>
+					<portRef name="ADR1" instanceRef="L18"/>
+					<portRef name="ADR1" instanceRef="L19"/>
+					<portRef name="ADR1" instanceRef="L21"/>
+					<portRef name="ADR1" instanceRef="L22"/>
+					<portRef name="ADR1" instanceRef="L25"/>
+					<portRef name="ADR1" instanceRef="L26"/>
+					<portRef name="ADR1" instanceRef="L27"/>
+					<portRef name="ADR1" instanceRef="L28"/>
+					<portRef name="ADR1" instanceRef="L29"/>
+					<portRef name="ADR1" instanceRef="L34"/>
+					<portRef name="ADR1" instanceRef="L35"/>
+					<portRef name="ADR1" instanceRef="L36"/>
+					<portRef name="ADR1" instanceRef="L37"/>
+					<portRef name="ADR1" instanceRef="L38"/>
+					<portRef name="ADR1" instanceRef="L40"/>
+					<portRef name="ADR1" instanceRef="L41"/>
+					<portRef name="ADR1" instanceRef="L43"/>
+					<portRef name="ADR1" instanceRef="L44"/>
+					<portRef name="ADR1" instanceRef="L46"/>
+					<portRef name="ADR1" instanceRef="L47"/>
+				</net>
+				<net name="net_L77">
+					<portRef name="O" instanceRef="L77"/>
+					<portRef name="ADR1" instanceRef="L32"/>
+					<portRef name="ADR1" instanceRef="L50"/>
+					<portRef name="ADR1" instanceRef="L79"/>
+					<portRef name="ADR1" instanceRef="L80"/>
+					<portRef name="ADR1" instanceRef="L81"/>
+					<portRef name="ADR1" instanceRef="L82"/>
+					<portRef name="ADR1" instanceRef="L83"/>
+					<portRef name="ADR1" instanceRef="L84"/>
+					<portRef name="ADR1" instanceRef="L85"/>
+					<portRef name="ADR1" instanceRef="L86"/>
+					<portRef name="ADR1" instanceRef="L87"/>
+					<portRef name="ADR1" instanceRef="L97"/>
+					<portRef name="ADR1" instanceRef="L98"/>
+					<portRef name="ADR1" instanceRef="L99"/>
+					<portRef name="ADR1" instanceRef="L100"/>
+				</net>
+				<net name="net_L103">
+					<portRef name="O" instanceRef="L103"/>
+					<portRef name="ADR2" instanceRef="L77"/>
+				</net>
+				<net name="net_L115">
+					<portRef name="O" instanceRef="L115"/>
+					<portRef name="ADR1" instanceRef="L114"/>
+				</net>
+				<net name="ms_cnt[16]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[16]"/>
+					<portRef name="ADR2" instanceRef="L96"/>
+					<portRef name="ADR0" instanceRef="L103"/>
+				</net>
+				<net name="ms_cnt[15]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[15]"/>
+					<portRef name="ADR3" instanceRef="L96"/>
+					<portRef name="ADR1" instanceRef="L103"/>
+				</net>
+				<net name="ms_cnt[14]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[14]"/>
+					<portRef name="ADR1" instanceRef="L61"/>
+					<portRef name="ADR1" instanceRef="L63"/>
+					<portRef name="ADR1" instanceRef="L71"/>
+					<portRef name="ADR1" instanceRef="L78"/>
+					<portRef name="ADR0" instanceRef="L104"/>
+				</net>
+				<net name="ms_cnt[13]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[13]"/>
+					<portRef name="ADR2" instanceRef="L61"/>
+					<portRef name="ADR2" instanceRef="L63"/>
+					<portRef name="ADR2" instanceRef="L71"/>
+					<portRef name="ADR2" instanceRef="L78"/>
+					<portRef name="ADR1" instanceRef="L104"/>
+				</net>
+				<net name="ms_cnt[12]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[12]"/>
+					<portRef name="ADR2" instanceRef="L26"/>
+					<portRef name="ADR0" instanceRef="L38"/>
+					<portRef name="ADR1" instanceRef="L77"/>
+					<portRef name="ADR1" instanceRef="L96"/>
+					<portRef name="ADR0" instanceRef="L100"/>
+				</net>
+				<net name="ms_cnt[11]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[11]"/>
+					<portRef name="ADR2" instanceRef="L25"/>
+					<portRef name="ADR0" instanceRef="L80"/>
+					<portRef name="ADR3" instanceRef="L102"/>
+				</net>
+				<net name="ms_cnt[10]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[10]"/>
+					<portRef name="ADR2" instanceRef="L24"/>
+					<portRef name="ADR0" instanceRef="L40"/>
+					<portRef name="ADR0" instanceRef="L81"/>
+					<portRef name="ADR0" instanceRef="L102"/>
+				</net>
+				<net name="ms_cnt[9]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[9]"/>
+					<portRef name="ADR2" instanceRef="L23"/>
+					<portRef name="ADR0" instanceRef="L41"/>
+					<portRef name="ADR0" instanceRef="L99"/>
+					<portRef name="ADR0" instanceRef="L113"/>
+				</net>
+				<net name="ms_cnt[8]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[8]"/>
+					<portRef name="ADR2" instanceRef="L22"/>
+					<portRef name="ADR0" instanceRef="L82"/>
+					<portRef name="ADR0" instanceRef="L114"/>
+				</net>
+				<net name="ms_cnt[7]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[7]"/>
+					<portRef name="ADR2" instanceRef="L21"/>
+					<portRef name="ADR0" instanceRef="L43"/>
+					<portRef name="ADR0" instanceRef="L83"/>
+					<portRef name="ADR1" instanceRef="L113"/>
+				</net>
+				<net name="ms_cnt[6]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[6]"/>
+					<portRef name="ADR2" instanceRef="L20"/>
+					<portRef name="ADR0" instanceRef="L44"/>
+					<portRef name="ADR0" instanceRef="L98"/>
+					<portRef name="ADR1" instanceRef="L116"/>
+				</net>
+				<net name="ms_cnt[5]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[5]"/>
+					<portRef name="ADR2" instanceRef="L19"/>
+					<portRef name="ADR0" instanceRef="L84"/>
+					<portRef name="ADR2" instanceRef="L114"/>
+				</net>
+				<net name="ms_cnt[4]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[4]"/>
+					<portRef name="ADR2" instanceRef="L18"/>
+					<portRef name="ADR0" instanceRef="L46"/>
+					<portRef name="ADR0" instanceRef="L85"/>
+					<portRef name="ADR0" instanceRef="L116"/>
+				</net>
+				<net name="ms_cnt[3]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[3]"/>
+					<portRef name="ADR2" instanceRef="L17"/>
+					<portRef name="ADR0" instanceRef="L47"/>
+					<portRef name="ADR0" instanceRef="L97"/>
+					<portRef name="ADR1" instanceRef="L115"/>
+				</net>
+				<net name="ms_cnt[2]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[2]"/>
+					<portRef name="ADR2" instanceRef="L16"/>
+					<portRef name="ADR0" instanceRef="L86"/>
+					<portRef name="ADR2" instanceRef="L115"/>
+				</net>
+				<net name="ms_cnt[1]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[1]"/>
+					<portRef name="ADR2" instanceRef="L33"/>
+					<portRef name="ADR0" instanceRef="L87"/>
+					<portRef name="ADR0" instanceRef="L115"/>
+				</net>
+				<net name="ms_cnt[0]">
+					<portRef name="Q" instanceRef="ms_cnt_reg[0]"/>
+					<portRef name="ADR3" instanceRef="L32"/>
+					<portRef name="ADR1" instanceRef="L49"/>
+					<portRef name="ADR0" instanceRef="L50"/>
+					<portRef name="ADR1" instanceRef="L62"/>
+					<portRef name="ADR0" instanceRef="L79"/>
+					<portRef name="ADR3" instanceRef="L115"/>
+				</net>
+				<net name="counter_reg[15]">
+					<portRef name="Q" instanceRef="counter_reg_reg[15]"/>
+					<portRef name="ADR0" instanceRef="L29"/>
+					<portRef name="ADR0" instanceRef="L34"/>
+					<portRef name="ADR0" instanceRef="L35"/>
+					<portRef name="ADR3" instanceRef="L109"/>
+				</net>
+				<net name="counter_reg[14]">
+					<portRef name="Q" instanceRef="counter_reg_reg[14]"/>
+					<portRef name="ADR0" instanceRef="L28"/>
+					<portRef name="ADR2" instanceRef="L29"/>
+					<portRef name="ADR2" instanceRef="L34"/>
+					<portRef name="ADR2" instanceRef="L35"/>
+					<portRef name="ADR0" instanceRef="L36"/>
+					<portRef name="ADR3" instanceRef="L107"/>
+				</net>
+				<net name="counter_reg[13]">
+					<portRef name="Q" instanceRef="counter_reg_reg[13]"/>
+					<portRef name="ADR0" instanceRef="L27"/>
+					<portRef name="ADR2" instanceRef="L28"/>
+					<portRef name="ADR2" instanceRef="L36"/>
+					<portRef name="ADR0" instanceRef="L37"/>
+					<portRef name="ADR0" instanceRef="L101"/>
+					<portRef name="ADR3" instanceRef="L111"/>
+				</net>
+				<net name="counter_reg[12]">
+					<portRef name="Q" instanceRef="counter_reg_reg[12]"/>
+					<portRef name="ADR0" instanceRef="L26"/>
+					<portRef name="ADR2" instanceRef="L38"/>
+					<portRef name="ADR3" instanceRef="L100"/>
+					<portRef name="ADR3" instanceRef="L105"/>
+				</net>
+				<net name="counter_reg[11]">
+					<portRef name="Q" instanceRef="counter_reg_reg[11]"/>
+					<portRef name="ADR0" instanceRef="L25"/>
+					<portRef name="ADR3" instanceRef="L80"/>
+					<portRef name="ADR3" instanceRef="L92"/>
+					<portRef name="ADR3" instanceRef="L93"/>
+				</net>
+				<net name="counter_reg[10]">
+					<portRef name="Q" instanceRef="counter_reg_reg[10]"/>
+					<portRef name="ADR0" instanceRef="L24"/>
+					<portRef name="ADR2" instanceRef="L40"/>
+					<portRef name="ADR3" instanceRef="L81"/>
+					<portRef name="ADR3" instanceRef="L90"/>
+					<portRef name="ADR3" instanceRef="L91"/>
+				</net>
+				<net name="counter_reg[9]">
+					<portRef name="Q" instanceRef="counter_reg_reg[9]"/>
+					<portRef name="ADR0" instanceRef="L23"/>
+					<portRef name="ADR2" instanceRef="L41"/>
+					<portRef name="ADR3" instanceRef="L94"/>
+					<portRef name="ADR3" instanceRef="L95"/>
+					<portRef name="ADR3" instanceRef="L99"/>
+				</net>
+				<net name="counter_reg[8]">
+					<portRef name="Q" instanceRef="counter_reg_reg[8]"/>
+					<portRef name="ADR0" instanceRef="L22"/>
+					<portRef name="ADR3" instanceRef="L82"/>
+					<portRef name="ADR3" instanceRef="L88"/>
+					<portRef name="ADR3" instanceRef="L89"/>
+				</net>
+				<net name="counter_reg[7]">
+					<portRef name="Q" instanceRef="counter_reg_reg[7]"/>
+					<portRef name="ADR0" instanceRef="L21"/>
+					<portRef name="ADR2" instanceRef="L43"/>
+					<portRef name="ADR3" instanceRef="L83"/>
+					<portRef name="ADR2" instanceRef="L93"/>
+					<portRef name="ADR0" instanceRef="L110"/>
+				</net>
+				<net name="counter_reg[6]">
+					<portRef name="Q" instanceRef="counter_reg_reg[6]"/>
+					<portRef name="ADR0" instanceRef="L20"/>
+					<portRef name="ADR2" instanceRef="L44"/>
+					<portRef name="ADR2" instanceRef="L91"/>
+					<portRef name="ADR3" instanceRef="L98"/>
+					<portRef name="ADR0" instanceRef="L108"/>
+				</net>
+				<net name="counter_reg[5]">
+					<portRef name="Q" instanceRef="counter_reg_reg[5]"/>
+					<portRef name="ADR0" instanceRef="L19"/>
+					<portRef name="ADR3" instanceRef="L84"/>
+					<portRef name="ADR2" instanceRef="L95"/>
+					<portRef name="ADR0" instanceRef="L112"/>
+				</net>
+				<net name="counter_reg[4]">
+					<portRef name="Q" instanceRef="counter_reg_reg[4]"/>
+					<portRef name="ADR0" instanceRef="L18"/>
+					<portRef name="ADR2" instanceRef="L46"/>
+					<portRef name="ADR3" instanceRef="L85"/>
+					<portRef name="ADR2" instanceRef="L89"/>
+					<portRef name="ADR0" instanceRef="L106"/>
+				</net>
+				<net name="counter_reg[3]">
+					<portRef name="Q" instanceRef="counter_reg_reg[3]"/>
+					<portRef name="ADR0" instanceRef="L17"/>
+					<portRef name="ADR2" instanceRef="L47"/>
+					<portRef name="ADR3" instanceRef="L97"/>
+					<portRef name="ADR0" instanceRef="L109"/>
+				</net>
+				<net name="counter_reg[2]">
+					<portRef name="Q" instanceRef="counter_reg_reg[2]"/>
+					<portRef name="ADR0" instanceRef="L16"/>
+					<portRef name="ADR3" instanceRef="L86"/>
+					<portRef name="ADR0" instanceRef="L107"/>
+				</net>
+				<net name="counter_reg[1]">
+					<portRef name="Q" instanceRef="counter_reg_reg[1]"/>
+					<portRef name="ADR0" instanceRef="L33"/>
+					<portRef name="ADR3" instanceRef="L87"/>
+					<portRef name="ADR0" instanceRef="L111"/>
+				</net>
+				<net name="counter_reg[0]">
+					<portRef name="Q" instanceRef="counter_reg_reg[0]"/>
+					<portRef name="ADR0" instanceRef="L32"/>
+					<portRef name="ADR3" instanceRef="L49"/>
+					<portRef name="ADR3" instanceRef="L50"/>
+					<portRef name="ADR3" instanceRef="L62"/>
+					<portRef name="ADR3" instanceRef="L79"/>
+					<portRef name="ADR0" instanceRef="L105"/>
+				</net>
+				<net name="net_Buf-pad-digit_en[3]">
+					<portRef name="O" instanceRef="L0"/>
+					<portRef name="I" instanceRef="Buf-pad-digit_en[3]"/>
+				</net>
+				<net name="net_Buf-pad-digit_en[0]">
+					<portRef name="O" instanceRef="L1"/>
+					<portRef name="I" instanceRef="Buf-pad-digit_en[0]"/>
+				</net>
+				<net name="net_Buf-pad-seg[0]">
+					<portRef name="O" instanceRef="L4"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[0]"/>
+				</net>
+				<net name="net_Buf-pad-seg[1]">
+					<portRef name="O" instanceRef="L5"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[1]"/>
+				</net>
+				<net name="net_Buf-pad-seg[2]">
+					<portRef name="O" instanceRef="L6"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[2]"/>
+				</net>
+				<net name="net_Buf-pad-seg[3]">
+					<portRef name="O" instanceRef="L7"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[3]"/>
+				</net>
+				<net name="net_Buf-pad-seg[4]">
+					<portRef name="O" instanceRef="L8"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[4]"/>
+				</net>
+				<net name="net_Buf-pad-seg[5]">
+					<portRef name="O" instanceRef="L9"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[5]"/>
+				</net>
+				<net name="net_Buf-pad-seg[6]">
+					<portRef name="O" instanceRef="L10"/>
+					<portRef name="I" instanceRef="Buf-pad-seg[6]"/>
+				</net>
+				<net name="net_L112">
+					<portRef name="O" instanceRef="L112"/>
+					<portRef name="ADR1" instanceRef="L95"/>
+				</net>
+				<net name="net_L94">
+					<portRef name="O" instanceRef="L94"/>
+					<portRef name="ADR0" instanceRef="L54"/>
+				</net>
+				<net name="net_L95">
+					<portRef name="O" instanceRef="L95"/>
+					<portRef name="ADR1" instanceRef="L54"/>
+				</net>
+				<net name="net_L110">
+					<portRef name="O" instanceRef="L110"/>
+					<portRef name="ADR1" instanceRef="L93"/>
+				</net>
+				<net name="net_L92">
+					<portRef name="O" instanceRef="L92"/>
+					<portRef name="ADR0" instanceRef="L53"/>
+					<portRef name="ADR0" instanceRef="L56"/>
+				</net>
+				<net name="net_L93">
+					<portRef name="O" instanceRef="L93"/>
+					<portRef name="ADR1" instanceRef="L53"/>
+					<portRef name="ADR1" instanceRef="L56"/>
+				</net>
+				<net name="net_L108">
+					<portRef name="O" instanceRef="L108"/>
+					<portRef name="ADR1" instanceRef="L91"/>
+				</net>
+				<net name="net_L90">
+					<portRef name="O" instanceRef="L90"/>
+					<portRef name="ADR0" instanceRef="L52"/>
+					<portRef name="ADR0" instanceRef="L55"/>
+				</net>
+				<net name="net_L91">
+					<portRef name="O" instanceRef="L91"/>
+					<portRef name="ADR1" instanceRef="L52"/>
+					<portRef name="ADR1" instanceRef="L55"/>
+				</net>
+				<net name="net_L106">
+					<portRef name="O" instanceRef="L106"/>
+					<portRef name="ADR1" instanceRef="L89"/>
+				</net>
+				<net name="net_L88">
+					<portRef name="O" instanceRef="L88"/>
+					<portRef name="ADR0" instanceRef="L51"/>
+					<portRef name="ADR0" instanceRef="L57"/>
+				</net>
+				<net name="net_L89">
+					<portRef name="O" instanceRef="L89"/>
+					<portRef name="ADR1" instanceRef="L51"/>
+					<portRef name="ADR1" instanceRef="L57"/>
+				</net>
+				<net name="net_L96">
+					<portRef name="O" instanceRef="L96"/>
+					<portRef name="ADR0" instanceRef="L61"/>
+					<portRef name="ADR0" instanceRef="L63"/>
+					<portRef name="ADR0" instanceRef="L71"/>
+					<portRef name="ADR0" instanceRef="L78"/>
+					<portRef name="ADR1" instanceRef="L101"/>
+				</net>
+				<net name="net_L104">
+					<portRef name="O" instanceRef="L104"/>
+					<portRef name="ADR3" instanceRef="L77"/>
+					<portRef name="ADR2" instanceRef="L101"/>
+				</net>
+				<net name="net_L102">
+					<portRef name="O" instanceRef="L102"/>
+					<portRef name="ADR0" instanceRef="L77"/>
+					<portRef name="ADR0" instanceRef="L96"/>
+				</net>
+				<net name="net_L113">
+					<portRef name="O" instanceRef="L113"/>
+					<portRef name="ADR1" instanceRef="L102"/>
+				</net>
+				<net name="net_L114">
+					<portRef name="O" instanceRef="L114"/>
+					<portRef name="ADR2" instanceRef="L102"/>
+				</net>
+				<net name="net_L116">
+					<portRef name="O" instanceRef="L116"/>
+					<portRef name="ADR3" instanceRef="L114"/>
+				</net>
+				<net name="clk">
+					<portRef name="clk"/>
+					<portRef name="I" instanceRef="Buf-pad-clk"/>
+					<portRef name="PAD" instanceRef="clk_ipad"/>
+				</net>
+				<net name="net_Buf-pad-clk">
+					<portRef name="O" instanceRef="Buf-pad-clk"/>
+					<portRef name="I" instanceRef="IBuf-clkpad-clk"/>
+				</net>
+				<net name="rst_n">
+					<portRef name="rst_n"/>
+					<portRef name="I" instanceRef="Buf-pad-rst_n"/>
+					<portRef name="PAD" instanceRef="rst_n_ipad"/>
+				</net>
+				<net name="seg[6]">
+					<portRef name="PAD" instanceRef="seg[6]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[6]"/>
+					<portRef name="seg[6]"/>
+				</net>
+				<net name="seg[5]">
+					<portRef name="PAD" instanceRef="seg[5]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[5]"/>
+					<portRef name="seg[5]"/>
+				</net>
+				<net name="seg[4]">
+					<portRef name="PAD" instanceRef="seg[4]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[4]"/>
+					<portRef name="seg[4]"/>
+				</net>
+				<net name="seg[3]">
+					<portRef name="PAD" instanceRef="seg[3]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[3]"/>
+					<portRef name="seg[3]"/>
+				</net>
+				<net name="seg[2]">
+					<portRef name="PAD" instanceRef="seg[2]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[2]"/>
+					<portRef name="seg[2]"/>
+				</net>
+				<net name="seg[1]">
+					<portRef name="PAD" instanceRef="seg[1]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[1]"/>
+					<portRef name="seg[1]"/>
+				</net>
+				<net name="seg[0]">
+					<portRef name="PAD" instanceRef="seg[0]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-seg[0]"/>
+					<portRef name="seg[0]"/>
+				</net>
+				<net name="digit_en[3]">
+					<portRef name="PAD" instanceRef="digit_en[3]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-digit_en[3]"/>
+					<portRef name="digit_en[3]"/>
+				</net>
+				<net name="digit_en[2]">
+					<portRef name="PAD" instanceRef="digit_en[2]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-digit_en[2]"/>
+					<portRef name="digit_en[2]"/>
+				</net>
+				<net name="digit_en[1]">
+					<portRef name="PAD" instanceRef="digit_en[1]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-digit_en[1]"/>
+					<portRef name="digit_en[1]"/>
+				</net>
+				<net name="digit_en[0]">
+					<portRef name="PAD" instanceRef="digit_en[0]_opad"/>
+					<portRef name="O" instanceRef="Buf-pad-digit_en[0]"/>
+					<portRef name="digit_en[0]"/>
+				</net>
+			</contents>
+		</module>
+	</library>
+	<topModule name="top" libraryRef="work_lib"/>
+</design>
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Rabbit Project File-->
+<project name="" constraint="exp1_cons.xml" bitstream=".">
+    <panel grid_width="50" grid_height="50"/>
+    <components>
+        <component type="Button" name="rstn" grid_x="3" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="true"/>
+            </settings>
+            <inputs>
+                <input pin="P152" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="interval[2]" grid_x="7" grid_y="5">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P150" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="interval[1]" grid_x="5" grid_y="5">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P148" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="SegmentDisplay" name="counter" grid_x="5" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P16" port="A"/>
+                <output pin="P8" port="B"/>
+                <output pin="P9" port="C"/>
+                <output pin="P4" port="D"/>
+                <output pin="P5" port="E"/>
+                <output pin="P6" port="F"/>
+                <output pin="P7" port="G"/>
+                <output pin="" port="DP"/>
+            </outputs>
+        </component>
+        <component type="LED" name="timeout" grid_x="10" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="color" usage="LED color" value="Red"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P15" port="LED"/>
+            </outputs>
+        </component>
+        <component type="Switch" name="dir" grid_x="10" grid_y="5">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P160" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="Switch" name="interval[0]" grid_x="3" grid_y="5">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+            </settings>
+            <inputs>
+                <input pin="P151" port="SW"/>
+            </inputs>
+            <outputs/>
+        </component>
+    </components>
+</project>

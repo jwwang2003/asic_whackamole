@@ -1,0 +1,625 @@
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/exp4/v_src/top.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/exp4/v_src/defines.vh
+Opening include file /home/allenwalker/project/exp4/v_src/defines.vh
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Warning:  /home/allenwalker/project/exp4/v_src/top.v:87: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/allenwalker/project/exp4/v_src/top.v:66: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 60 in file
+	'/home/allenwalker/project/exp4/v_src/top.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            66            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine top line 60 in file
+		'/home/allenwalker/project/exp4/v_src/top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       req_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     sec_cnt_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/allenwalker/project/exp4/top.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'top'.
+Information: Building the design 'lfsr_prng' instantiated from design 'top' with
+	the parameters "INIT_SEED=8'ha5". (HDL-193)
+
+Inferred memory devices in process
+	in routine lfsr_prng_a5 line 15 in file
+		'/home/allenwalker/project/exp4/v_src/lfsr_prng.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     random_reg      | Flip-flop |   4   |  Y  | N  | N  | Y  | N  | N  | N  |
+|     random_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'unique_selector'. (HDL-193)
+
+Inferred memory devices in process
+	in routine unique_selector line 24 in file
+		'/home/allenwalker/project/exp4/v_src/unique_selector.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|       done_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| potential_number_reg | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    searching_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  selected_mask_reg   | Flip-flop |   8   |  N  | N  | Y  | N  | N  | N  | N  |
+| selected_number_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+Statistics for MUX_OPs
+=============================================================
+|  block name/line   | Inputs | Outputs | # sel inputs | MB |
+=============================================================
+| unique_selector/42 |   8    |    1    |      3       | N  |
+=============================================================
+Presto compilation completed successfully.
+Information: Building the design 'seven_seg'. (HDL-193)
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/exp4/v_src/unique_selector.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine unique_selector line 24 in file
+		'/home/allenwalker/project/exp4/v_src/unique_selector.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|       done_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| potential_number_reg | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    searching_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  selected_mask_reg   | Flip-flop |   8   |  N  | N  | Y  | N  | N  | N  | N  |
+| selected_number_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+Statistics for MUX_OPs
+=============================================================
+|  block name/line   | Inputs | Outputs | # sel inputs | MB |
+=============================================================
+| unique_selector/42 |   8    |    1    |      3       | N  |
+=============================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/allenwalker/project/exp4/unique_selector.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'unique_selector'.
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/exp4/v_src/lfsr_prng.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine lfsr_prng line 15 in file
+		'/home/allenwalker/project/exp4/v_src/lfsr_prng.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     random_reg      | Flip-flop |   5   |  Y  | N  | N  | Y  | N  | N  | N  |
+|     random_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/allenwalker/project/exp4/lfsr_prng.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'lfsr_prng'.
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/exp4/v_src/seven_seg.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/exp4/v_src/defines.vh
+Opening include file /home/allenwalker/project/exp4/v_src/defines.vh
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/allenwalker/project/exp4/seven_seg.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'seven_seg'.
+Current design is 'top'.
+Current design is 'top'.
+
+  Linking design 'top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (5 designs)               /home/allenwalker/project/exp4/top.db, etc
+  fde_dc (library)            /home/allenwalker/project/lib/fde_dc.db
+
+Warning: Can't find net 'lfsr_prng/feedback' in design 'top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+Warning: Dont_touch on net 'sec_cnt[0]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[1]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[2]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[3]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[4]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[5]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[6]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[7]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[8]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[9]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[10]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[11]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[12]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[13]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[14]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[15]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[16]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[17]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[18]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[19]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[20]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[21]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[22]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[23]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[24]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[25]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[26]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[27]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[28]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[29]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[30]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[31]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'trigger' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Information: Updating graph... (UID-83)
+Alib files are up-to-date.
+Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Warning: Dont_touch on net 'sec_cnt[0]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[1]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[2]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[3]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[4]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[5]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[6]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[7]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[8]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[9]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[10]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[11]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[12]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[13]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[14]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[15]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[16]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[17]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[18]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[19]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[20]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[21]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[22]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[23]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[24]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[25]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[26]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[27]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[28]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[29]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[30]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'sec_cnt[31]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'trigger' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+
+Information: There are 1 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'top'
+  Ungrouping instance 'unique_inst/C238' 
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'top' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Mapping 'DW01_add'
+Information: Added key list 'DesignWare' to design 'top'. (DDB-72)
+  Mapping 'DW01_cmp2'
+
+  Beginning Mapping Optimizations  (Ultra Medium effort)
+  -------------------------------
+  Structuring 'top'
+  Mapping 'top'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     520.0      0.00       0.0       1.9                          
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     520.0      0.00       0.0       1.9                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+    0:00:00     524.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     524.0      0.00       0.0       0.0                          
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+    0:00:00     522.0      0.00       0.0       0.0                          
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+
+  Optimization Complete
+  ---------------------
+Warning: Design has no hierarchy.  No cells can be ungrouped. (UID-228)
+Alib files are up-to-date.
+Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'top' has no optimization constraints set. (OPT-108)
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00     522.0      0.00       0.0       0.0                          
+Information: The register 'sec_cnt_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'sec_cnt_reg[16]' is a constant and will be removed. (OPT-1206)
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+    0:00:01     474.0      0.00       0.0       0.0                          
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/home/allenwalker/project/exp4/result/top_gate.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1

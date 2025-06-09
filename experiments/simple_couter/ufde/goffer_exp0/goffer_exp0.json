@@ -1,0 +1,1 @@
+{"name":"goffer_exp0","file_lists":[{"name":"timer_display_gate.v","path":"C:\\Users\\wjw_0\\Desktop\\exp0\\result\\timer_display_gate.v","type":"verilog"},{"name":"goffer_exp0_cons.xml","path":"D:\\FDE\\Workspace\\goffer_exp0\\goffer_exp0_cons.xml","type":"constraint"}],"target_device":"FDP3P7","settings":{"route":{"mode":"Direct Search"},"place":{"mode":"Timing Driven"}}}

@@ -1,0 +1,311 @@
+<design name="top">
+	<external name="cell_lib">
+		<module name="DFFSHQ" type="FFLATCH">
+			<property name="edge" value="rise"/>
+			<port name="D" direction="input"/>
+			<port name="CK" direction="input" type="clock"/>
+			<port name="SN" direction="input" type="reset"/>
+			<port name="Q" direction="output"/>
+		</module>
+		<module name="DFFRHQ" type="FFLATCH">
+			<property name="edge" value="rise"/>
+			<port name="D" direction="input"/>
+			<port name="CK" direction="input" type="clock"/>
+			<port name="RN" direction="input" type="reset"/>
+			<port name="Q" direction="output"/>
+		</module>
+		<module name="ADDF" type="MACRO">
+			<property name="truthtable" value="1100001100111100"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="CI" direction="input"/>
+			<port name="S" direction="output"/>
+			<port name="CO" direction="output" type="carry"/>
+		</module>
+		<module name="XOR2" type="COMB">
+			<property name="truthtable" value="01|10"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NAND2B" type="COMB">
+			<property name="truthtable" value="1-|-0"/>
+			<port name="AN" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="MX2" type="COMB">
+			<property name="truthtable" value="1-0|-11"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="S0" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="OAI2BB1" type="COMB">
+			<property name="truthtable" value="11-|--0"/>
+			<port name="A0N" direction="input"/>
+			<port name="A1N" direction="input"/>
+			<port name="B0" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="OR2" type="COMB">
+			<property name="truthtable" value="1-|-1"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NOR2B" type="COMB">
+			<property name="truthtable" value="10"/>
+			<port name="AN" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="INV" type="COMB">
+			<property name="truthtable" value="0"/>
+			<port name="A" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NOR2" type="COMB">
+			<property name="truthtable" value="00"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NOR3B" type="COMB">
+			<property name="truthtable" value="100"/>
+			<port name="AN" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="C" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NAND3" type="COMB">
+			<property name="truthtable" value="0--|-0-|--0"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="C" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+		<module name="NAND2" type="COMB">
+			<property name="truthtable" value="0-|-0"/>
+			<port name="A" direction="input"/>
+			<port name="B" direction="input"/>
+			<port name="Y" direction="output"/>
+		</module>
+	</external>
+	<library name="work_lib">
+		<module name="top" type="GENERIC">
+			<port name="seed" msb="7" lsb="0" direction="input"/>
+			<port name="seg" msb="6" lsb="0" direction="output"/>
+			<port name="clk" direction="input"/>
+			<port name="rst" direction="input"/>
+			<contents>
+				<instance name="u_prng/random_reg[7]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[0]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[1]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[2]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[3]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[4]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[5]" moduleRef="DFFSHQ" libraryRef="cell_lib"/>
+				<instance name="u_prng/random_reg[6]" moduleRef="DFFRHQ" libraryRef="cell_lib"/>
+				<instance name="U26" moduleRef="ADDF" libraryRef="cell_lib"/>
+				<instance name="U27" moduleRef="XOR2" libraryRef="cell_lib"/>
+				<instance name="U28" moduleRef="NAND2B" libraryRef="cell_lib"/>
+				<instance name="U29" moduleRef="XOR2" libraryRef="cell_lib"/>
+				<instance name="U30" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U31" moduleRef="OAI2BB1" libraryRef="cell_lib"/>
+				<instance name="U32" moduleRef="OR2" libraryRef="cell_lib"/>
+				<instance name="U33" moduleRef="MX2" libraryRef="cell_lib"/>
+				<instance name="U34" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U35" moduleRef="INV" libraryRef="cell_lib"/>
+				<instance name="U36" moduleRef="NOR2" libraryRef="cell_lib"/>
+				<instance name="U37" moduleRef="NOR2B" libraryRef="cell_lib"/>
+				<instance name="U38" moduleRef="INV" libraryRef="cell_lib"/>
+				<instance name="U39" moduleRef="NOR3B" libraryRef="cell_lib"/>
+				<instance name="U40" moduleRef="NAND3" libraryRef="cell_lib"/>
+				<instance name="U41" moduleRef="OR2" libraryRef="cell_lib"/>
+				<instance name="U42" moduleRef="NAND2" libraryRef="cell_lib"/>
+				<instance name="U43" moduleRef="INV" libraryRef="cell_lib"/>
+				<net name="seed[7]">
+					<portRef name="seed[7]"/>
+				</net>
+				<net name="seed[6]">
+					<portRef name="seed[6]"/>
+				</net>
+				<net name="seed[5]">
+					<portRef name="seed[5]"/>
+				</net>
+				<net name="seed[4]">
+					<portRef name="seed[4]"/>
+				</net>
+				<net name="seed[3]">
+					<portRef name="seed[3]"/>
+				</net>
+				<net name="seed[2]">
+					<portRef name="seed[2]"/>
+				</net>
+				<net name="seed[1]">
+					<portRef name="seed[1]"/>
+				</net>
+				<net name="seed[0]">
+					<portRef name="seed[0]"/>
+				</net>
+				<net name="clk">
+					<portRef name="clk"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[7]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[0]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[1]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[2]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[3]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[4]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[5]"/>
+					<portRef name="CK" instanceRef="u_prng/random_reg[6]"/>
+				</net>
+				<net name="rst">
+					<portRef name="rst"/>
+					<portRef name="A" instanceRef="U43"/>
+				</net>
+				<net name="u_prng/feedback">
+					<portRef name="S" instanceRef="U26"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[0]"/>
+				</net>
+				<net name="n1">
+					<portRef name="Y" instanceRef="U43"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[7]"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[0]"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[1]"/>
+					<portRef name="RN" instanceRef="u_prng/random_reg[2]"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[3]"/>
+					<portRef name="RN" instanceRef="u_prng/random_reg[4]"/>
+					<portRef name="SN" instanceRef="u_prng/random_reg[5]"/>
+					<portRef name="RN" instanceRef="u_prng/random_reg[6]"/>
+				</net>
+				<net name="n18">
+					<portRef name="Y" instanceRef="U27"/>
+					<portRef name="CI" instanceRef="U26"/>
+				</net>
+				<net name="n19">
+					<portRef name="Y" instanceRef="U29"/>
+					<portRef name="B" instanceRef="U28"/>
+				</net>
+				<net name="n20">
+					<portRef name="Y" instanceRef="U42"/>
+					<portRef name="B" instanceRef="U30"/>
+					<portRef name="A1N" instanceRef="U31"/>
+					<portRef name="B" instanceRef="U40"/>
+				</net>
+				<net name="n21">
+					<portRef name="Y" instanceRef="U41"/>
+					<portRef name="B0" instanceRef="U31"/>
+					<portRef name="C" instanceRef="U40"/>
+				</net>
+				<net name="n22">
+					<portRef name="Y" instanceRef="U33"/>
+					<portRef name="B" instanceRef="U32"/>
+				</net>
+				<net name="n23">
+					<portRef name="Y" instanceRef="U34"/>
+					<portRef name="A" instanceRef="U33"/>
+				</net>
+				<net name="n24">
+					<portRef name="Y" instanceRef="U35"/>
+					<portRef name="B" instanceRef="U33"/>
+					<portRef name="B" instanceRef="U34"/>
+				</net>
+				<net name="n25">
+					<portRef name="Y" instanceRef="U37"/>
+					<portRef name="B" instanceRef="U36"/>
+				</net>
+				<net name="n26">
+					<portRef name="Y" instanceRef="U39"/>
+					<portRef name="A" instanceRef="U38"/>
+				</net>
+				<net name="rnd_out[7]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[7]"/>
+					<portRef name="A" instanceRef="U26"/>
+				</net>
+				<net name="rnd_out[6]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[6]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[7]"/>
+				</net>
+				<net name="rnd_out[5]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[5]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[6]"/>
+					<portRef name="B" instanceRef="U26"/>
+				</net>
+				<net name="rnd_out[4]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[4]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[5]"/>
+					<portRef name="A" instanceRef="U27"/>
+				</net>
+				<net name="rnd_out[3]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[3]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[4]"/>
+					<portRef name="B" instanceRef="U27"/>
+				</net>
+				<net name="rnd_out[2]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[2]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[3]"/>
+					<portRef name="A" instanceRef="U29"/>
+					<portRef name="S0" instanceRef="U30"/>
+					<portRef name="A0N" instanceRef="U31"/>
+					<portRef name="A" instanceRef="U35"/>
+					<portRef name="AN" instanceRef="U37"/>
+					<portRef name="B" instanceRef="U39"/>
+					<portRef name="A" instanceRef="U40"/>
+				</net>
+				<net name="rnd_out[1]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[1]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[2]"/>
+					<portRef name="AN" instanceRef="U28"/>
+					<portRef name="A" instanceRef="U30"/>
+					<portRef name="S0" instanceRef="U33"/>
+					<portRef name="B" instanceRef="U37"/>
+					<portRef name="AN" instanceRef="U39"/>
+					<portRef name="A" instanceRef="U41"/>
+					<portRef name="B" instanceRef="U42"/>
+				</net>
+				<net name="rnd_out[0]">
+					<portRef name="Q" instanceRef="u_prng/random_reg[0]"/>
+					<portRef name="D" instanceRef="u_prng/random_reg[1]"/>
+					<portRef name="B" instanceRef="U29"/>
+					<portRef name="AN" instanceRef="U34"/>
+					<portRef name="A" instanceRef="U36"/>
+					<portRef name="C" instanceRef="U39"/>
+					<portRef name="B" instanceRef="U41"/>
+					<portRef name="A" instanceRef="U42"/>
+				</net>
+				<net name="">
+					<portRef name="Y" instanceRef="U30"/>
+					<portRef name="seg[0]"/>
+				</net>
+				<net name="">
+					<portRef name="Y" instanceRef="U31"/>
+					<portRef name="seg[1]"/>
+				</net>
+				<net name="">
+					<portRef name="Y" instanceRef="U32"/>
+					<portRef name="seg[3]"/>
+				</net>
+				<net name="">
+					<portRef name="Y" instanceRef="U38"/>
+					<portRef name="seg[4]"/>
+				</net>
+				<net name="">
+					<portRef name="Y" instanceRef="U40"/>
+					<portRef name="seg[5]"/>
+				</net>
+				<net name="">
+					<portRef name="Y" instanceRef="U28"/>
+					<portRef name="seg[6]"/>
+				</net>
+				<net name="">
+					<portRef name="Y" instanceRef="U36"/>
+					<portRef name="A" instanceRef="U32"/>
+					<portRef name="seg[2]"/>
+				</net>
+			</contents>
+		</module>
+	</library>
+	<topModule name="top" libraryRef="work_lib"/>
+</design>
+

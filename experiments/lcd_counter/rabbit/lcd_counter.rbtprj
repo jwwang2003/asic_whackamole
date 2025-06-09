@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Rabbit Project File-->
+<project name="lcd_counter" constraint="../ufde/lcd_counter_cons.xml" bitstream="../ufde/lcd_counter_dc_bit.bit">
+    <panel grid_width="50" grid_height="50"/>
+    <components>
+        <component type="Button" name="rstn" grid_x="2" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="true"/>
+            </settings>
+            <inputs>
+                <input pin="P151" port="BTN"/>
+            </inputs>
+            <outputs/>
+        </component>
+        <component type="FourDigitSegmentDisplay" name="counter" grid_x="4" grid_y="1">
+            <settings>
+                <setting name="is_low_active" value="false"/>
+                <setting name="vision_persistence" value="50"/>
+            </settings>
+            <inputs/>
+            <outputs>
+                <output pin="P20" port="SEL0"/>
+                <output pin="P10" port="SEL1"/>
+                <output pin="P11" port="SEL2"/>
+                <output pin="P15" port="SEL3"/>
+                <output pin="P16" port="A"/>
+                <output pin="P8" port="B"/>
+                <output pin="P9" port="C"/>
+                <output pin="P4" port="D"/>
+                <output pin="P5" port="E"/>
+                <output pin="P6" port="F"/>
+                <output pin="P7" port="G"/>
+                <output pin="" port="DP"/>
+            </outputs>
+        </component>
+    </components>
+</project>

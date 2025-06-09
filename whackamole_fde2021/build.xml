@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="prog" name="FPGACompilation">
+<property environment="env"/>
+<property name="design" value="whackamole"/>
+<property name="device" value="FDP3P7"/>
+<property name="family" value="fdp3"/>
+<property location="/D:/Program Files (x86)/FDE2021/bin/eclipse/plugins/cn.edu.fudan.fpga_3.0.0/../../" name="eclipsedir"/>
+<property location="${eclipsedir}\..\..\hw_lib" name="libdir"/>
+<property location="${libdir}\fdp3p7_arch.xml" name="archfile"/>
+<property location="${libdir}\fdp3p7_cil.xml" name="cilfile"/>
+<property location="${libdir}\dc_cell.xml" name="celllibfile"/>
+<property location="${libdir}\fdp3_cell.xml" name="dccelllibfile"/>
+<property location="${libdir}\fdp3_dcplib.xml" name="dcplibfile"/>
+<property location="${libdir}\fdp3_config.xml" name="xdlcfgfile"/>
+<property location="${libdir}\fdp3_cell.xml" name="xdllibfile"/>
+<property location="${libdir}\fdp3_con.xml" name="interconlib"/>
+<property location="${libdir}\fdp3p7_dly.xml" name="plcdelayfile"/>
+<property location="${eclipsedir}\.." name="fdebin"/>
+<property location="${fdebin}\yosys" name="yosysbin"/>
+<property location="${yosysbin}\share\fde" name="yosyslib"/>
+<property name="maparg" value=""/>
+<property name="flow" value="_fde_dc"/>
+<property name="antargs" value=""/>
+<property name="topModule" value=""/>
+<property name="edffile_syn" value="${design}${flow}_syn.edf"/>
+<property name="xmlfile_imp" value="${design}${flow}_imp.xml"/>
+<property name="xmlfile_map" value="${design}${flow}_map.xml"/>
+<property name="xmlfile_pack" value="${design}${flow}_pack.xml"/>
+<property name="xmlfile_cst" value="${design}${flow}_cst.xml"/>
+<property name="xmlfile_plc" value="${design}${flow}_plc.xml"/>
+<property name="xmlfile_rt" value="${design}${flow}_rt.xml"/>
+<property name="xml_nlf" value="${design}${flow}_refined.xml"/>
+<property name="xdlfile_pack" value="${design}${flow}_pack.fdl"/>
+<property name="bitfile" value="${design}${flow}.bit"/>
+<property name="starptfile" value="${design}${flow}_sta.rpt"/>
+<property name="yosysfile" value="${design}${flow}_gate.v"/>
+<property name="packfile" value="${design}${flow}_pack.v"/>
+<property name="routefile" value="${design}${flow}_route.v"/>
+<property name="mapfile" value="${design}${flow}_map.v"/>
+<property name="sdffile" value="${design}${flow}_sim.sdf"/>
+<property name="basedir_q" value="&quot;${basedir}&quot;"/>
+<property name="archfile_q" value="&quot;${archfile}&quot;"/>
+<property name="cilfile_q" value="&quot;${cilfile}&quot;"/>
+<property name="celllibfile_q" value="&quot;${celllibfile}&quot;"/>
+<property name="dccelllibfile_q" value="&quot;${dccelllibfile}&quot;"/>
+<property name="dcplibfile_q" value="&quot;${dcplibfile}&quot;"/>
+<property name="xdlcfgfile_q" value="&quot;${xdlcfgfile}&quot;"/>
+<property name="xdllibfile_q" value="&quot;${xdllibfile}&quot;"/>
+<property name="interconlib_q" value="&quot;${interconlib}&quot;"/>
+<property name="plcdelayfile_q" value="&quot;${plcdelayfile}&quot;"/>
+<property name=".timestamp" value="0"/>
+<property name="imp.timestamp" value="0"/>
+<property name="map.timestamp" value="0"/>
+<property name="pack.timestamp" value="0"/>
+<property name="place.timestamp" value="1749457517092"/>
+<property name="route.timestamp" value="1749457546674"/>
+<property name="sta.timestamp" value="1749460115991"/>
+<property name="bit.timestamp" value="0"/>
+<property name="prog.timestamp" value="0"/>
+<property name="imp_cst.timestamp" value="0"/>
+<property name="pack.mode" value=""/>
+<property name="place.mode" value="-t"/>
+<property name="route.mode" value="-t"/>
+<property name="yosys.simfile" value=""/>
+<property name="map.simfile" value=""/>
+<property name="pack.simfile" value=""/>
+<property name="route.simfile" value=""/>
+<property name="prog.mode" value="usb"/>
+<property name="prog.format" value="mcs"/>
+<property name="prog.port" value="888"/>
+<property name="prog.lpt.args" value="${basedir_q} ${bitfile} ${prog.format} ${bitfile} slvsrllpt ${prog.port}"/>
+<property name="prog.usb.args" value="${bitfile}"/>
+<property name="sta.sim" value="false"/>
+<property name="sta.pnum" value="10"/>
+<property name="place.cstfile" value="D:\FDE\Workspace\whackamole\src\cons.xml"/>
+<property name="place.cstfile_q" value="&quot;${place.cstfile}&quot;"/>
+<property name="route.cstfile" value="D:\FDE\Workspace\whackamole\src\cons.xml"/>
+<property name="route.cstfile_q" value="&quot;${route.cstfile}&quot;"/>
+<target name="cst.check">
+		<condition property="cst.exist">
+			<available file="${place.cstfile}" type="file"/>
+		</condition>
+		<condition else="" property="place.cst" value="-c ${place.cstfile_q}">
+			<isset property="cst.exist"/>
+		</condition>
+	</target>
+<target name="rtcst.check">
+		<condition property="rtcst.exist">
+			<available file="${route.cstfile}" type="file"/>
+		</condition>
+		<condition else="" property="route.cst" value="-c ${route.cstfile_q}">
+			<isset property="rtcst.exist"/>
+		</condition>
+	</target>
+<target description="Import Constraint File" name="imp_cst">
+		<fde.copy file="${imp_cst.file}" tofile="${xmlfile_cst}"/>
+	</target>
+<target description="Import" name="imp">
+		<fde.imp destfile="${xmlfile_imp}" dir="${basedir}" executable="${fdebin}/import.exe" failonerror="true">
+			<srcfiles dir="src" includes="**/*.v"/>
+			<arg line="-x ${xmlfile_imp} -l ${celllibfile_q} -e"/>
+		</fde.imp>
+	</target>
+<target description="Yosys" name="yosys">
+		<fde.yosys destfile="${edffile_syn}" dir="${basedir}" executable="${yosysbin}/yosys.exe" failonerror="true">
+			<srcfiles dir="src" includes="**/*.v"/>
+			<arg line="tcl ${yosyslib}\yosys_fde.tcl -l ${yosyslib}\fdesimlib.v -m ${yosyslib}\techmap.v -c ${yosyslib}\cells_map.v -o ${edffile_syn} ${maparg} ${yosys.simfile}"/>
+		</fde.yosys>
+		<fde.exec destfile="${xmlfile_map}" dir="${basedir}" executable="${fdebin}/map.exe" failonerror="true" srcfile="${edffile_syn}">
+			<arg line="-y -i ${edffile_syn} -o ${xmlfile_map} -c ${celllibfile_q} ${maparg} ${map.simfile} -e"/>
+		</fde.exec>		
+	</target>
+<target depends="imp" description="Map" name="map">
+		<fde.exec destfile="${xmlfile_map}" dir="${basedir}" executable="${fdebin}/map.exe" failonerror="true" srcfile="${xmlfile_imp}">
+			<arg line="-i ${xmlfile_imp} -o ${xmlfile_map} -c ${celllibfile_q} ${maparg} ${map.simfile} -e"/>
+		</fde.exec>
+	</target>
+<target depends="map" description="Pack" name="pack">
+		<fde.exec destfile="${xmlfile_pack}" dir="${basedir}" executable="${fdebin}/pack${pack.mode}.exe" failonerror="true" srcfile="${xmlfile_map}">
+			<arg line="-c ${family} -n ${xmlfile_map} -l ${dccelllibfile_q} -r ${dcplibfile_q} -o ${xmlfile_pack} -g ${xdlcfgfile_q} ${pack.simfile} -e"/>
+		</fde.exec>
+	</target>
+<target depends="pack,cst.check" description="Place" name="place">
+		<fde.exec destfile="${xmlfile_plc}" dir="${basedir}" executable="${fdebin}/place.exe" failonerror="true" srcfile="${xmlfile_pack}">
+			<arg line="-a ${archfile_q} -d ${plcdelayfile_q} -i ${xmlfile_pack} -o ${xmlfile_plc} ${place.cst} ${place.mode} -e"/>
+		</fde.exec>
+	</target>
+<target depends="place,rtcst.check" description="Route" name="route">
+		<fde.exec destfile="${xmlfile_rt}" dir="${basedir}" executable="${fdebin}/route.exe" failonerror="true" srcfile="${xmlfile_plc}">
+			<arg line="-a ${archfile_q} -n ${xmlfile_plc} -o ${xmlfile_rt} ${route.mode} ${route.simfile} ${route.cst} -e"/>
+		</fde.exec>
+	</target>
+<target depends="route" description="Generate Bitfile" name="bit">
+		<fde.exec destfile="${bitfile}" dir="${basedir}" executable="${fdebin}/bitgen.exe" failonerror="true" srcfile="${xmlfile_rt}">
+			<arg line="-a ${archfile_q} -c ${cilfile_q} -n ${xmlfile_rt} -b ${bitfile} -e"/>
+		</fde.exec>
+	</target>
+<target depends="route" description="Timing Analysis" name="sta">
+		<fde.exec destfile="${xml_nlf}" dir="${basedir}" executable="${fdebin}/NLFiner.exe" failonerror="true" srcfile="${xmlfile_rt}">
+			<arg line="-d ${xmlfile_rt} -l ${xdllibfile_q} -c ${xdlcfgfile_q} -o ${xml_nlf} "/>
+		</fde.exec>
+		<fde.exec destfile="${starptfile}" dir="${basedir}" executable="${fdebin}/sta.exe" failonerror="true" srcfile="${xml_nlf}">
+			<arg line="-a ${archfile_q} -i ${xml_nlf} -l ${interconlib_q} -r ${starptfile} -n ${sta.pnum}"/>
+		</fde.exec>
+	</target>
+<target depends="bit" description="Programming" name="prog">
+		<condition else="${prog.lpt.args}" property="prog.args" value="${prog.usb.args}">
+			<equals arg1="${prog.mode}" arg2="usb"/>
+		</condition>
+		<!--fde.exec executable="${fdebin}/prog_${prog.mode}.exe" failonerror="true" dir="${basedir}">
+			<arg line="${prog.args}"/>
+		</fde.exec-->
+	</target>
+<target description="Chip Viewer" name="view">
+		<fde.exec dir="${basedir}" executable="${fdebin}/viewer.exe">
+			<!--arg line="-i ${xmlfile_rt} -a"/-->
+		</fde.exec>
+	</target>
+</project>

@@ -1,0 +1,564 @@
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/final_src/v_src/top.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/final_src/v_src/defines.vh
+Opening include file /home/allenwalker/project/final_src/v_src/defines.vh
+Presto compilation completed successfully.
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+Loading db file '/eda/synopsys/dc2013/libraries/syn/gtech.db'
+Loading db file '/eda/synopsys/dc2013/libraries/syn/standard.sldb'
+  Loading link library 'fde_dc'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 339 in file
+	'/home/allenwalker/project/final_src/v_src/top.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           343            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 401 in file
+	'/home/allenwalker/project/final_src/v_src/top.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           409            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine top line 170 in file
+		'/home/allenwalker/project/final_src/v_src/top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| start_btn_db_d_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine top line 182 in file
+		'/home/allenwalker/project/final_src/v_src/top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| mole_btns_db_d_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine top line 299 in file
+		'/home/allenwalker/project/final_src/v_src/top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  mole_pattern_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine top line 332 in file
+		'/home/allenwalker/project/final_src/v_src/top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine top line 401 in file
+		'/home/allenwalker/project/final_src/v_src/top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  time_interval_reg  | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  time_interval_reg  | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|    score_reg_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      level_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      level_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|   multiplier_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   multiplier_reg    | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'top'.
+Warning: Cannot find the design 'btn_debounce' in the library 'WORK'. (LBR-1)
+Information: Building the design 'btn_debounce' instantiated from design 'top' with
+	the parameters "WIDTH=16". (HDL-193)
+Warning: Cannot find the design 'btn_debounce' in the library 'WORK'. (LBR-1)
+Warning: Cannot find the design 'lfsr_prng' in the library 'WORK'. (LBR-1)
+Information: Building the design 'lfsr_prng'. (HDL-193)
+Warning: Cannot find the design 'lfsr_prng' in the library 'WORK'. (LBR-1)
+Warning: Cannot find the design 'unique_selector' in the library 'WORK'. (LBR-1)
+Information: Building the design 'unique_selector'. (HDL-193)
+Warning: Cannot find the design 'unique_selector' in the library 'WORK'. (LBR-1)
+Warning: Cannot find the design 'interval_counter' in the library 'WORK'. (LBR-1)
+Information: Building the design 'interval_counter'. (HDL-193)
+Warning: Cannot find the design 'interval_counter' in the library 'WORK'. (LBR-1)
+Warning: Cannot find the design 'seven_seg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'seven_seg'. (HDL-193)
+Warning: Cannot find the design 'seven_seg' in the library 'WORK'. (LBR-1)
+Warning: Cannot find the design 'four_digit_seg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'four_digit_seg'. (HDL-193)
+Warning: Cannot find the design 'four_digit_seg' in the library 'WORK'. (LBR-1)
+Warning: Design 'top' has '6' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/final_src/v_src/interval_counter.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/final_src/v_src/defines.vh
+Opening include file /home/allenwalker/project/final_src/v_src/defines.vh
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Warning:  /home/allenwalker/project/final_src/v_src/interval_counter.v:20: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine interval_counter line 22 in file
+		'/home/allenwalker/project/final_src/v_src/interval_counter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     div_cnt_reg     | Flip-flop |  15   |  Y  | N  | N  | N  | N  | N  | N  |
+|      done_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|     timeout_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'interval_counter'.
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/final_src/v_src/lfsr_prng.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine lfsr_prng line 14 in file
+		'/home/allenwalker/project/final_src/v_src/lfsr_prng.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     random_reg      | Flip-flop |   5   |  Y  | N  | N  | Y  | N  | N  | N  |
+|     random_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'lfsr_prng'.
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/final_src/v_src/unique_selector.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine unique_selector line 24 in file
+		'/home/allenwalker/project/final_src/v_src/unique_selector.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|       done_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| potential_number_reg | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    searching_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  selected_mask_reg   | Flip-flop |   8   |  N  | N  | Y  | N  | N  | N  | N  |
+| selected_number_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+Statistics for MUX_OPs
+=============================================================
+|  block name/line   | Inputs | Outputs | # sel inputs | MB |
+=============================================================
+| unique_selector/42 |   8    |    1    |      3       | N  |
+=============================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'unique_selector'.
+Running PRESTO HDLC
+Error:  Unable to open file `/home/allenwalker/project/final_src/v_src/whackamole_fsm.v': No such file or directory. (VER-41)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't find the architecture 'whackamole_fsm(verilog)' in the library 'WORK'
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/final_src/v_src/four_digit_seg.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/final_src/v_src/defines.vh
+Opening include file /home/allenwalker/project/final_src/v_src/defines.vh
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Warning:  /home/allenwalker/project/final_src/v_src/four_digit_seg.v:125: signed to unsigned conversion occurs. (VER-318)
+Warning:  /home/allenwalker/project/final_src/v_src/four_digit_seg.v:134: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 26 in file
+	'/home/allenwalker/project/final_src/v_src/four_digit_seg.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            40            |    auto/auto     |
+|            66            |    auto/auto     |
+|            92            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 132 in file
+	'/home/allenwalker/project/final_src/v_src/four_digit_seg.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           134            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine four_digit_seg line 124 in file
+		'/home/allenwalker/project/final_src/v_src/four_digit_seg.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    scan_cnt_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    digit_idx_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'four_digit_seg'.
+Warning: Cannot find the design 'seven_seg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'seven_seg'. (HDL-193)
+Warning: Cannot find the design 'seven_seg' in the library 'WORK'. (LBR-1)
+Warning: Design 'four_digit_seg' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/final_src/v_src/seven_seg.v
+Searching for ./defines.vh
+Searching for /home/allenwalker/project/lib/defines.vh
+Searching for /home/allenwalker/project/final_src/v_src/defines.vh
+Opening include file /home/allenwalker/project/final_src/v_src/defines.vh
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Warning:  /home/allenwalker/project/final_src/v_src/seven_seg.v:10: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'seven_seg'.
+Running PRESTO HDLC
+Compiling source file /home/allenwalker/project/final_src/v_src/btn_debounce.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine btn_debounce line 22 in file
+		'/home/allenwalker/project/final_src/v_src/btn_debounce.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    sync_ff1_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    sync_ff2_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine btn_debounce line 34 in file
+		'/home/allenwalker/project/final_src/v_src/btn_debounce.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    shift_reg_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   button_out_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'btn_debounce'.
+Current design is 'top'.
+Information: Building the design 'btn_debounce' instantiated from design 'top' with
+	the parameters "WIDTH=16". (HDL-193)
+
+Inferred memory devices in process
+	in routine btn_debounce_WIDTH16 line 22 in file
+		'/home/allenwalker/project/final_src/v_src/btn_debounce.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    sync_ff1_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    sync_ff2_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine btn_debounce_WIDTH16 line 34 in file
+		'/home/allenwalker/project/final_src/v_src/btn_debounce.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    shift_reg_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   button_out_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Uniquified 4 instances of design 'seven_seg'. (OPT-1056)
+Information: Uniquified 9 instances of design 'btn_debounce_WIDTH16'. (OPT-1056)
+Current design is 'top'.
+
+  Linking design 'top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (19 designs)              /home/allenwalker/project/final_src/top.db, etc
+  fde_dc (library)            /home/allenwalker/project/lib/fde_dc.db
+
+Warning: Dont_touch on net 'time_interval[0]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'time_interval[1]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'time_interval[2]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'time_interval[3]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Information: Updating graph... (UID-83)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | H-2013.03-DWBB_201303.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+Warning: Dont_touch on net 'time_interval[0]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'time_interval[1]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'time_interval[2]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+Warning: Dont_touch on net 'time_interval[3]' may be overridden by compile because it
+	is connected to generic logic. Use all_connected to see net
+	connections. (OPT-461)
+
+Information: There are 37 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'top'
+  Ungrouping instance 'u_us/C238' 
+Information: The register 'time_interval_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'time_interval_reg[0]' is a constant and will be removed. (OPT-1206)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'top' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'DW01_sub_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_add_width16'
+  Processing 'DW01_add_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_sub_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_sub_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_add_width15'
+  Processing 'DW01_ash_A_width8_SH_width3'
+  Processing 'DW01_cmp2_width16'
+  Processing 'DW01_cmp2_width16'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Structuring 'top'
+  Mapping 'top'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    3318.0      0.00       0.0      34.5                          
+    0:00:01    3318.0      0.00       0.0      34.5                          
+    0:00:01    3318.0      0.00       0.0      34.5                          
+    0:00:01    3318.0      0.00       0.0      34.5                          
+    0:00:01    3318.0      0.00       0.0      34.5                          
+    0:00:01    3318.0      0.00       0.0      34.5                          
+    0:00:01    3318.0      0.00       0.0      34.5                          
+    0:00:01    3318.0      0.00       0.0      34.5                          
+    0:00:01    3318.0      0.00       0.0      34.5                          
+    0:00:01    3326.0      0.00       0.0      16.7                          
+    0:00:01    3330.0      0.00       0.0       7.0                          
+    0:00:01    3334.0      0.00       0.0       2.5                          
+    0:00:01    3336.0      0.00       0.0       0.7                          
+    0:00:01    3337.0      0.00       0.0       0.2                          
+    0:00:01    3338.0      0.00       0.0       0.0                          
+    0:00:01    3338.0      0.00       0.0       0.0                          
+    0:00:01    3338.0      0.00       0.0       0.0                          
+    0:00:01    3338.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    3338.0      0.00       0.0       0.0                          
+    0:00:01    3338.0      0.00       0.0       0.0                          
+    0:00:01    3338.0      0.00       0.0       0.0                          
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    3338.0      0.00       0.0       0.0                          
+    0:00:01    3340.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    3340.0      0.00       0.0       0.0                          
+    0:00:01    3340.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+    0:00:01    3288.0      0.00       0.0       0.0                          
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+
+  Optimization Complete
+  ---------------------
+Warning: Design has no hierarchy.  No cells can be ungrouped. (UID-228)
+Alib files are up-to-date.
+Loading db file '/eda/synopsys/dc2013/libraries/syn/dw_foundation.sldb'
+Information: Failed to find dw_foundation.sldb in the user defined search_path, load it from 'Synopsys Root'. (UISN-70)
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | H-2013.03-DWBB_201303.0 |     *     |
+| Licensed DW Building Blocks        | H-2013.03-DWBB_201303.0 |     *     |
+============================================================================
+
+
+Loaded alib file './alib-52/fde_dc.db.alib'
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'top' has no optimization constraints set. (OPT-108)
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00    3288.0      0.00       0.0       0.0                          
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+    0:00:00    3288.0      0.00       0.0       0.0                          
+Loading db file '/home/allenwalker/project/lib/fde_dc.db'
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/home/allenwalker/project/final_src/result/top_gate.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
