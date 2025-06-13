@@ -15,13 +15,12 @@ ASIC 打地鼠游戏是一个基于 Verilog HDL 和 FPGA/ASIC 综合流程实现
 ## 本地演示
 下面是在本地 FPGA 开发板上跑通后的演示视频：
 
-<!-- demos/whackamole_final_demo.mp4 -->
-https://github.com/jwwang2003/asic_whackamole/blob/main/demos/whackamole_final_demo.mp4
-
 <!-- <video src="demos/whackamole_final_demo.mp4" controls width="640" height="360">
   您的浏览器不支持 video 标签，请下载后本地查看：  
   [下载演示视频](demos/whackamole_demo.mp4)
 </video> -->
+
+https://github.com/user-attachments/assets/0f1c0035-de53-4b54-9dbe-5cb949ccfa5a
 
 ## 目录结构
 
