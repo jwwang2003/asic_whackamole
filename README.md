@@ -39,12 +39,3 @@ asic_whackamole
 │   └── ASIC_FINAL.pdf          # 试验报告
 └── README.md                   # 项目说明文件
 ```
-
-## 快速开始
-1. 克隆仓库  
-   ```bash
-   git clone https://your.git.repo/ASIC-Whack-a-Mole.git
-   cd ASIC-Whack-a-Mole
-2. 打开 Vivado 或 Synopsys 工程，导入 `src/` 和 `constraints/` 中文件。
-3. 运行综合、实现和生成比特流（或网表）。
-4. 下载到 FPGA 开发板，运行并按“Start”键开始游戏。
